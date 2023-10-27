@@ -1,1 +1,12 @@
 10 requetes SPARQL
+
+ - Quelles sont les maladies les plus courantes dans une période donnée ?
+ - Regrouper tout les symptomes lié a une maladie
+ - Les maladies les plus courantes dans une zone géographique
+ - facteur héréditaire pour une maladie : Quelles maladies sont présentes dans la famille ?
+ - conditions préexistante courante pour une maladie donnée
+ - Quelles sont les maladies les plus courantes pour un groupe d'age donné
+ - Pour une maladie, quels sont les traitements qui ont été efficace ?
+ - Pour un traitement et une maladie, en combien de temps le traitement a été efficace ?
+ - Quels médecins sont les plus efficaces pour une maladie donnée ?
+ - Antécédents médicaux courants pour une maladie donnée

@@ -2,3 +2,29 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xs:   <http://www.w3.org/2001/XMLSchema#> .
 
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+@prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix loinc: <http://purl.bioontology.org/ontology/LNC/> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+
+@base <http://www.example.org/> .
+
+<Patient> a foaf:Person;
+    owl:hasValue foaf:name;
+    foaf:birthday 18 ;
+    owl:hasValue foaf:surname;
+    loinc:LP97908-5 230;
+    owl:hasValue height;
+    owl:hasValue preexistingCondition;
+    owl:hasValue loinc:54140-9;
+    owl:hasValue knownFamilyHistory
+
+<preexistingCondition> a HealthIssue.
+
+
+
+
