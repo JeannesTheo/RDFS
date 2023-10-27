@@ -1,4 +1,45 @@
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xs:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xs:      <http://www.w3.org/2001/XMLSchema#> .
 
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+@prefix ncit:    <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix loinc:   <http://purl.bioontology.org/ontology/LNC/> .
+@prefix snomed:  <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+
+@prefix :        <localhost:8081/schema#> .
+@base <localhost:8081/data#>.
+
+<Patient>
+    a                foaf:Person ;
+    foaf:name        'Doe' ;
+    foaf:family_name 'John' ;
+    foaf:birthday    '18/06/1980' ;
+    :height          '230'^^xs:float ; # weight
+    :weight          '180'^^xs:float ; # height
+    :hasSex          ncit:C1657 ; # sex female
+    :knownHereditaryCondition ncit:C26747. # diabetes
+
+<Doctor>
+    a :Medecin .
+
+<Case1>
+    a                 :CaseReport ;
+    :hasCaseId        '651'^^xs:integer ;
+    :isRegarding      <Patient> ;
+    :hasBeenWrittenBy <Doctor> ;
+    :wasWrittenOn     '2018-01-01'^^xs:date ;
+    :diagnosis        <diagnosis> ;
+    :treatment        <treatment> ;
+    :followUp         <Follow1> .
+
+<Follow1>
+    a                 :FollowUp ;
+    :isRegarding      <Patient> ;
+    :hasBeenWrittenBy <Doctor> ;
+    :wasWrittenOn     '2018-01-01'^^xs:date ;
+    :patientStatus    'Parfaite santé' .

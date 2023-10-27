@@ -1,30 +1,262 @@
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xs:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xs:     <http://www.w3.org/2001/XMLSchema#> .
 
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
 
-@prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
-@prefix loinc: <http://purl.bioontology.org/ontology/LNC/> .
+@prefix ncit:   <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix loinc:  <http://purl.bioontology.org/ontology/LNC/> .
 @prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
 
 @base <http://www.example.org/> .
 
-<Patient> a foaf:Person;
-    owl:hasValue foaf:name;
-    foaf:birthday 18 ;
-    owl:hasValue foaf:surname;
-    loinc:LP97908-5 230;
-    owl:hasValue height;
-    owl:hasValue preexistingCondition;
-    owl:hasValue loinc:54140-9;
-    owl:hasValue knownFamilyHistory
+<Patient>
+    rdfs:subClassOf foaf:Person, ncit:C16960 .
 
-<preexistingCondition> a HealthIssue.
+<weight>
+    a               rdf:Property ;
+    rdfs:domain     foaf:Person ;
+    rdfs:range      xs:float ;
+    skos:prefLabel  "weight"@en ;
+    skos:definition "The weight of the patient"@en ;
+    skos:example    "80.5"@en ;
+    skos:scopeNote  "The weight of the patient is measured in kilograms"@en ;
+    ncit:P355       "kg"@en . # Unit of measurement
+
+<height>
+    a               rdf:Property ;
+    rdfs:domain     foaf:Person ;
+    rdfs:range      xs:float ;
+    skos:prefLabel  "height"@en ;
+    skos:definition "The height of the patient"@en ;
+    skos:example    "180"@en ;
+    skos:scopeNote  "The height of the patient is measured in centimeters"@en ;
+    ncit:P355       "cm"@en .
+
+<hasSex>
+    a               rdf:Property ;
+    rdfs:domain     foaf:Person ;
+    rdfs:range      ncit:C28421 ;
+    owl:seeAlso     ncit:C17357 ;
+    skos:prefLabel  "hasSex"@en ;
+    skos:definition "define the sex, as physical attributes, of a person" .
+
+<hasSecuritySocialNumber>
+    a               rdf:Property ;
+    rdfs:domain     <Patient> ;
+    rdfs:range      xs:string ;
+    skos:prefLabel  "hasSecuritySocialNumber"@en ;
+    skos:definition "The security social number of the patient"@en ;
+    skos:example    "1234567890123"@en ;
+    skos:scopeNote  "The security social number of the patient is measured in string"@en .
+
+<livesInCountry>
+    a               rdf:Property ;
+    rdfs:domain     foaf:Person ;
+    rdfs:range      ncit:C25164 ;
+    skos:prefLabel  "livesInCountry"@en ;
+    skos:definition "The country where the person lives"@en ;
+    skos:scopeNote  "The country where the person lives is measured in string"@en .
+
+<pre-existingCondition>
+    a               rdfs:Class ;
+    rdfs:subClassOf ncit:C7057 ; # Disease or Issue
+    skos:prefLabel  "Pre-existing condition"@en ;
+    skos:example    ncit:C26980 ; # Allergic Arthritis
+    skos:definition "A pre-existing condition, that reoccuring or never leaving"@en .
+
+<medicalHistory>
+    a               rdfs:Class ;
+    rdfs:subClassOf ncit:C7057 ; # Disease or Issue
+    skos:prefLabel  "Medical history"@en ;
+    skos:definition "A history of previous wounds or illness"@en .
+
+<knownHereditaryCondition>
+    a               rdf:Property ;
+    rdfs:domain     <Patient> ;
+    rdfs:range      ncit:C27998, ncit:C7057 ;# Hereditary Issue
+    skos:prefLabel  "hasHereditaryCondition"@en ;
+    skos:definition "Known family or related issues that might be hereditary"@en .
+
+<Medecin>
+    rdfs:subClassOf foaf:Person ;
+    foaf:status     ncit:C69164 .# Doctor
+
+<hasDoctorNumber>
+    a               rdf:Property ;
+    rdfs:domain     <Medecin> ;
+    rdfs:range      xs:string ;
+    skos:prefLabel  "hasId"@en ;
+    skos:definition "The id of the person"@en ;
+    skos:example    "123456789"@en ;
+    skos:scopeNote  "The id of the person is measured in string"@en .
+
+<specializedIn>
+    a               rdf:Property ;
+    rdfs:domain     <Medecin> ;
+    rdfs:range      ncit:C17153 ; # Medical Specialty
+    skos:prefLabel  "specializedIn"@en ;
+    skos:definition "The specialization of the medecin"@en ;
+    skos:example    ncit:C86055 ; # Cardiology
+    skos:scopeNote  "The specialization of the medecin is measured in string"@en .
+
+<Follow-Up>
+    rdfs:subClassOf ncit:C16033 ; # Follow-Up Care
+    skos:prefLabel  "Follow-Up"@en ;
+    skos:definition "The follow-up of the patient"@en .
+
+<CaseReport>
+    rdfs:subPropertyOf ncit:C25375 . # Report
+
+<hasCaseId>
+    a               rdf:Property ;
+    rdfs:domain     ncit:C19498 ;
+    rdfs:range      xs:decimal ;
+    skos:prefLabel  "hasId"@en ;
+    skos:definition "The id of the report"@en ;
+    skos:example    123456 .
+
+<diagnosis>
+    a               rdf:Property ;
+    rdfs:domain     <CaseReport> ;
+    rdfs:range      ncit:C7057 ; # Disease or Issue
+    skos:prefLabel  "diagnosis"@en ;
+    skos:definition "The diagnosis of the patient"@en ;
+    skos:scopeNote  "The diagnosis of the patient is measured in string"@en .
+
+<hasBeenWrittenBy>
+    rdfs:subPropertyOf dc:created ;
+    rdfs:domain        ncit:C19498 ;
+    rdfs:range         <Medecin> ;
+    skos:prefLabel     "hasBeenWrittenBy"@en ;
+    skos:definition    "The case report has been written by the medecin"@en ;
+    skos:scopeNote     "The case report has been written by the medecin"@en .
+
+<isRegarding>
+    rdfs:subPropertyOf dc:subject ;
+    rdfs:domain        ncit:C19498 ;
+    rdfs:range         <Patient> ;
+    skos:prefLabel     "isRegarding"@en ;
+    skos:definition    "The case report is regarding the patient"@en ;
+    skos:scopeNote     "The case report is regarding the patient"@en .
+
+<followUp>
+    a               rdf:Property ;
+    rdfs:domain     <CaseReport> ;
+    rdfs:range      <Follow-Up> ;
+    skos:prefLabel  "followUp"@en ;
+    skos:definition "The follow-up of the patient"@en ;
+    skos:scopeNote  "The follow-up of the patient"@en .
+
+<patientStatus>
+    a               rdf:Property ;
+    rdfs:domain     <Follow-Up> ;
+    rdfs:range      xs:string ; # Disease or Issue
+    skos:prefLabel  "patientStatus"@en ;
+    skos:definition "The status of the patient"@en .
+
+<wasWrittenOn>
+    a               rdf:Property ;
+    rdfs:domain     ncit:C19498 ; # Document
+    rdfs:range      xs:dateTime ;
+    skos:prefLabel  "wasWrittenOn"@en ;
+    skos:definition "The date of the report"@en .
+
+<symptomsDisplayed>
+    a               rdf:Property ;
+    rdfs:domain     <CaseReport> ;
+    rdfs:range      ncit:C4876 ; # Symptom
+    skos:prefLabel  "symptomDisplayed"@en ;
+    skos:definition "A symptom displayed by the patient"@en .
+
+<givenTreatment>
+    a               rdf:Property ;
+    rdfs:domain     <CaseReport> ;
+    rdfs:range      <Treatment> ;
+    skos:prefLabel  "givenTreatment"@en ;
+    skos:definition "A treatment given to the patient"@en .
+
+<supplementaryTests>
+    a               rdf:Property ;
+    rdfs:domain     <CaseReport> ;
+    rdfs:range      ncit:C16203 ; # Activitées médicales
+    skos:prefLabel  "supplementaryTests"@en ;
+    skos:definition "A supplementary test given to the patient"@en .
+
+<Treatment>
+    a               rdfs:Class ;
+    skos:prefLabel  "Treatment"@en ;
+    skos:definition "A treatment"@en .
+
+<durationPeriod>
+    a               rdf:Property ;
+    rdfs:domain     <Treatment> ;
+    rdfs:range      xs:dayTimeDuration ;
+    skos:prefLabel  "durationPeriod"@en ;
+    skos:definition "The duration of the treatment"@en ;
+    skos:example    "10"@en ;
+    skos:scopeNote  "The duration of the treatment is measured in days"@en ;
+    ncit:P355       "days"@en . # Unit of measurement
+
+<complementaryInstructions>
+    a               rdf:Property ;
+    rdfs:domain     <Treatment> ;
+    rdfs:range      xs:string ;
+    skos:prefLabel  "complementaryInstructions"@en ;
+    skos:definition "Complementary instructions for the treatment"@en ;
+    skos:example    "Take with food"@en ;
+    skos:scopeNote  "Complementary instructions for the treatment"@en .
 
 
+<MedicalActivity>
+    rdfs:subClassOf <Treatment>, ncit:C16203 ; # Report
+    skos:prefLabel  "Medical Activity"@en ;
+    skos:definition "A medical activity prescribed to someone"@en ;
+    skos:example    ncit:C102857 .
+
+<shouldBePerformed>
+    a               rdf:Property ;
+    rdfs:domain     <MedicalActivity> ;
+    rdfs:range      xs:string ;
+    skos:prefLabel  "shouldBePerformed"@en ;
+    skos:definition "Details about what should be performed for a medical activity"@en ;
+    rdfs:seeAlso    <MedicalActivity> ;
+    skos:related    <MedicalActivity> .
+
+<numberVisits>
+    a               rdf:Property ;
+    rdfs:domain     <MedicalActivity> ;
+    rdfs:range      xs:integer ;
+    skos:prefLabel  "numberVisits"@en ;
+    skos:definition "The number of visits for a medical activity"@en ;
+    rdfs:seeAlso    <MedicalActivity> ;
+    skos:related    <MedicalActivity> .
+
+
+<Drug>
+    rdfs:subClassOf <Treatment>, ncit:C1908 ; # Drug
+    skos:prefLabel  "Drug"@en ;
+    skos:definition "A drug"@en .
+
+<dayBetweenTwoTake>
+    a               rdf:Property ;
+    rdfs:domain     <Drug> ;
+    rdfs:range      xs:dayTimeDuration ;
+    skos:prefLabel  "dayBetweenTwoTake"@en ;
+    skos:definition "The number of days between two take of the drug"@en ;
+    skos:example    'P0D'^^xs:dayTimeDuration ;
+    skos:scopeNote  "The number of days between two take of the drug is measured in days"@en .
+
+<TakesPerDay>
+    a               rdf:Property ;
+    rdfs:domain     <Drug> ;
+    rdfs:range      xs:integer ;
+    skos:prefLabel  "TakesPerDay"@en ;
+    skos:definition "The number of takes per day of the drug"@en ;
+    skos:example    2 ;
+    skos:scopeNote  "The number of takes per day of the drug is measured in integer"@en .
 
 
