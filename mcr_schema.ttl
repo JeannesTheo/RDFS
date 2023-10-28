@@ -82,31 +82,23 @@
     skos:example   "06410" .
 
 <pre-existingCondition>
-    a               rdfs:Class ;
-    rdfs:subClassOf ncit:C7057 ; # Disease or Issue
+    a               rdf:Property ;
+    rdfs:domain     foaf:Person ;
+    rdfs:range      ncit:C7057 ; # Disease or Issue
     skos:prefLabel  "Pre-existing condition"@en ;
     skos:altLabel   "Condition pré-existante"@fr ;
     skos:example    ncit:C26980 ; # Allergic Arthritis
     skos:definition "A pre-existing condition, that reoccuring or never leaving"@en,
                     "Une condition pré-existante, qui réapparait ou ne part jamais"@fr .
 
-<previousCondition>
-    a               rdfs:Class ;
-    rdfs:subClassOf ncit:C7057 ; # Disease or Issue
-    skos:prefLabel  "Previous condition"@en ;
-    skos:altLabel   "Condition antérieure"@fr ;
-    skos:definition "A previous wounds or illness"@en, "Une blessure ou un problème de santé ancien du patient" .
-
-#TODO Relation entre historique et date avec dc:date
-
 <hasBeenAffectedBy>
     a               rdf:Property ;
     rdfs:domain     <Patient> ;
-    rdfs:range      <pre-existingCondition> ;
+    rdfs:range      ncit:C7057 ;
     skos:prefLabel  "has been affected by"@en ;
     skos:altLabel   "a été affecté par"@fr ;
-    skos:definition "The patient has been affected by a pre-existing condition"@en,
-                    "Le patient a été affecté par une condition pré-existante"@fr .
+    skos:definition "Issue that had affected a patient in the past"@en,
+                    "Problème ayant affecté le patient a un moment donné"@fr .
 
 <knownHereditaryCondition>
     a               rdf:Property ;
@@ -151,7 +143,7 @@
     dc:isReferencedBy <CaseReport> .
 
 <CaseReport>
-    rdfs:subPropertyOf ncit:C25375 ; # Report
+    rdfs:subClassOf ncit:C25375 ; # Report
     skos:prefLabel     "Case Report"@en ;
     skos:altLabel      "Rapport médical"@fr .
 
@@ -267,8 +259,7 @@
     skos:prefLabel  "duration period"@en ;
     skos:altLabel   "durée du traitement"@fr ;
     skos:definition "The duration of the treatment"@en ;
-    skos:example    "P10D"^^xs:dayTimeDuration ;
-    skos:scopeNote  "The duration of the treatment is measured in days"@en .
+    skos:example    "P10D"^^xs:dayTimeDuration .
 
 <complementaryInstructions>
     a               rdf:Property ;
@@ -290,24 +281,22 @@
 
 <shouldBePerformed>
     a               rdf:Property ;
-    rdfs:domain     <MedicalActivity> ;
+    rdfs:domain     <Treatment> ;
     rdfs:range      xs:string ;
     skos:prefLabel  "should be performed"@en ;
     skos:altLabel   "devrait être effectué"@fr, "ce qui doit être fait"@fr, "what should be done"@en ;
     skos:definition "Details about what should be performed for a medical activity"@en,
                     "Détails sur ce qui doit être fait pour une activité médicale"@fr ;
-    rdfs:seeAlso    <MedicalActivity> ;
     skos:related    <MedicalActivity> .
 
 <numberVisits>
     a               rdf:Property ;
-    rdfs:domain     <MedicalActivity> ;
+    rdfs:domain     <Treatment> ;
     rdfs:range      xs:integer ;
     skos:prefLabel  "number of visits"@en ;
     skos:altLabel   "nombre de visites"@fr ;
     skos:definition "The number of visits for a medical activity"@en,
                     "Le nombre de visites pour une activité médicale"@fr ;
-    rdfs:seeAlso    <MedicalActivity> ;
     skos:related    <MedicalActivity> .
 
 
@@ -319,7 +308,7 @@
 
 <dayBetweenTwoTake>
     a               rdf:Property ;
-    rdfs:domain     <Drug> ;
+    rdfs:domain     <Treatment> ;
     rdfs:range      xs:dayTimeDuration ;
     skos:prefLabel  "days between two takes"@en ;
     skos:altLabel   "jours entre deux prises"@fr ;
@@ -327,11 +316,11 @@
                     "Le nombre de jours entre deux prises du médicament"@fr ;
     skos:example    'P0D'^^xs:dayTimeDuration .
 
-<TakesPerDay>
+<takesPerDay>
     a               rdf:Property ;
-    rdfs:domain     <Drug> ;
+    rdfs:domain     <Treatment> ;
     rdfs:range      xs:integer ;
-    skos:prefLabel  "TakesPerDay"@en ;
+    skos:prefLabel  "takes per day "@en ;
     skos:altLabel   "prises par jour"@fr ;
     skos:definition "The number of takes per day of the drug"@en, "Le nombre de prises par jour du médicament"@fr ;
     skos:example    2 .
