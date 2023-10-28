@@ -14,215 +14,288 @@
 @base <http://www.example.org/> .
 
 <Patient>
-    rdfs:subClassOf foaf:Person, ncit:C16960 .
+    rdfs:subClassOf foaf:Person ;
+    foaf:status     ncit:C16960 ; # Patient
+    skos:prefLabel  "Patient"@en ;
+    skos:altLabel   "Patient"@fr ;
+    skos:definition "Someone who is the subject of a case report"@en,
+                    "Une personne qui est sujet d'un rapport médical"@fr .
 
 <weight>
     a               rdf:Property ;
     rdfs:domain     foaf:Person ;
     rdfs:range      xs:float ;
     skos:prefLabel  "weight"@en ;
-    skos:definition "The weight of the patient"@en ;
-    skos:example    "80.5"@en ;
-    skos:scopeNote  "The weight of the patient is measured in kilograms"@en ;
-    ncit:P355       "kg"@en . # Unit of measurement
+    skos:altLabel   "poids"@fr ;
+    skos:definition "The weight of the person"@en, "Le poids de la personne"@fr ;
+    skos:example    "80.5"^^xs:float ;
+    skos:scopeNote  "The weight of the person is measured in kilograms"@en,
+                    "Le poids de la personne est mesurée en kilogrammes"@fr ;
+    ncit:P355       "kg" . # Unit of measurement
 
 <height>
     a               rdf:Property ;
     rdfs:domain     foaf:Person ;
     rdfs:range      xs:float ;
     skos:prefLabel  "height"@en ;
-    skos:definition "The height of the patient"@en ;
-    skos:example    "180"@en ;
-    skos:scopeNote  "The height of the patient is measured in centimeters"@en ;
+    skos:altLabel   "taille"@fr ;
+    skos:definition "The height of the person"@en, "La taille d'une personne"@fr ;
+    skos:example    "180"^^xs:float ;
+    skos:scopeNote  "The height of the person is measured in centimeters"@en,
+                    "La taille de la personne est mesurée en centimètres"@fr ;
     ncit:P355       "cm"@en .
 
 <hasSex>
     a               rdf:Property ;
     rdfs:domain     foaf:Person ;
     rdfs:range      ncit:C28421 ;
-    owl:seeAlso     ncit:C17357 ;
-    skos:prefLabel  "hasSex"@en ;
-    skos:definition "define the sex, as physical attributes, of a person" .
+    rdfs:seeAlso    ncit:C17357 ;
+    skos:prefLabel  "has Sex"@en ;
+    skos:altLabel   "est de sexe"@fr ;
+    skos:definition "define the sex, as physical attributes, of a person"@en,
+                    "définie le sexe biologique d'une personne, en fonction de ses attributs biologiques"@fr .
 
 <hasSecuritySocialNumber>
     a               rdf:Property ;
     rdfs:domain     <Patient> ;
     rdfs:range      xs:string ;
-    skos:prefLabel  "hasSecuritySocialNumber"@en ;
-    skos:definition "The security social number of the patient"@en ;
-    skos:example    "1234567890123"@en ;
-    skos:scopeNote  "The security social number of the patient is measured in string"@en .
+    skos:prefLabel  "has Security Social Number"@en ;
+    skos:altLabel   "a pour numéro de sécurité sociale"@fr, ""@en ;
+    skos:definition "The security social number of the patient"@en, "Le numéro de sécurité sociale du patient"@fr ;
+    skos:example    "1234567890123" ; .
 
 <livesInCountry>
     a               rdf:Property ;
     rdfs:domain     foaf:Person ;
-    rdfs:range      ncit:C25164 ;
-    skos:prefLabel  "livesInCountry"@en ;
-    skos:definition "The country where the person lives"@en ;
-    skos:scopeNote  "The country where the person lives is measured in string"@en .
+    rdfs:range      ncit:C176365 ; # Country of permanent residence
+    skos:prefLabel  "lives in country"@en ;
+    skos:altLabel   "vit dans le pays"@fr ;
+    skos:definition "The country where the person lives"@en, "Le pays où la personne vit"@fr ;
+    skos:example    ncit:C16592 . # France
+
+<hasPostalCode>
+    a              rdf:Property ;
+    rdfs:domain    foaf:Person ;
+    rdfs:range     xs:string ;
+    skos:prefLabel "has Postal Code"@en ;
+    skos:altLabel  "a pour code postal"@fr ;
+    skos:example   "06410" .
 
 <pre-existingCondition>
     a               rdfs:Class ;
     rdfs:subClassOf ncit:C7057 ; # Disease or Issue
     skos:prefLabel  "Pre-existing condition"@en ;
+    skos:altLabel   "Condition pré-existante"@fr ;
     skos:example    ncit:C26980 ; # Allergic Arthritis
-    skos:definition "A pre-existing condition, that reoccuring or never leaving"@en .
+    skos:definition "A pre-existing condition, that reoccuring or never leaving"@en,
+                    "Une condition pré-existante, qui réapparait ou ne part jamais"@fr .
 
-<medicalHistory>
+<previousCondition>
     a               rdfs:Class ;
     rdfs:subClassOf ncit:C7057 ; # Disease or Issue
-    skos:prefLabel  "Medical history"@en ;
-    skos:definition "A history of previous wounds or illness"@en .
+    skos:prefLabel  "Previous condition"@en ;
+    skos:altLabel   "Condition antérieure"@fr ;
+    skos:definition "A previous wounds or illness"@en, "Une blessure ou un problème de santé ancien du patient" .
+
+#TODO Relation entre historique et date avec dc:date
+
+<hasBeenAffectedBy>
+    a               rdf:Property ;
+    rdfs:domain     <Patient> ;
+    rdfs:range      <pre-existingCondition> ;
+    skos:prefLabel  "has been affected by"@en ;
+    skos:altLabel   "a été affecté par"@fr ;
+    skos:definition "The patient has been affected by a pre-existing condition"@en,
+                    "Le patient a été affecté par une condition pré-existante"@fr .
 
 <knownHereditaryCondition>
     a               rdf:Property ;
     rdfs:domain     <Patient> ;
     rdfs:range      ncit:C27998, ncit:C7057 ;# Hereditary Issue
     skos:prefLabel  "hasHereditaryCondition"@en ;
-    skos:definition "Known family or related issues that might be hereditary"@en .
+    skos:altLabel   "a pour condition héréditaire"@fr ;
+    skos:definition "Known family or related issues that might be hereditary"@en,
+                    "Condtion médicale connue parmi la famille"@fr .
 
 <Medecin>
     rdfs:subClassOf foaf:Person ;
-    foaf:status     ncit:C69164 .# Doctor
+    foaf:status     ncit:C69164 ;# Doctor
+    skos:prefLabel  "Medecin"@en ;
+    skos:altLabel   "Médecin"@fr ;
+    skos:definition "Person who can perform medicals acts"@en, "Une personne autorisée a pratiquer la médécine"@fr .
 
 <hasDoctorNumber>
-    a               rdf:Property ;
-    rdfs:domain     <Medecin> ;
-    rdfs:range      xs:string ;
-    skos:prefLabel  "hasId"@en ;
-    skos:definition "The id of the person"@en ;
-    skos:example    "123456789"@en ;
-    skos:scopeNote  "The id of the person is measured in string"@en .
+    rdfs:subPropertyOf dc:identifier ;
+    rdfs:domain        <Medecin> ;
+    rdfs:range         xs:string ;
+    skos:prefLabel     "has Id"@en ;
+    skos:altLabel      "a pour numéro de médecin"@fr ;
+    skos:definition    "The id of the person"@en ;
+    skos:example       "123456789"@en .
 
 <specializedIn>
     a               rdf:Property ;
     rdfs:domain     <Medecin> ;
     rdfs:range      ncit:C17153 ; # Medical Specialty
     skos:prefLabel  "specializedIn"@en ;
-    skos:definition "The specialization of the medecin"@en ;
-    skos:example    ncit:C86055 ; # Cardiology
-    skos:scopeNote  "The specialization of the medecin is measured in string"@en .
+    skos:altLabel   "spécialisé en"@fr ;
+    skos:definition "The specialization of the medecin"@en, "La spécialisation du médecin"@fr ;
+    skos:example    ncit:C86055 . # Cardiology
 
 <Follow-Up>
-    rdfs:subClassOf ncit:C16033 ; # Follow-Up Care
-    skos:prefLabel  "Follow-Up"@en ;
-    skos:definition "The follow-up of the patient"@en .
+    rdfs:subClassOf   ncit:C16033 ; # Follow-Up Care
+    skos:prefLabel    "Follow-Up"@en ;
+    skos:altLabel     "Suivi"@fr ;
+    skos:definition   "The follow-up of the patien, after a case report"@en,
+                      "Un point sur l'etat du patient, après un rapport médical"@fr ;
+    dc:isReferencedBy <CaseReport> .
 
 <CaseReport>
-    rdfs:subPropertyOf ncit:C25375 . # Report
+    rdfs:subPropertyOf ncit:C25375 ; # Report
+    skos:prefLabel     "Case Report"@en ;
+    skos:altLabel      "Rapport médical"@fr .
 
 <hasCaseId>
-    a               rdf:Property ;
-    rdfs:domain     ncit:C19498 ;
-    rdfs:range      xs:decimal ;
-    skos:prefLabel  "hasId"@en ;
-    skos:definition "The id of the report"@en ;
-    skos:example    123456 .
+    rdfs:subPropertyOf dc:identifier ;
+    rdfs:domain        ncit:C19498 ;
+    rdfs:range         xs:decimal ;
+    skos:prefLabel     "has Id"@en ;
+    skos:altLabel      "a pour numéro de rapport"@fr ;
+    skos:definition    "The id of the report"@en, "L'identifiant unique du rapport"@fr ;
+    skos:example       123456 .
 
 <diagnosis>
     a               rdf:Property ;
     rdfs:domain     <CaseReport> ;
     rdfs:range      ncit:C7057 ; # Disease or Issue
     skos:prefLabel  "diagnosis"@en ;
-    skos:definition "The diagnosis of the patient"@en ;
-    skos:scopeNote  "The diagnosis of the patient is measured in string"@en .
+    skos:altLabel   "diagnostic"@fr ;
+    skos:definition "The diagnosis of the patient"@en, "Le diagnostic du patient"@fr ;
+    rdfs:seeAlso    <Patient> .
 
 <hasBeenWrittenBy>
     rdfs:subPropertyOf dc:created ;
     rdfs:domain        ncit:C19498 ;
     rdfs:range         <Medecin> ;
-    skos:prefLabel     "hasBeenWrittenBy"@en ;
-    skos:definition    "The case report has been written by the medecin"@en ;
-    skos:scopeNote     "The case report has been written by the medecin"@en .
+    skos:prefLabel     "has been written by"@en ;
+    skos:altLabel      "a été écrit par"@fr ;
+    skos:definition    "The case report has been written by the medecin"@en,
+                       "Le rapport médical a été écrit par le médecin"@fr .
 
 <isRegarding>
     rdfs:subPropertyOf dc:subject ;
     rdfs:domain        ncit:C19498 ;
     rdfs:range         <Patient> ;
-    skos:prefLabel     "isRegarding"@en ;
-    skos:definition    "The case report is regarding the patient"@en ;
-    skos:scopeNote     "The case report is regarding the patient"@en .
+    skos:prefLabel     "is regarding"@en ;
+    skos:altLabel      "concerne"@fr ;
+    skos:definition    "The case report is regarding the patient"@en, "Le rapport médical concerne le patient"@fr .
 
 <followUp>
     a               rdf:Property ;
     rdfs:domain     <CaseReport> ;
     rdfs:range      <Follow-Up> ;
-    skos:prefLabel  "followUp"@en ;
-    skos:definition "The follow-up of the patient"@en ;
-    skos:scopeNote  "The follow-up of the patient"@en .
+    skos:prefLabel  "follows"@en ;
+    skos:altLabel   "suit"@fr ;
+    skos:definition "The follow-up of the patient"@en, "Le suivi du patient"@fr ;
+    rdfs:seeAlso    <Follow-Up> .
+
+
+<isPatientHealthy>
+    a               rdf:Property ;
+    rdfs:domain     <Follow-Up> ;
+    rdfs:range      xs:boolean ;
+    skos:prefLabel  "is patient healthy"@en ;
+    skos:altLabel   "est en bonne santé"@fr ;
+    skos:definition "The patient is healthy"@en, "Le patient est en bonne santé"@fr ;
+    skos:example    true .
 
 <patientStatus>
     a               rdf:Property ;
     rdfs:domain     <Follow-Up> ;
     rdfs:range      xs:string ; # Disease or Issue
-    skos:prefLabel  "patientStatus"@en ;
-    skos:definition "The status of the patient"@en .
+    skos:prefLabel  "patient status"@en ;
+    skos:altLabel   "état du patient"@fr ;
+    skos:definition "Complementary informations regarding the state of the patient"@en,
+                    "Détails sur l'etat du patient"@fr ;
+    skos:example    "Normal mobility"^^xs:string .
 
 <wasWrittenOn>
-    a               rdf:Property ;
-    rdfs:domain     ncit:C19498 ; # Document
-    rdfs:range      xs:dateTime ;
-    skos:prefLabel  "wasWrittenOn"@en ;
-    skos:definition "The date of the report"@en .
+    rdfs:subPropertyOf dc:date ;
+    rdfs:domain        ncit:C19498 ; # Document
+    rdfs:range         xs:dateTime ;
+    skos:prefLabel     "was written on"@en ;
+    skos:altLabel      "a été écrit le"@fr ;
+    skos:definition    "Redaction date of the document"@en, "La date de rédaction du document "@fr .
 
 <symptomsDisplayed>
     a               rdf:Property ;
     rdfs:domain     <CaseReport> ;
     rdfs:range      ncit:C4876 ; # Symptom
-    skos:prefLabel  "symptomDisplayed"@en ;
-    skos:definition "A symptom displayed by the patient"@en .
+    skos:prefLabel  "symptom displayed"@en ;
+    skos:altLabel   "symptôme connu"@fr ;
+    skos:definition "A symptom displayed by the patient"@en, "Un symptome du patient"@fr .
 
 <givenTreatment>
     a               rdf:Property ;
     rdfs:domain     <CaseReport> ;
     rdfs:range      <Treatment> ;
-    skos:prefLabel  "givenTreatment"@en ;
-    skos:definition "A treatment given to the patient"@en .
+    skos:prefLabel  "given treatment"@en ;
+    skos:altLabel   "traitement donné"@fr ;
+    skos:definition "A treatment given to the patient"@en, "Un traitement prescrit au patient"@fr .
 
 <supplementaryTests>
     a               rdf:Property ;
     rdfs:domain     <CaseReport> ;
     rdfs:range      ncit:C16203 ; # Activitées médicales
     skos:prefLabel  "supplementaryTests"@en ;
-    skos:definition "A supplementary test given to the patient"@en .
+    skos:altLabel   "tests complémentaires"@fr ;
+    skos:definition "A supplementary test given to the patient"@en, "Un examen complémentaire donné a un patient"@fr ;
+    rdfs:seeAlso    <Follow-Up> .
 
 <Treatment>
     a               rdfs:Class ;
     skos:prefLabel  "Treatment"@en ;
-    skos:definition "A treatment"@en .
+    skos:definition "A treatment, either a medical activity or a prescription"@en,
+                    "Un traitement, qui peut etre un médicament ou une activitée médicale"@fr ;
+    skos:altLabel   "Traitement"@fr ;
+    skos:narrower   <MedicalActivity>, <Drug> .
 
 <durationPeriod>
     a               rdf:Property ;
     rdfs:domain     <Treatment> ;
     rdfs:range      xs:dayTimeDuration ;
-    skos:prefLabel  "durationPeriod"@en ;
+    skos:prefLabel  "duration period"@en ;
+    skos:altLabel   "durée du traitement"@fr ;
     skos:definition "The duration of the treatment"@en ;
-    skos:example    "10"@en ;
-    skos:scopeNote  "The duration of the treatment is measured in days"@en ;
-    ncit:P355       "days"@en . # Unit of measurement
+    skos:example    "P10D"^^xs:dayTimeDuration ;
+    skos:scopeNote  "The duration of the treatment is measured in days"@en .
 
 <complementaryInstructions>
     a               rdf:Property ;
     rdfs:domain     <Treatment> ;
     rdfs:range      xs:string ;
-    skos:prefLabel  "complementaryInstructions"@en ;
-    skos:definition "Complementary instructions for the treatment"@en ;
-    skos:example    "Take with food"@en ;
-    skos:scopeNote  "Complementary instructions for the treatment"@en .
+    skos:prefLabel  "complementary instructions"@en ;
+    skos:altLabel   "instructions complémentaires"@fr ;
+    skos:definition "Complementary instructions for the treatment"@en,
+                    "Instructions complémentaires pour le traitement"@fr ;
+    skos:example    "Take with food"@en .
 
 
 <MedicalActivity>
     rdfs:subClassOf <Treatment>, ncit:C16203 ; # Report
     skos:prefLabel  "Medical Activity"@en ;
-    skos:definition "A medical activity prescribed to someone"@en ;
+    skos:altLabel   "Activité médicale"@fr ;
+    skos:definition "A medical activity prescribed to someone"@en, "Une activité médicale prescrite à quelqu'un"@fr ;
     skos:example    ncit:C102857 .
 
 <shouldBePerformed>
     a               rdf:Property ;
     rdfs:domain     <MedicalActivity> ;
     rdfs:range      xs:string ;
-    skos:prefLabel  "shouldBePerformed"@en ;
-    skos:definition "Details about what should be performed for a medical activity"@en ;
+    skos:prefLabel  "should be performed"@en ;
+    skos:altLabel   "devrait être effectué"@fr, "ce qui doit être fait"@fr, "what should be done"@en ;
+    skos:definition "Details about what should be performed for a medical activity"@en,
+                    "Détails sur ce qui doit être fait pour une activité médicale"@fr ;
     rdfs:seeAlso    <MedicalActivity> ;
     skos:related    <MedicalActivity> .
 
@@ -230,8 +303,10 @@
     a               rdf:Property ;
     rdfs:domain     <MedicalActivity> ;
     rdfs:range      xs:integer ;
-    skos:prefLabel  "numberVisits"@en ;
-    skos:definition "The number of visits for a medical activity"@en ;
+    skos:prefLabel  "number of visits"@en ;
+    skos:altLabel   "nombre de visites"@fr ;
+    skos:definition "The number of visits for a medical activity"@en,
+                    "Le nombre de visites pour une activité médicale"@fr ;
     rdfs:seeAlso    <MedicalActivity> ;
     skos:related    <MedicalActivity> .
 
@@ -239,24 +314,26 @@
 <Drug>
     rdfs:subClassOf <Treatment>, ncit:C1908 ; # Drug
     skos:prefLabel  "Drug"@en ;
-    skos:definition "A drug"@en .
+    skos:altLabel   "Médicament"@fr ;
+    skos:definition "A legal substance use for medication"@en, "Une substance légale utilisée pour la médication"@fr .
 
 <dayBetweenTwoTake>
     a               rdf:Property ;
     rdfs:domain     <Drug> ;
     rdfs:range      xs:dayTimeDuration ;
-    skos:prefLabel  "dayBetweenTwoTake"@en ;
-    skos:definition "The number of days between two take of the drug"@en ;
-    skos:example    'P0D'^^xs:dayTimeDuration ;
-    skos:scopeNote  "The number of days between two take of the drug is measured in days"@en .
+    skos:prefLabel  "days between two takes"@en ;
+    skos:altLabel   "jours entre deux prises"@fr ;
+    skos:definition "The number of days between two take of the drug"@en,
+                    "Le nombre de jours entre deux prises du médicament"@fr ;
+    skos:example    'P0D'^^xs:dayTimeDuration .
 
 <TakesPerDay>
     a               rdf:Property ;
     rdfs:domain     <Drug> ;
     rdfs:range      xs:integer ;
     skos:prefLabel  "TakesPerDay"@en ;
-    skos:definition "The number of takes per day of the drug"@en ;
-    skos:example    2 ;
-    skos:scopeNote  "The number of takes per day of the drug is measured in integer"@en .
+    skos:altLabel   "prises par jour"@fr ;
+    skos:definition "The number of takes per day of the drug"@en, "Le nombre de prises par jour du médicament"@fr ;
+    skos:example    2 .
 
 
