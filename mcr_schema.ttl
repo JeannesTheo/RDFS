@@ -144,8 +144,8 @@
 
 <CaseReport>
     rdfs:subClassOf ncit:C25375 ; # Report
-    skos:prefLabel     "Case Report"@en ;
-    skos:altLabel      "Rapport médical"@fr .
+    skos:prefLabel  "Case Report"@en ;
+    skos:altLabel   "Rapport médical"@fr .
 
 <hasCaseId>
     rdfs:subPropertyOf dc:identifier ;

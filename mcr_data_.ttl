@@ -195,3 +195,28 @@
     :hasSecuritySocialNumber  "0831245675302" ;
     :pre-existingCondition    ncit:C28397, ncit:C172310 ; # Asthme, Allergy aux chats
     :knownHereditaryCondition ncit:C2975 . #Mucoviscidose
+
+#"Nom : Hadren
+#Prenom : Nyam
+#        N° Médecin : 190
+#Spécialité : Cardiologue"
+<Medecin1>
+    a                :Medecin ;
+    foaf:name        "Hadren" ;
+    foaf:familyName  "Nyam" ;
+    :hasDoctorNumber "190" ;
+    :specializedIn   ncit:C17153 . #Cardiologue
+
+<Medecin2>
+    a                :Medecin ;
+    foaf:name        "Banar" ;
+    foaf:familyName  "Camille" ;
+    :hasDoctorNumber "33" ;
+    :specializedIn   ncit:C16943 . # ORL
+
+<Medecin3>
+    a                :Medecin ;
+    foaf:name        "Laner" ;
+    foaf:familyName  "Xavier" ;
+    :hasDoctorNumber "48" ;
+    :specializedIn   ncit:C17099 . # Rhumatologue
