@@ -222,7 +222,7 @@
 <symptomsDisplayed>
     a               rdf:Property ;
     rdfs:domain     <CaseReport> ;
-    rdfs:range      ncit:C4876 ; # Symptom
+    rdfs:range      ncit:C100104 ; # Symptom
     skos:prefLabel  "symptom displayed"@en ;
     skos:altLabel   "symptôme connu"@fr ;
     skos:definition "A symptom displayed by the patient"@en, "Un symptome du patient"@fr .
@@ -273,15 +273,22 @@
 
 
 <MedicalActivity>
-    rdfs:subClassOf <Treatment>, ncit:C16203 ; # Report
+    rdfs:subClassOf <Treatment> ; # Report
     skos:prefLabel  "Medical Activity"@en ;
     skos:altLabel   "Activité médicale"@fr ;
     skos:definition "A medical activity prescribed to someone"@en, "Une activité médicale prescrite à quelqu'un"@fr ;
     skos:example    ncit:C102857 .
 
+<activity>
+    a              rdf:Property ;
+    rdfs:domain    <MedicalActivity> ;
+    rdfs:range     ncit:C16203 ;
+    skos:prefLabel "activity to do"@en ;
+    skos:altLabel  "l'activitée à faire"@en .
+
 <shouldBePerformed>
     a               rdf:Property ;
-    rdfs:domain     <Treatment> ;
+    rdfs:domain     <MedicalActivity> ;
     rdfs:range      xs:string ;
     skos:prefLabel  "should be performed"@en ;
     skos:altLabel   "devrait être effectué"@fr, "ce qui doit être fait"@fr, "what should be done"@en ;
@@ -291,7 +298,7 @@
 
 <numberVisits>
     a               rdf:Property ;
-    rdfs:domain     <Treatment> ;
+    rdfs:domain     <MedicalActivity> ;
     rdfs:range      xs:integer ;
     skos:prefLabel  "number of visits"@en ;
     skos:altLabel   "nombre de visites"@fr ;
@@ -301,14 +308,21 @@
 
 
 <Drug>
-    rdfs:subClassOf <Treatment>, ncit:C1908 ; # Drug
+    rdfs:subClassOf <Treatment> ; # Drug
     skos:prefLabel  "Drug"@en ;
     skos:altLabel   "Médicament"@fr ;
     skos:definition "A legal substance use for medication"@en, "Une substance légale utilisée pour la médication"@fr .
 
+<medication>
+    a              rdf:Property ;
+    rdfs:domain    <Drug> ;
+    rdfs:range     ncit:C1908 ;
+    skos:prefLabel "medication"@en ;
+    skos:altLabel  "médication"@fr, "principe actif"@fr, "active agent"@fr .
+
 <dayBetweenTwoTake>
     a               rdf:Property ;
-    rdfs:domain     <Treatment> ;
+    rdfs:domain     <Drug> ;
     rdfs:range      xs:dayTimeDuration ;
     skos:prefLabel  "days between two takes"@en ;
     skos:altLabel   "jours entre deux prises"@fr ;
@@ -318,7 +332,7 @@
 
 <takesPerDay>
     a               rdf:Property ;
-    rdfs:domain     <Treatment> ;
+    rdfs:domain     <Drug> ;
     rdfs:range      xs:integer ;
     skos:prefLabel  "takes per day "@en ;
     skos:altLabel   "prises par jour"@fr ;

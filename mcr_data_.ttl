@@ -196,25 +196,21 @@
     :pre-existingCondition    ncit:C28397, ncit:C172310 ; # Asthme, Allergy aux chats
     :knownHereditaryCondition ncit:C2975 . #Mucoviscidose
 
-#"Nom : Hadren
-#Prenom : Nyam
-#        N° Médecin : 190
-#Spécialité : Cardiologue"
-<Medecin1>
+<cardio>
     a                :Medecin ;
     foaf:name        "Hadren" ;
     foaf:familyName  "Nyam" ;
     :hasDoctorNumber "190" ;
     :specializedIn   ncit:C17153 . #Cardiologue
 
-<Medecin2>
+<orl>
     a                :Medecin ;
     foaf:name        "Banar" ;
     foaf:familyName  "Camille" ;
     :hasDoctorNumber "33" ;
     :specializedIn   ncit:C16943 . # ORL
 
-<Medecin3>
+<rhumat>
     a                :Medecin ;
     foaf:name        "Laner" ;
     foaf:familyName  "Xavier" ;
