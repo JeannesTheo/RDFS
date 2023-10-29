@@ -22,11 +22,5 @@
 
 ### Ontologies liées à la santé
 
-- ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> . Seule utilisée pour l'instant
-- loinc: <http://purl.bioontology.org/ontology/LNC/> .
-- snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
-
-On peut piller un voc & se lier a un autre voc avec des liens, seeAlso, sameAs et j'en passe (related entre autres)
-
-Recommander : https://bioportal.bioontology.org/recommender
+- ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 

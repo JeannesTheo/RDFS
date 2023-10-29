@@ -4,12 +4,9 @@
 
 @prefix dc:     <http://purl.org/dc/terms/> .
 @prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
-@prefix owl:    <http://www.w3.org/2002/07/owl#> .
 @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
 
 @prefix ncit:   <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
-@prefix loinc:  <http://purl.bioontology.org/ontology/LNC/> .
-@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
 
 @prefix :       <localhost:8081/schema#> .
 @base <localhost:8081/data#>.
@@ -150,7 +147,7 @@
     :wasWrittenOn       "2022-01-07"^^xs:date ;
     :symptomsDisplayed  ncit:C78225, ncit:C60271, ncit:C113194, ncit:C35051, ncit:C128439 ;
     #encombrement bronchiques, infections respiratoires, problèles digestifs, mains moites, aphtes
-    :diagnosis          ncit:C2975 ; #Mucoviscidose
+    :diagnosis          ncit:C2975, ncit:C4679 ; #Mucoviscidose
     :supplementaryTests ncit:C114184 ; #Irm
     :givenTreatment     <balneo2> ; #Balnéo thérapie
     :followUp           <followUp6> . #1

@@ -1,12 +1,144 @@
-10 requetes SPARQL
+- Comment trouver tous les symptômes d'une maladie ?
 
- - Quelles sont les maladies les plus courantes dans une période donnée ?
- - Regrouper tout les symptomes lié a une maladie
- - Les maladies les plus courantes dans une zone géographique
- - facteur héréditaire pour une maladie : Quelles maladies sont présentes dans la famille ?
- - conditions préexistante courante pour une maladie donnée
- - Quelles sont les maladies les plus courantes pour un groupe d'age donné
- - Pour une maladie, quels sont les traitements qui ont été efficace ?
- - Pour un traitement et une maladie, en combien de temps le traitement a été efficace ?
- - Quels médecins sont les plus efficaces pour une maladie donnée ?
- - Antécédents médicaux courants pour une maladie donnée
+    Pour trouver tous les symptômes liés à une maladie, nous pouvons utiliser la requête suivante, en replaçant ncit:C2975 par l'URI de la maladie recherchée.
+    Ici, nous avons utilisé la mucoviscidose.
+
+    select distinct ?y where { ?x :symptomsDisplayed ?y. ?x :diagnosis ncit:C2975.}
+------------------------------------------------------
+- Quelles sont les maladies les plus courantes dans une zone géographique donnée ?
+  
+    Cette requête permet de classer les maladies de la plus courante à la moins courante dans une zone géographique donnée.
+    
+    select ?z (count(?z) as ?pos) where {
+      ?x :isRegarding ?y.
+      ?x :diagnosis ncit:C38029.
+      ?y :hasPostalCode ?z.
+    }group by ?z
+    order by desc(?pos)
+------------------------------------------------------
+- Quelles sont les maladies qui sont diagnostiquées à un patient qui a déja la maladie parmi sa famille ?
+
+    Cette requête récupère les maladies qui sont diagnostiquées à un patient, et qui sont parmi les maladies héréditaires de la famille du patient.
+
+    select distinct ?y where {
+    	?x :diagnosis ?y.
+    	?x :isRegarding ?patient.
+    	?patient :knownHereditaryCondition ?y
+    }
+------------------------------------------------------
+- Quelles sont les maladies les plus courantes parmi les 18-24 ans ?
+
+    Pour cela, nous filtrons les patients pour ne garder que ceux entre 18 et 24 ans, puis nous trions les maladies par nombre d'occurrences.
+
+    select (count(?diag) as ?nb) ?diag where {
+    	?x foaf:birthday ?y.
+    	?case :isRegarding ?x.
+    	?case :diagnosis ?diag
+    	FILTER(year(?y) < 2005 && year(?y) >=1999 )
+    }group by ?diag
+    order by desc(?nb)
+
+------------------------------------------------------
+- Quelles sont les patients qui sont atteints de tachycardie ou de mucoviscidose ?
+
+    Cette requête permet de récupérer les patients qui sont atteints de tachycardie ou de mucoviscidose.
+
+   select distinct ?x where {
+    {?x :diagnosis ncit:C2975.}
+    UNION {?x :diagnosis ncit:C38029.}
+    }
+------------------------------------------------------
+- Combien chaque médecin a vu de patient qu'il n'a pas soigné ?
+
+    Cette requête permet de récupérer le nombre de patients qu'un médecin a vu,
+    mais qu'il n'a pas soigné, soit parce qu'il n'a pas fait de suivi, soit puisque l'état du patient ne s'est pas amélioré.
+
+   SELECT DISTINCT (COALESCE(?neg,0) as ?neg) ?y WHERE{
+           {?y a :Medecin}
+           OPTIONAL{SELECT (COUNT(?y) as ?neg) ?y WHERE {
+                     {?x :diagnosis ncit:C2975.
+                     ?x :hasBeenWrittenBy ?y.
+                     OPTIONAL {?x :followUp ?f.}
+                     FILTER (!bound(?f))}
+                     UNION
+                     {?x :diagnosis ncit:C2975.
+                     ?x :hasBeenWrittenBy ?y.
+                     ?x :followUp ?f.
+                     ?f :isPatientHealthy false}
+                   } GROUP BY ?y}
+           }GROUP BY ?y
+
+------------------------------------------------------
+- Quelle est l'efficacité des médecins ?
+
+    Nous avons d'abord récupéré le nombre de patients soigné par un médecin, puis nous avons soustrait à ce nombre le nombre de patients qui ont été vu, mais pas soigné par ce médecin
+    en réutilisant la requête précédente. Cela permet d'associer un score de performance à chaque médecin.
+
+    SELECT ?y (?pos - ?neg as ?score) WHERE {
+      # Subquery for positive count
+      {
+        SELECT (COALESCE(COUNT(?f),0) as ?pos) ?y WHERE {
+    	?y a :Medecin
+    	OPTIONAL{
+          	?x :diagnosis ncit:C2975.
+    	?x :hasBeenWrittenBy ?y.
+    	?x :followUp ?f.
+    	?f :isPatientHealthy true}
+        }group by ?y
+      }
+      # Subquery for negative count
+      {
+      SELECT DISTINCT (COALESCE(?neg,0) as ?neg) ?y WHERE{
+        {?y a :Medecin}
+        OPTIONAL{SELECT (COUNT(?y) as ?neg) ?y WHERE {
+                  {?x :diagnosis ncit:C2975.
+                  ?x :hasBeenWrittenBy ?y.
+                  OPTIONAL {?x :followUp ?f.}
+                  FILTER (!bound(?f))}
+                  UNION
+                  {?x :diagnosis ncit:C2975.
+                  ?x :hasBeenWrittenBy ?y.
+                  ?x :followUp ?f.
+                  ?f :isPatientHealthy false}
+                } GROUP BY ?y}
+        }GROUP BY ?y
+      }
+    }
+
+------------------------------------------------------
+- Pour une maladie, quels sont les traitements qui ont été efficace ?
+
+    Cette requête permet de récupérer les traitements qui ont été efficace pour la mucoviscidose, avec le patient lié au traitement.
+    Cela permet de voir si le traitement a été efficace pour un patient donné.
+
+    select ?t ?patient where {
+        ?x :diagnosis ncit:C2975.
+    	?x :isRegarding ?patient
+       	?x :followUp ?y.
+       	?y :isPatientHealthy true.
+       	?x :givenTreatment ?t
+        }
+
+------------------------------------------------------
+- Quelles sont les maladies qui ont des symptômes qui apparaissent dans plus de deux rapports ?
+
+    Cette requête permet de récupérer les maladies qui ont des symptômes qui apparaissent dans plus de deux rapports.
+
+    SELECT ?z ?y WHERE {
+          ?x :symptomsDisplayed ?y.
+          ?x :diagnosis ?z.
+     }GROUP BY ?z ?y
+    HAVING (COUNT(?y)>2)
+
+------------------------------------------------------
+- Quels sont les symptômes les plus courants pour une maladie donnée ?
+
+    Cette requête donne les trois symptômes les plus courants pour la mucoviscidose.
+
+    select ?y where{
+      select ?y (count(?y) as ?nb) where {
+        ?x :symptomsDisplayed ?y. ?x :diagnosis ncit:C2975.
+      }group by ?y
+       order by desc(?nb)
+       limit 3
+    }

@@ -5,272 +5,275 @@
     <link rel="stylesheet" type="text/css" href="data_presentation.css">
     <title>Title</title>
 </head>
-<body>
-<meta vocab="http://localhost:8081/data#">
-<link rel="prefix" href="http://localhost:8081/schema#">
-<link rel="prefix" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<link rel="prefix" href="http://www.w3.org/2000/01/rdf-schema#">
-<link rel="prefix" href="http://www.w3.org/2001/XMLSchema#">
-<link rel="prefix" href="http://purl.org/dc/terms/">
-<link rel="prefix" href="http://www.w3.org/2004/02/skos/core#">
-<link rel="prefix" href="http://www.w3.org/2002/07/owl#">
-<link rel="prefix" href="http://xmlns.com/foaf/0.1/">
-<link rel="prefix" href="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#">
+<body vocab="http://localhost:8081/data#">
+<link rel="prefix" href=": http://localhost:8081/schema#">
+<link rel="prefix" href="rdf : http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<link rel="prefix" href="rdfs : http://www.w3.org/2000/01/rdf-schema#">
+<link rel="prefix" href="xs : http://www.w3.org/2000/01/rdf-schema#">
+<link rel="prefix" href="dc : http://purl.org/dc/terms/">
+<link rel="prefix" href="skos : http://www.w3.org/2004/02/skos/core#">
+<link rel="prefix" href="foaf : http://xmlns.com/foaf/0.1/">
+<link rel="prefix" href="ncit : http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#">
 
 <h1> Patients </h1>
 
-<div class="card" about="data#Patient1" typeof="localhost:8081/schema#Patient">
+<div class="card" resource="Patient1" typeof=":Patient">
     <h1 property="foaf:name">name: François</h1>
     <p property="foaf:familyName">familyName: Deville</p>
     <p property="foaf:birthday">birthday: 1982-09-08</p>
-    <p property="localhost:8081/schema#weight">weight: 100kg</p>
-    <p property="localhost:8081/schema#height">height: 179cm</p>
-    <p property="localhost:8081/schema#hasSex" resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197">
+    <p property=":weight">weight: 100kg</p>
+    <p property=":height">height: 179cm</p>
+    <p property=":hasSex" resource="ncit:C20197">
         hasSex: Male</p>
-    <p property="localhost:8081/schema#livesInCountry"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592">livesInCountry: France</p>
-    <p property="localhost:8081/schema#hasPostalCode">hasPostalCode: 75001 (Paris)</p>
-    <p property="localhost:8081/schema#hasSecuritySocialNumber">hasSecuritySocialNumber: 0672153498123</p>
-    <span property="localhost:8081/schema#pre-existingCondition">
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3283">pre-existingCondition: Obesité</span>
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747">, Diabetes Type 2</span>
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172316">, Fruit Allergy</span>
+    <p property=":livesInCountry"
+       resource="ncit:C16592">livesInCountry: France</p>
+    <p property=":hasPostalCode">hasPostalCode: 75001 (Paris)</p>
+    <p property=":hasSecuritySocialNumber">hasSecuritySocialNumber: 0672153498123</p>
+    <span property=":pre-existingCondition">
+        <span resource="ncit:C3283">pre-existingCondition: Obesité</span>
+        <span resource="ncit:C26747">, Diabetes Type 2</span>
+        <span resource="ncit:C172316">, Fruit Allergy</span>
     </span>
-    <p/>
-    <span property="localhost:8081/schema#hasBeenAffectedBy" resource="data#malaise1 data#operation1">
+    <br/>
+    <span property=":hasBeenAffectedBy">
         <span>hasBeenAffectedBy:</span>
-        <span about="data#malaise1" typeof="schema:Malaise">
-            <span property="rdfs:label">Malaise</span>
+        <span resource="malaise1" typeof="ncit:C3832">
+            <span>Malaise</span>
         </span>
 
-        <span about="data#operation1" typeof="schema:Operation">
-            <span property="rdfs:label">, Operation</span>
+        <span resource="operation1" typeof="ncit:C157806">
+            <span>, Operation</span>
         </span>
     </span>
 </div>
 
-<div class="card" about="data#Patient2" typeof="localhost:8081/schema#Patient">
+<div class="card" about="Patient2" typeof=":Patient">
     <h1 property="foaf:name">name: Bernard</h1>
     <p property="foaf:familyName">familyName: Pataphou</p>
     <p property="foaf:birthday">birthday: 1978-09-03</p>
-    <p property="localhost:8081/schema#weight">weight: 92kg</p>
-    <p property="localhost:8081/schema#height">height: 168cm</p>
-    <p property="localhost:8081/schema#hasSex" resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197">
+    <p property=":weight">weight: 92kg</p>
+    <p property=":height">height: 168cm</p>
+    <p property=":hasSex" resource="ncit:C20197">
         hasSex: Male</p>
-    <p property="localhost:8081/schema#livesInCountry"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592">livesInCountry: France</p>
-    <p property="localhost:8081/schema#hasPostalCode">hasPostalCode: 75008 (Paris)</p>
-    <p property="localhost:8081/schema#hasSecuritySocialNumber">hasSecuritySocialNumber: 2265189370246</p>
-    <span property="localhost:8081/schema#pre-existingCondition">
-       <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3283">pre-existingCondition: Obesité</span>
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747">, Diabetes Type 2</span>
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172310">, cat allergy</span>
+    <p property=":livesInCountry"
+       resource="ncit:C16592">livesInCountry: France</p>
+    <p property=":hasPostalCode">hasPostalCode: 75001 (Paris)</p>
+    <p property=":hasSecuritySocialNumber">hasSecuritySocialNumber: 2265189370246</p>
+    <span property=":pre-existingCondition">
+       <span resource="ncit:C3283">pre-existingCondition: Obesité</span>
+        <span resource="ncit:C26747">, Diabetes Type 2</span>
+        <span resource="ncit:C172310">, cat allergy</span>
     </span>
-    <p/>
-    <span property="localhost:8081/schema#hasBeenAffectedBy" resource="data#malaise2 data#essouflement data#tendinite">
+    <br/>
+    <span property=":hasBeenAffectedBy">
         <span>hasBeenAffectedBy:</span>
-        <span about="data#malaise2" typeof="schema:Malaise">
-            <span property="rdfs:label">Malaise</span>
+        <span resource="malaise2" typeof="ncit:C3832">
+            <span>Malaise</span>
         </span>
 
-        <span about="data#essouflement" typeof="schema:Essouflement">
-            <span property="rdfs:label">, Essouflement</span>
+        <span resource="essouflement" typeof="ncit:C141592">
+            <span>, Essouflement</span>
         </span>
 
-        <span about="data#tendinite" typeof="schema:Tendinite">
-            <span property="rdfs:label">, Tendinite</span>
+        <span resource="tendinite" typeof="ncit:97141">
+            <span>, Tendinite</span>
         </span>
     </span>
 </div>
 
-<div class="card" about="data#Patient3" typeof="localhost:8081/schema#Patient">
+<div class="card" about="Patient3" typeof=":Patient">
     <h1 property="foaf:name">name: Robert</h1>
     <p property="foaf:familyName">familyName: De Niro</p>
     <p property="foaf:birthday">birthday: 1977-09-18</p>
-    <p property="localhost:8081/schema#weight">weight: 89kg</p>
-    <p property="localhost:8081/schema#height">height: 172cm</p>
-    <p property="localhost:8081/schema#hasSex" resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197">
+    <p property=":weight">weight: 89kg</p>
+    <p property=":height">height: 172cm</p>
+    <p property=":hasSex" resource="ncit:C20197">
         hasSex: Male</p>
-    <p property="localhost:8081/schema#livesInCountry"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592">livesInCountry: France</p>
-    <p property="localhost:8081/schema#hasPostalCode">hasPostalCode: 75011 (Paris)</p>
-    <p property="localhost:8081/schema#hasSecuritySocialNumber">hasSecuritySocialNumber: 0928347610583</p>
-    <span property="localhost:8081/schema#pre-existingCondition">
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3283">pre-existingCondition: Obesité</span>
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747">, Diabetes Type 2</span>
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172320">, SeaFood Allergy</span>
+    <p property=":livesInCountry"
+       resource="ncit:C16592">livesInCountry: France</p>
+    <p property=":hasPostalCode">hasPostalCode: 75011 (Paris)</p>
+    <p property=":hasSecuritySocialNumber">hasSecuritySocialNumber: 0928347610583</p>
+    <span property=":pre-existingCondition">
+        <span resource="ncit:C3283">pre-existingCondition: Obesité</span>
+        <span resource="ncit:C26747">, Diabetes Type 2</span>
+        <span resource="ncit:C172320">, SeaFood Allergy</span>
     </span>
-    <p/>
-    <span property="localhost:8081/schema#hasBeenAffectedBy" resource="data#fracture">
+    <br/>
+    <span property=":hasBeenAffectedBy" resource="fracture">
         <span>hasBeenAffectedBy:</span>
-        <span about="data#fracture" typeof="schema:FracturePoignet">
-            <span property="rdfs:label">Fracture Poignet</span>
+        <span about="fracture" typeof="ncit:C26777">
+            <span>Fracture Poignet</span>
         </span>
     </span>
 </div>
 
-<div class="card" about="data#Patient4" typeof="localhost:8081/schema#Patient">
+<div class="card" about="Patient4" typeof=":Patient">
     <h1 property="foaf:name">name: Emma</h1>
     <p property="foaf:familyName">familyName: Annelie</p>
     <p property="foaf:birthday">birthday: 2002-03-19</p>
-    <p property="localhost:8081/schema#weight">weight: 60kg</p>
-    <p property="localhost:8081/schema#height">height: 172cm</p>
-    <p property="localhost:8081/schema#hasSex" resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16567">
+    <p property=":weight">weight: 60kg</p>
+    <p property=":height">height: 172cm</p>
+    <p property=":hasSex" resource="ncit:C16567">
         hasSex: Female</p>
-    <p property="localhost:8081/schema#livesInCountry"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592">livesInCountry: France</p>
-    <p property="localhost:8081/schema#hasPostalCode">hasPostalCode: 69002 (Lyon)</p>
-    <p property="localhost:8081/schema#hasSecuritySocialNumber">hasSecuritySocialNumber: 2306958274512</p>
-    <span property="localhost:8081/schema#pre-existingCondition">
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28397">pre-existingCondition: Asthme</span>
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C145003">, Apnée du sommeil</span>
+    <p property=":livesInCountry"
+       resource="ncit:C16592">livesInCountry: France</p>
+    <p property=":hasPostalCode">hasPostalCode: 69002 (Lyon)</p>
+    <p property=":hasSecuritySocialNumber">hasSecuritySocialNumber: 2306958274512</p>
+    <span property=":pre-existingCondition">
+        <span resource="ncit:C28397">pre-existingCondition: Asthme</span>
+        <span resource="ncit:C145003">, Apnée du sommeil</span>
     </span>
-    <p property="localhost:8081/schema#hasBeenAffectedBy" resource="data#rhinite">
+    <p property=":hasBeenAffectedBy" resource="rhinite">
         hasBeenAffectedBy: Rhinite
     </p>
-    <p property="localhost:8081/schema#knownHereditaryCondition"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975">
-        knownHereditaryCondition: Mucoviscidose
+    <p property=":knownHereditaryCondition"
+    >
+        <span resource="ncit:C2975">knownHereditaryCondition: Mucoviscidose</span>
+        <span resource="ncit:C26747">Diabetes Type 2</span>
     </p>
 </div>
 
-<div class="card" about="data#Patient5" typeof="localhost:8081/schema#Patient">
+<div class="card" about="Patient5" typeof=":Patient">
     <h1 property="foaf:name">name: Léa</h1>
     <p property="foaf:familyName">familyName: Dupond</p>
     <p property="foaf:birthday">birthday: 2004-01-20</p>
-    <p property="localhost:8081/schema#weight">weight: 50kg</p>
-    <p property="localhost:8081/schema#height">height: 160cm</p>
-    <p property="localhost:8081/schema#hasSex" resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16567">
+    <p property=":weight">weight: 50kg</p>
+    <p property=":height">height: 160cm</p>
+    <p property=":hasSex" resource="ncit:C16567">
         hasSex: Female</p>
-    <p property="localhost:8081/schema#livesInCountry"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592">livesInCountry: France</p>
-    <p property="localhost:8081/schema#hasPostalCode">hasPostalCode: 69004 (Paris)</p>
-    <p property="localhost:8081/schema#hasSecuritySocialNumber">hasSecuritySocialNumber: 2387561092834</p>
-    <span property="localhost:8081/schema#pre-existingCondition">
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28397">pre-existingCondition: Asthme</span>
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C145003">, Apnée du sommeil</span>
+    <p property=":livesInCountry"
+       resource="ncit:C16592">livesInCountry: France</p>
+    <p property=":hasPostalCode">hasPostalCode: 69004 (Paris)</p>
+    <p property=":hasSecuritySocialNumber">hasSecuritySocialNumber: 2387561092834</p>
+    <span property=":pre-existingCondition">
+        <span resource="ncit:C28397">pre-existingCondition: Asthme</span>
+        <span resource="ncit:C145003">, Apnée du sommeil</span>
     </span>
-    <p property="localhost:8081/schema#hasBeenAffectedBy" resource="data#rhinite1 data#essouflement1">
-        hasBeenAffectedBy: Rhinite, Essouflement
+    <p property=":hasBeenAffectedBy">
+        hasBeenAffectedBy: <span resource="rhinite1">Rhinite</span>, <span resource="essouflement1">Essouflement</span>
     </p>
-    <p property="localhost:8081/schema#knownHereditaryCondition"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975">
+    <p property=":knownHereditaryCondition"
+       resource="ncit:C2975">
         knownHereditaryCondition: Mucoviscidose
     </p>
 </div>
 
-<div class="card" about="data#Patient6" typeof="localhost:8081/schema#Patient">
+<div class="card" about="Patient6" typeof=":Patient">
     <h1 property="foaf:name">name: Navah</h1>
     <p property="foaf:familyName">familyName: Killian</p>
     <p property="foaf:birthday">birthday: 2002-08-19</p>
-    <p property="localhost:8081/schema#weight">weight: 70kg</p>
-    <p property="localhost:8081/schema#height">height: 172cm</p>
-    <p property="localhost:8081/schema#hasSex" resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197">
+    <p property=":weight">weight: 70kg</p>
+    <p property=":height">height: 172cm</p>
+    <p property=":hasSex" resource="ncit:C20197">
         hasSex: Male</p>
-    <p property="localhost:8081/schema#livesInCountry"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592">livesInCountry: France</p>
-    <p property="localhost:8081/schema#hasPostalCode">hasPostalCode: 13001</p>
-    <p property="localhost:8081/schema#hasSecuritySocialNumber">hasSecuritySocialNumber: 0152093465827</p>
-    <p property="localhost:8081/schema#hasBeenAffectedBy" resource="data#rhinite2 data#fracture2">
-        hasBeenAffectedBy: Rhinite, Fracture pelvis
+    <p property=":livesInCountry"
+       resource="ncit:C16592">livesInCountry: France</p>
+    <p property=":hasPostalCode">hasPostalCode: 13001</p>
+    <p property=":hasSecuritySocialNumber">hasSecuritySocialNumber: 0152093465827</p>
+    <p property=":hasBeenAffectedBy">
+        hasBeenAffectedBy:<span resource="rhinite2">Rhinite</span>,<span resource="fracture2"> Fracture pelvis</span>
     </p>
-    <span property="localhost:8081/schema#pre-existingCondition">
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28397">pre-existingCondition: Asthme</span>
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C145003">, Apnée du sommeil</span>
+    <span property=":pre-existingCondition">
+        pre-existingCondition: <span resource="ncit:C28397">Asthme</span>
+        , <span resource="ncit:C145003">Apnée du sommeil</span>
     </span>
-    <p property="localhost:8081/schema#knownHereditaryCondition"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975">
+    <p property=":knownHereditaryCondition"
+       resource="ncit:C2975">
         knownHereditaryCondition: Mucoviscidose
     </p>
 </div>
 
-<div class="card" about="data#Patient7" typeof="localhost:8081/schema#Patient">
+<div class="card" about="Patient7" typeof=":Patient">
     <h1 property="foaf:name">name: Anna</h1>
     <p property="foaf:familyName">familyName: Belfore</p>
     <p property="foaf:birthday">birthday: 1968-03-12</p>
-    <p property="localhost:8081/schema#weight">weight: 58kg</p>
-    <p property="localhost:8081/schema#height">height: 157cm</p>
-    <p property="localhost:8081/schema#hasSex" resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16567">
+    <p property=":weight">weight: 58kg</p>
+    <p property=":height">height: 157cm</p>
+    <p property=":hasSex" resource="ncit:C16567">
         hasSex: Female</p>
-    <p property="localhost:8081/schema#livesInCountry"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592">livesInCountry: France</p>
-    <p property="localhost:8081/schema#hasPostalCode">hasPostalCode: 75013 (Paris)</p>
-    <p property="localhost:8081/schema#hasSecuritySocialNumber">hasSecuritySocialNumber: 2245739810263</p>
-    <span property="localhost:8081/schema#pre-existingCondition">
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#97141">pre-existingCondition: Tendinopathies</span>
+    <p property=":livesInCountry"
+       resource="ncit:C16592">livesInCountry: France</p>
+    <p property=":hasPostalCode">hasPostalCode: 75013 (Paris)</p>
+    <p property=":hasSecuritySocialNumber">hasSecuritySocialNumber: 2245739810263</p>
+    <span property=":pre-existingCondition">
+        <span resource="ncit:97141">pre-existingCondition: Tendinopathies</span>
     </span>
-    <p property="localhost:8081/schema#hasBeenAffectedBy" resource="data#tendinite1">
+    <p property=":hasBeenAffectedBy" resource="tendinite1">
         hasBeenAffectedBy: Tendinite
+    </p>
+    <p property=":knownHereditaryCondition"
+    >
+        <span resource="ncit:C26747">knownHereditaryCondition: Diabetes Type 2</span>
     </p>
 </div>
 
-<div class="card" about="data#Patient8" typeof="localhost:8081/schema#Patient">
+<div class="card" about="Patient8" typeof=":Patient">
     <h1 property="foaf:name">name: Johan</h1>
     <p property="foaf:familyName">familyName: Fliel</p>
     <p property="foaf:birthday">birthday: 1971-12-22</p>
-    <p property="localhost:8081/schema#weight">weight: 80kg</p>
-    <p property="localhost:8081/schema#height">height: 180cm</p>
-    <p property="localhost:8081/schema#hasSex" resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197">
+    <p property=":weight">weight: 80kg</p>
+    <p property=":height">height: 180cm</p>
+    <p property=":hasSex" resource="ncit:C20197">
         hasSex: Male</p>
-    <p property="localhost:8081/schema#livesInCountry"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592">livesInCountry: France</p>
-    <p property="localhost:8081/schema#hasPostalCode">hasPostalCode: 75116 (Paris)</p>
-    <p property="localhost:8081/schema#hasSecuritySocialNumber">hasSecuritySocialNumber: 0831245675302</p>
-    <span property="localhost:8081/schema#pre-existingCondition">
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747">pre-existingCondition: Diabetes Type 2</span>
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C5357">, tumeur au coeur</span>
+    <p property=":livesInCountry"
+       resource="ncit:C16592">livesInCountry: France</p>
+    <p property=":hasPostalCode">hasPostalCode: 75116 (Paris)</p>
+    <p property=":hasSecuritySocialNumber">hasSecuritySocialNumber: 0831245675302</p>
+    <span property=":pre-existingCondition">
+        <span resource="ncit:C26747">pre-existingCondition: Diabetes Type 2</span>
+        <span resource="ncit:C5357">, tumeur au coeur</span>
     </span>
-    <p property="localhost:8081/schema#hasBeenAffectedBy" resource="data#fractureMultiple">
+    <p property=":hasBeenAffectedBy" resource="fractureMultiple">
         hasBeenAffectedBy: FractureMultiple
     </p>
 </div>
 
-<div class="card" about="data#Patient9" typeof="localhost:8081/schema#Patient">
+<div class="card" about="Patient9" typeof=":Patient">
     <h1 property="foaf:name">name: Gaetan</h1>
     <p property="foaf:familyName">familyName: Renoir</p>
     <p property="foaf:birthday">birthday: 2018-03-16</p>
-    <p property="localhost:8081/schema#weight">weight: 38kg</p>
-    <p property="localhost:8081/schema#height">height: 125cm</p>
-    <p property="localhost:8081/schema#livesInCountry"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592">livesInCountry: France</p>
-    <p property="localhost:8081/schema#hasPostalCode">hasPostalCode: 75011 (Paris)</p>
-    <p property="localhost:8081/schema#hasSecuritySocialNumber">hasSecuritySocialNumber: 0831245675302</p>
-    <span property="localhost:8081/schema#pre-existingCondition">
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28397">pre-existingCondition: Asthme</span>
-        <span resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172310">, Allergy aux chats</span>
+    <p property=":weight">weight: 38kg</p>
+    <p property=":height">height: 125cm</p>
+    <p property=":livesInCountry"
+       resource="ncit:C16592">livesInCountry: France</p>
+    <p property=":hasPostalCode">hasPostalCode: 75011 (Paris)</p>
+    <p property=":hasSecuritySocialNumber">hasSecuritySocialNumber: 0831245675302</p>
+    <span property=":pre-existingCondition">
+        <span resource="ncit:C28397">pre-existingCondition: Asthme</span>
+        <span resource="ncit:C172310">, Allergy aux chats</span>
     </span>
-    <p property="localhost:8081/schema#knownHereditaryCondition"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975">
+    <p property=":knownHereditaryCondition"
+       resource="ncit:C2975">
         knownHereditaryCondition: Mucoviscidose
     </p>
 </div>
 
 <h1> Doctors </h1>
 
-<div class="card" about="data#cardio" typeof="localhost:8081/schema#Medecin">
+<div class="card" about="cardio" typeof=":Medecin">
     <h1 property="foaf:name">name: Hadren</h1>
     <p property="foaf:familyName">familyName: Nyam</p>
-    <p property="localhost:8081/schema#hasDoctorNumber">Doctor Number: 190</p>
-    <p property="localhost:8081/schema#specializedIn"
-       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17153">
+    <p property=":hasDoctorNumber">Doctor Number: 190</p>
+    <p property=":specializedIn"
+       resource="ncit:C17153">
         specializedIn: Cardiologue
     </p>
 </div>
 
-<div class="card" about="data#orl" typeof="localhost:8081/schema#Medecin">
+<div class="card" about="orl" typeof=":Medecin">
     <h1 property="foaf:name">name: Banar</h1>
     <p property="foaf:familyName">familyName: Camille</p>
-    <p property="localhost:8081/schema#hasDoctorNumber">Doctor Number: 33</p>
-    <p property="localhost:8081/schema#specializedIn" resource="http://ncit:C16943">
+    <p property=":hasDoctorNumber">Doctor Number: 33</p>
+    <p property=":specializedIn" resource="ncit:C16943">
         specializedIn: ORL
     </p>
 </div>
 
-<div class="card" about="data#rhumat" typeof="localhost:8081/schema#Medecin">
+<div class="card" about="rhumat" typeof=":Medecin">
     <h1 property="foaf:name">name: Laner</h1>
     <p property="foaf:familyName">familyName: Xavier</p>
-    <p property="localhost:8081/schema#hasDoctorNumber">Doctor Number: 48</p>
-    <p property="localhost:8081/schema#specializedIn" resource="http://ncit:C17099">
+    <p property=":hasDoctorNumber">Doctor Number: 48</p>
+    <p property=":specializedIn" resource="ncit:C17099">
         specializedIn: Rhumatologue
     </p>
 </div>
@@ -278,77 +281,76 @@
 <h1> Case Reports, Treatments & Follow Ups</h1>
 
 <div class="case-follow-up-container">
-    <div class="card" about="data#caseReport2" typeof="localhost:8081/schema#CaseReport">
+    <div class="card" about="caseReport2" typeof=":CaseReport">
         <h1 property="hasCaseId">Case Report #2</h1>
-        <p property="isRegarding" resource="data#Patient2">Regarding: Patient2</p>
-        <p property="hasBeenWrittenBy" resource="data#cardio">Written By: Dr. Dr. Hadren Nyam</p>
+        <p property="isRegarding" resource="Patient2">Regarding: Patient2</p>
+        <p property="hasBeenWrittenBy" resource="cardio">Written By: Dr. Dr. Hadren Nyam</p>
         <p property="wasWrittenOn">Written On: 2019-04-13</p>
-        <p property="symptomsDisplayed"
-           resource="http://ncit:C3117 http://ncit:C3258 http://ncit:C37943 http://ncit:C50635 http://ncit:C92801">
-            Symptoms Displayed: tension élevée, nausée, vertiges, perte de connaissance, fringales
+        <p property="symptomsDisplayed">
+            Symptoms Displayed: <span resource="ncit:C3117">tension élevée</span>, <span resource="ncit:C3258">nausée</span>, <span resource="ncit:C37943">vertiges</span>, <span resource="ncit:C50635">perte de connaissance</span>, <span resource="ncit:C92801">fringales</span>
         </p>
-        <p property="diagnosis" resource="http://ncit:C38029">Diagnosis: Tachycardie</p>
-        <p property="supplementaryTests" resource="http://ncit:C168186">Supplementary Tests: electrocardiogramme</p>
-        <p property="givenTreatment" resource="data#coagulants2">Given Treatment: Coagulants</p>
+        <p property="diagnosis" resource="ncit:C38029">Diagnosis: Tachycardie</p>
+        <p property="supplementaryTests" resource="ncit:C168186">Supplementary Tests: electrocardiogramme</p>
+        <p property="givenTreatment" resource="coagulants2">Given Treatment: Coagulants</p>
         <span property="followUp">
-        <span resource="data#followUp2 data#followUp3">Follow-Up #2</span>
-        <span resource="data#followUp3">, Follow-Up #3</span>
+        <span resource="followUp2">Follow-Up #2</span>
+        <span resource="followUp3">, Follow-Up #3</span>
     </span>
     </div>
-    <div class="card" about="data#coagulants2" typeof="localhost:8081/schema#Drug">
+    <div class="card" about="coagulants2" typeof=":Drug">
         <h1>Treatment</h1>
         <p property="medication" resource="ncit:C943">Medication: Vitamine K</p>
         <p property="takesPerDay">Takes Per Day: 1</p>
         <p property="daysBetweenTakes" datatype="xs:dayTimeDuration">Days Between Takes: P0D</p>
         <p property="complementaryInstructions" lang="en">Complementary Instructions: morning, for life</p>
     </div>
-    <div class="card" about="data#followUp2" typeof="localhost:8081/schema#FollowUp">
+    <div class="card" about="followUp2" typeof=":FollowUp">
         <h1 property="hasCaseId">Follow-Up #2</h1>
-        <p property="isRegarding" resource="data#Patient2">Regarding: Patient2</p>
-        <p property="hasBeenWrittenBy" resource="data#cardio">Written By: Dr. Dr. Hadren Nyam</p>
+        <p property="isRegarding" resource="Patient2">Regarding: Patient2</p>
+        <p property="hasBeenWrittenBy" resource="cardio">Written By: Dr. Dr. Hadren Nyam</p>
         <p property="wasWrittenOn">Written On: 2019-07-22</p>
-        <p property="patientStatus" resource="http://ncit:C38029">
+        <p property="patientStatus" resource="ncit:C38029">
             Patient Status: In recovery
         </p>
-        <p property="isPatientHealthy" resource="http://www.w3.org/2001/XMLSchema#boolean">Is Patient Healthy: false</p>
+        <p property="isPatientHealthy" resource="xs:boolean">Is Patient Healthy: false</p>
     </div>
-    <div class="card" about="data#followUp3" typeof="localhost:8081/schema#FollowUp">
+    <div class="card" about="followUp3" typeof=":FollowUp">
         <h1 property="hasCaseId">Follow-Up #3</h1>
-        <p property="isRegarding" resource="data#Patient2">Regarding: Patient2</p>
-        <p property="hasBeenWrittenBy" resource="data#cardio">Written By: Dr. Hadren Nyam</p>
+        <p property="isRegarding" resource="Patient2">Regarding: Patient2</p>
+        <p property="hasBeenWrittenBy" resource="cardio">Written By: Dr. Hadren Nyam</p>
         <p property="wasWrittenOn">Written On: 2019-08-22</p>
-        <p property="patientStatus" resource="http://ncit:C38029">
+        <p property="patientStatus" resource="ncit:C38029">
             Patient Status: Well, stable
         </p>
-        <p property="isPatientHealthy" resource="http://www.w3.org/2001/XMLSchema#boolean">Is Patient Healthy: true</p>
+        <p property="isPatientHealthy" resource="xs:boolean">Is Patient Healthy: true</p>
     </div>
 </div>
 
 <div class="case-follow-up-container">
-    <div class="card" about="data#caseReport4" typeof="localhost:8081/schema#CaseReport">
+    <div class="card" about="caseReport4" typeof=":CaseReport">
         <h1 property="hasCaseId">Case Report #4</h1>
-        <p property="isRegarding" resource="data#Patient4">Regarding: Patient4</p>
-        <p property="hasBeenWrittenBy" resource="data#orl">Written by: Dr. Banar Camille</p>
+        <p property="isRegarding" resource="Patient4">Regarding: Patient4</p>
+        <p property="hasBeenWrittenBy" resource="orl">Written by: Dr. Banar Camille</p>
         <p property="wasWrittenOn">Written on: 2022-03-03</p>
         <p property="symptomsDisplayed">
             Symptoms: encombrement bronchiques, infections respiratoires, problèmes digestifs
         </p>
         <p property="diagnosis" resource="ncit:C2975">Diagnosis: Mucoviscidose</p>
         <p property="supplementaryTests" resource="ncit:C114184">Supplementary Tests: Irm</p>
-        <p property="givenTreatment" resource="data#balneo1">Treatment: Balnéo thérapie</p>
-        <p property="followUp" resource="data#followUp5">Follow-Up #5</p>
+        <p property="givenTreatment" resource="balneo1">Treatment: Balnéo thérapie</p>
+        <p property="followUp" resource="followUp5">Follow-Up #5</p>
     </div>
-    <div class="card" about="data#balneo1" typeof="localhost:8081/schema#MedicalActivity">
+    <div class="card" about="balneo1" typeof=":MedicalActivity">
         <h1 property="hasCaseId">Treatment</h1>
         <p property="activityType" resource="ncit:C21117">Activity Type: Balnéo thérapie</p>
         <p property="durationPeriod" datatype="xs:dayTimeDuration">Duration: P180D</p>
         <p property="numberVisits">Number of Visits: 30</p>
         <p property="shouldBePerformed" lang="en">Should be performed: light exercise + breathing</p>
     </div>
-    <div class="card" about="data#followUp5" typeof="localhost:8081/schema#FollowUp">
+    <div class="card" about="followUp5" typeof=":FollowUp">
         <h1 property="hasCaseId">Follow up #5</h1>
-        <p property="isRegarding" resource="data#Patient4">Regarding: Patient4</p>
-        <p property="hasBeenWrittenBy" resource="data#orl">Written by: Dr. Banar Camille</p>
+        <p property="isRegarding" resource="Patient4">Regarding: Patient4</p>
+        <p property="hasBeenWrittenBy" resource="orl">Written by: Dr. Banar Camille</p>
         <p property="wasWrittenOn">Written on: 2019-07-09</p>
         <p property="patientStatus" lang="en">Patient Status: In recovery</p>
         <p property="isPatientHealthy">Patient is not healthy</p>
@@ -356,19 +358,20 @@
 </div>
 
 <div class="case-follow-up-container">
-    <div class="card" about="data#caseReport8" typeof="localhost:8081/schema#CaseReport">
+    <div class="card" about="caseReport8" typeof=":CaseReport">
         <h1>Case Report #8</h1>
-        <p property="isRegarding" resource="data#Patient8">Regarding: Patient 8</p>
-        <p property="hasBeenWrittenBy" resource="data#rhumat">Written By: Dr. Laner Xavier</p>
+        <p property="isRegarding" resource="Patient8">Regarding: Patient 8</p>
+        <p property="hasBeenWrittenBy" resource="rhumat">Written By: Dr. Laner Xavier</p>
         <p property="wasWrittenOn" datatype="xs:date">Written On: 2021-09-28</p>
-        <p property="symptomsDisplayed" resource="ncit:C143637 ncit:C26778 ncit:C38644">Symptoms Displayed: Inflammation Larynx, fractures multiples, douleur osseuse</p>
+        <p property="symptomsDisplayed">
+            Symptoms Displayed: <span resource="ncit:C143637">Inflammation Larynx</span>, <span resource="ncit:C26778">fractures multiples</span>, <span resource="ncit:C38644">douleur osseuse</span></p>
         <p property="diagnosis" resource="ncit:C58396">Diagnosis: Ostéoporose</p>
         <p property="supplementaryTests" resource="ncit:C114184">Supplementary Tests: Radio</p>
-        <p property="givenTreatment" resource="data#kine">Given Treatment: Balnéo thérapie</p>
-        <p property="followUp" resource="data#followUp8">Follow-up #8</p>
+        <p property="givenTreatment" resource="kine">Given Treatment: Balnéo thérapie</p>
+        <p property="followUp" resource="followUp8">Follow-up #8</p>
     </div>
 
-    <div class="card" about="data#kine" typeof="localhost:8081/schema#MedicalActivity">
+    <div class="card" about="kine" typeof=":MedicalActivity">
         <h1>Treatment</h1>
         <p property="activityType" resource="ncit:C15302">Activity Type: Balnéo thérapie</p>
         <p property="durationPeriod" datatype="xs:dayTimeDuration">Duration Period: P150D</p>
@@ -376,10 +379,10 @@
         <p property="shouldBePerformed" lang="en">Should be Performed: Mobilization and massages</p>
     </div>
 
-    <div class="card" about="data#followUp8" typeof="localhost:8081/schema#Follow-Up">
+    <div class="card" about="followUp8" typeof=":Follow-Up">
         <h1>Follow-Up #8</h1>
-        <p property="isRegarding" resource="data#Patient8">Regarding: Patient 8</p>
-        <p property="hasBeenWrittenBy" resource="data#rhumat">Written By: Dr. Laner Xavier</p>
+        <p property="isRegarding" resource="Patient8">Regarding: Patient 8</p>
+        <p property="hasBeenWrittenBy" resource="rhumat">Written By: Dr. Laner Xavier</p>
         <p property="wasWrittenOn" datatype="xs:date">Written On: 2021-12-28</p>
         <p property="isPatientHealthy">Patient Status: En bonne santé</p>
     </div>

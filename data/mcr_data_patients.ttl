@@ -1,17 +1,14 @@
-@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xs:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xs:   <http://www.w3.org/2001/XMLSchema#> .
 
-@prefix dc:     <http://purl.org/dc/terms/> .
-@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
-@prefix owl:    <http://www.w3.org/2002/07/owl#> .
-@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix dc:   <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-@prefix ncit:   <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
-@prefix loinc:  <http://purl.bioontology.org/ontology/LNC/> .
-@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
 
-@prefix :       <localhost:8081/schema#> .
+@prefix :     <localhost:8081/schema#> .
 @base <localhost:8081/data#>.
 
 
@@ -58,7 +55,7 @@
     :height                  "168"^^xs:integer ;
     :hasSex                  ncit:C20197 ; #Male
     :livesInCountry          ncit:C16592 ; #France
-    :hasPostalCode           "75008" ; #Paris
+    :hasPostalCode           "75001" ; #Paris
     :hasSecuritySocialNumber "2265189370246" ;
     :pre-existingCondition   ncit:C3283, ncit:C26747, ncit:C172310 ; #Obesité, Diabetes Type 2, cat allergy
     :hasBeenAffectedBy       <malaise2>, <essouflement>, <tendinite> .
@@ -90,7 +87,7 @@
     :hasSecuritySocialNumber  "2306958274512" ;
     :pre-existingCondition    ncit:C28397, ncit:C145003 ; #Asthme, Apnée du sommeil
     :hasBeenAffectedBy        <rhinite> ;
-    :knownHereditaryCondition ncit:C2975 . #Mucoviscidose
+    :knownHereditaryCondition ncit:C2975, ncit:C26747 . #Mucoviscidose
 
 <rhinite>
     a       ncit:C78599 ; #rhinite
@@ -113,18 +110,18 @@
     dc:date "2018-10-15"^^xs:date .
 
 <tendinite>
-    a       ncit:ncit:97141 ;
+    a       ncit:97141 ;
     dc:date "2018-10-15"^^xs:date .
 
 <tendinite1>
-    a       ncit:ncit:97141 ;
+    a       ncit:97141 ;
     dc:date "2018-10-15"^^xs:date .
 
 <Patient5>
     a                         :Patient ;
     foaf:name                 "Léa" ;
     foaf:familyName           "Dupond" ;
-    foaf:birthday             "2002-01-20"^^xs:date ;
+    foaf:birthday             "2004-01-20"^^xs:date ;
     :weight                   "50"^^xs:integer ;
     :height                   "160"^^xs:integer ;
     :hasSex                   ncit:C16567 ; # Female
@@ -153,18 +150,19 @@
 #Condition préexistante: Allergie
 
 <Patient7>
-    a                        :Patient ;
-    foaf:name                "Anna" ;
-    foaf:familyName          "Belfore" ;
-    foaf:birthday            "1968-03-12"^^xs:date ;
-    :weight                  "58"^^xs:integer ;
-    :height                  "157"^^xs:integer ;
-    :hasSex                  ncit:C16567 ;
-    :livesInCountry          ncit:C16592 ;
-    :hasPostalCode           "75013" ;
-    :hasSecuritySocialNumber "2245739810263" ;
-    :pre-existingCondition   ncit:97141, ncit:C172310 ; # Tendinopathies
-    :hasBeenAffectedBy       <tendinite1> .
+    a                         :Patient ;
+    foaf:name                 "Anna" ;
+    foaf:familyName           "Belfore" ;
+    foaf:birthday             "1968-03-12"^^xs:date ;
+    :weight                   "58"^^xs:integer ;
+    :height                   "157"^^xs:integer ;
+    :hasSex                   ncit:C16567 ;
+    :livesInCountry           ncit:C16592 ;
+    :hasPostalCode            "75013" ;
+    :hasSecuritySocialNumber  "2245739810263" ;
+    :pre-existingCondition    ncit:97141, ncit:C172310 ; # Tendinopathies
+    :hasBeenAffectedBy        <tendinite1> ;
+    :knownHereditaryCondition ncit:C26747 .
 
 <Patient8>
     a                        :Patient ;
