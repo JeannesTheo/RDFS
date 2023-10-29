@@ -1,1 +1,2109 @@
-// Copie des données dans mcr_data_.ttl sous format json
+[
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#97141"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C113194"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C114184"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C128439"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C137928"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C141592"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C143637"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C145003"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15302"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C157806"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16567"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C168186"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16943"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17099"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17153"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172310"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172316"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172320"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C21117"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26777"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26778"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28397"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2883"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3117"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3128"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3258"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3283"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C35051"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C35153"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C37943"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38029"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3832"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38644"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50491"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50635"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50809"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C5357"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C56098"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C58396"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C60271"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78225"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78599"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C92801"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C943"
+  },
+  {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#ncit:97141"
+  },
+  {
+    "@id": "localhost:8081/Patient1",
+    "@type": [
+      "localhost:8081/schema#Patient"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "François"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      {
+        "@value": "Deville"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/birthday": [
+      {
+        "@value": "1982-09-08",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#weight": [
+      {
+        "@value": 100
+      }
+    ],
+    "localhost:8081/schema#height": [
+      {
+        "@value": 179
+      }
+    ],
+    "localhost:8081/schema#hasSex": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197"
+      }
+    ],
+    "localhost:8081/schema#livesInCountry": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"
+      }
+    ],
+    "localhost:8081/schema#hasPostalCode": [
+      {
+        "@value": "75001"
+      }
+    ],
+    "localhost:8081/schema#hasSecuritySocialNumber": [
+      {
+        "@value": "0672153498123"
+      }
+    ],
+    "localhost:8081/schema#pre-existingCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3283"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172316"
+      }
+    ],
+    "localhost:8081/schema#hasBeenAffectedBy": [
+      {
+        "@id": "localhost:8081/malaise1"
+      },
+      {
+        "@id": "localhost:8081/operation1"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/Patient2",
+    "@type": [
+      "localhost:8081/schema#Patient"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Bernard"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      {
+        "@value": "Pataphou"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/birthday": [
+      {
+        "@value": "1978-09-03",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#weight": [
+      {
+        "@value": 92
+      }
+    ],
+    "localhost:8081/schema#height": [
+      {
+        "@value": 168
+      }
+    ],
+    "localhost:8081/schema#hasSex": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197"
+      }
+    ],
+    "localhost:8081/schema#livesInCountry": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"
+      }
+    ],
+    "localhost:8081/schema#hasPostalCode": [
+      {
+        "@value": "75008"
+      }
+    ],
+    "localhost:8081/schema#hasSecuritySocialNumber": [
+      {
+        "@value": "2265189370246"
+      }
+    ],
+    "localhost:8081/schema#pre-existingCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3283"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172310"
+      }
+    ],
+    "localhost:8081/schema#hasBeenAffectedBy": [
+      {
+        "@id": "localhost:8081/malaise"
+      },
+      {
+        "@id": "localhost:8081/essouflement"
+      },
+      {
+        "@id": "localhost:8081/tendinite"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/Patient3",
+    "@type": [
+      "localhost:8081/schema#Patient"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Robert"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      {
+        "@value": "De Niro"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/birthday": [
+      {
+        "@value": "1977-09-18",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#weight": [
+      {
+        "@value": 89
+      }
+    ],
+    "localhost:8081/schema#height": [
+      {
+        "@value": 172
+      }
+    ],
+    "localhost:8081/schema#hasSex": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197"
+      }
+    ],
+    "localhost:8081/schema#livesInCountry": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"
+      }
+    ],
+    "localhost:8081/schema#hasPostalCode": [
+      {
+        "@value": "75011"
+      }
+    ],
+    "localhost:8081/schema#hasSecuritySocialNumber": [
+      {
+        "@value": "0928347610583"
+      }
+    ],
+    "localhost:8081/schema#pre-existingCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3283"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172320"
+      }
+    ],
+    "localhost:8081/schema#hasBeenAffectedBy": [
+      {
+        "@id": "localhost:8081/fracture"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/Patient4",
+    "@type": [
+      "localhost:8081/schema#Patient"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Emma"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      {
+        "@value": "Annelie"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/birthday": [
+      {
+        "@value": "2002-03-19",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#weight": [
+      {
+        "@value": 60
+      }
+    ],
+    "localhost:8081/schema#height": [
+      {
+        "@value": 172
+      }
+    ],
+    "localhost:8081/schema#hasSex": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16567"
+      }
+    ],
+    "localhost:8081/schema#livesInCountry": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"
+      }
+    ],
+    "localhost:8081/schema#hasPostalCode": [
+      {
+        "@value": "69002"
+      }
+    ],
+    "localhost:8081/schema#hasSecuritySocialNumber": [
+      {
+        "@value": "2306958274512"
+      }
+    ],
+    "localhost:8081/schema#pre-existingCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28397"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C145003"
+      }
+    ],
+    "localhost:8081/schema#hasBeenAffectedBy": [
+      {
+        "@id": "localhost:8081/rhinite"
+      }
+    ],
+    "localhost:8081/schema#knownHereditaryCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/Patient5",
+    "@type": [
+      "localhost:8081/schema#Patient"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Léa"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      {
+        "@value": "Dupond"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/birthday": [
+      {
+        "@value": "2002-01-20",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#weight": [
+      {
+        "@value": 50
+      }
+    ],
+    "localhost:8081/schema#height": [
+      {
+        "@value": 160
+      }
+    ],
+    "localhost:8081/schema#hasSex": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16567"
+      }
+    ],
+    "localhost:8081/schema#livesInCountry": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"
+      }
+    ],
+    "localhost:8081/schema#hasPostalCode": [
+      {
+        "@value": "69004"
+      }
+    ],
+    "localhost:8081/schema#hasSecuritySocialNumber": [
+      {
+        "@value": "2387561092834"
+      }
+    ],
+    "localhost:8081/schema#pre-existingCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28397"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C145003"
+      }
+    ],
+    "localhost:8081/schema#hasBeenAffectedBy": [
+      {
+        "@id": "localhost:8081/rhinite1"
+      },
+      {
+        "@id": "localhost:8081/essouflement1"
+      }
+    ],
+    "localhost:8081/schema#knownHereditaryCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/Patient6",
+    "@type": [
+      "localhost:8081/schema#Patient"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Navah"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      {
+        "@value": "Killian"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/birthday": [
+      {
+        "@value": "2002-08-19",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#weight": [
+      {
+        "@value": 70
+      }
+    ],
+    "localhost:8081/schema#height": [
+      {
+        "@value": 172
+      }
+    ],
+    "localhost:8081/schema#hasSex": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197"
+      }
+    ],
+    "localhost:8081/schema#livesInCountry": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"
+      }
+    ],
+    "localhost:8081/schema#hasPostalCode": [
+      {
+        "@value": "13001"
+      }
+    ],
+    "localhost:8081/schema#hasSecuritySocialNumber": [
+      {
+        "@value": "0152093465827"
+      }
+    ],
+    "localhost:8081/schema#hasBeenAffectedBy": [
+      {
+        "@id": "localhost:8081/rhinite2"
+      },
+      {
+        "@id": "localhost:8081/fracture2"
+      }
+    ],
+    "localhost:8081/schema#pre-existingCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28397"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C145003"
+      }
+    ],
+    "localhost:8081/schema#knownHereditaryCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/Patient7",
+    "@type": [
+      "localhost:8081/schema#Patient"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Anna"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      {
+        "@value": "Belfore"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/birthday": [
+      {
+        "@value": "1968-03-12",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#weight": [
+      {
+        "@value": 58
+      }
+    ],
+    "localhost:8081/schema#height": [
+      {
+        "@value": 157
+      }
+    ],
+    "localhost:8081/schema#hasSex": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16567"
+      }
+    ],
+    "localhost:8081/schema#livesInCountry": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"
+      }
+    ],
+    "localhost:8081/schema#hasPostalCode": [
+      {
+        "@value": "75013"
+      }
+    ],
+    "localhost:8081/schema#hasSecuritySocialNumber": [
+      {
+        "@value": "2245739810263"
+      }
+    ],
+    "localhost:8081/schema#pre-existingCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#97141"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172310"
+      }
+    ],
+    "localhost:8081/schema#hasBeenAffectedBy": [
+      {
+        "@id": "localhost:8081/tendinite1"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/Patient8",
+    "@type": [
+      "localhost:8081/schema#Patient"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Johan"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      {
+        "@value": "Fliel"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/birthday": [
+      {
+        "@value": "1971-12-22",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#weight": [
+      {
+        "@value": 80
+      }
+    ],
+    "localhost:8081/schema#height": [
+      {
+        "@value": 180
+      }
+    ],
+    "localhost:8081/schema#hasSex": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197"
+      }
+    ],
+    "localhost:8081/schema#livesInCountry": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"
+      }
+    ],
+    "localhost:8081/schema#hasPostalCode": [
+      {
+        "@value": "75116"
+      }
+    ],
+    "localhost:8081/schema#hasSecuritySocialNumber": [
+      {
+        "@value": "0831245675302"
+      }
+    ],
+    "localhost:8081/schema#pre-existingCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C5357"
+      }
+    ],
+    "localhost:8081/schema#hasBeenAffectedBy": [
+      {
+        "@id": "localhost:8081/fractureMultiple"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/Patient9",
+    "@type": [
+      "localhost:8081/schema#Patient"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Gaetan"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      {
+        "@value": "Renoir"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/birthday": [
+      {
+        "@value": "2018-03-16",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#weight": [
+      {
+        "@value": 38
+      }
+    ],
+    "localhost:8081/schema#height": [
+      {
+        "@value": 125
+      }
+    ],
+    "localhost:8081/schema#livesInCountry": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"
+      }
+    ],
+    "localhost:8081/schema#hasPostalCode": [
+      {
+        "@value": "75011"
+      }
+    ],
+    "localhost:8081/schema#hasSecuritySocialNumber": [
+      {
+        "@value": "0831245675302"
+      }
+    ],
+    "localhost:8081/schema#pre-existingCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28397"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172310"
+      }
+    ],
+    "localhost:8081/schema#knownHereditaryCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/balneo1",
+    "@type": [
+      "localhost:8081/schema#MedicalActivity"
+    ],
+    "localhost:8081/schema#activityType": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C21117"
+      }
+    ],
+    "localhost:8081/schema#durationPeriod": [
+      {
+        "@value": "P180D",
+        "@type": "http://www.w3.org/2001/XMLSchema#dayTimeDuration"
+      }
+    ],
+    "localhost:8081/schema#numberVisits": [
+      {
+        "@value": 30
+      }
+    ],
+    "localhost:8081/schema#shouldBePerformed": [
+      {
+        "@value": "exercice légers + respiration",
+        "@language": "fr"
+      },
+      {
+        "@value": "light exercise + breathing",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/balneo2",
+    "@type": [
+      "localhost:8081/schema#MedicalActivity"
+    ],
+    "localhost:8081/schema#activityType": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C21117"
+      }
+    ],
+    "localhost:8081/schema#durationPeriod": [
+      {
+        "@value": "P120D",
+        "@type": "http://www.w3.org/2001/XMLSchema#dayTimeDuration"
+      }
+    ],
+    "localhost:8081/schema#numberVisits": [
+      {
+        "@value": 20
+      }
+    ],
+    "localhost:8081/schema#shouldBePerformed": [
+      {
+        "@value": "exercice légers + respiration",
+        "@language": "fr"
+      },
+      {
+        "@value": "light exercise + breathing",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/balneo3",
+    "@type": [
+      "localhost:8081/schema#MedicalActivity"
+    ],
+    "localhost:8081/schema#activityType": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C21117"
+      }
+    ],
+    "localhost:8081/schema#durationPeriod": [
+      {
+        "@value": "P180D",
+        "@type": "http://www.w3.org/2001/XMLSchema#dayTimeDuration"
+      }
+    ],
+    "localhost:8081/schema#numberVisits": [
+      {
+        "@value": 25
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/balneo4",
+    "@type": [
+      "localhost:8081/schema#MedicalActivity"
+    ],
+    "localhost:8081/schema#activityType": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C21117"
+      }
+    ],
+    "localhost:8081/schema#durationPeriod": [
+      {
+        "@value": "P90D",
+        "@type": "http://www.w3.org/2001/XMLSchema#dayTimeDuration"
+      }
+    ],
+    "localhost:8081/schema#numberVisits": [
+      {
+        "@value": 15
+      }
+    ],
+    "localhost:8081/schema#shouldBePerformed": [
+      {
+        "@value": "exercice de respiration",
+        "@language": "fr"
+      },
+      {
+        "@value": "breathing exercises",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/cardio",
+    "@type": [
+      "localhost:8081/schema#Medecin"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Hadren"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      {
+        "@value": "Nyam"
+      }
+    ],
+    "localhost:8081/schema#hasDoctorNumber": [
+      {
+        "@value": "190"
+      }
+    ],
+    "localhost:8081/schema#specializedIn": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17153"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/caseReport1",
+    "@type": [
+      "localhost:8081/schema#CaseReport"
+    ],
+    "localhost:8081/schema#hasCaseId": [
+      {
+        "@value": "1"
+      }
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient1"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/cardio"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2019-02-12",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#symptomsDisplayed": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3117"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3258"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C37943"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50635"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C35051"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50809"
+      }
+    ],
+    "localhost:8081/schema#diagnosis": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38029"
+      }
+    ],
+    "localhost:8081/schema#supplementaryTests": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C168186"
+      }
+    ],
+    "localhost:8081/schema#givenTreatment": [
+      {
+        "@id": "localhost:8081/coagulants1"
+      }
+    ],
+    "localhost:8081/schema#followUp": [
+      {
+        "@id": "localhost:8081/followUp1"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/caseReport2",
+    "@type": [
+      "localhost:8081/schema#CaseReport"
+    ],
+    "localhost:8081/schema#hasCaseId": [
+      {
+        "@value": "2"
+      }
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient2"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/cardio"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2019-04-13",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#symptomsDisplayed": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3117"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3258"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C37943"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50635"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C92801"
+      }
+    ],
+    "localhost:8081/schema#diagnosis": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38029"
+      }
+    ],
+    "localhost:8081/schema#supplementaryTests": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C168186"
+      }
+    ],
+    "localhost:8081/schema#givenTreatment": [
+      {
+        "@id": "localhost:8081/coagulants2"
+      }
+    ],
+    "localhost:8081/schema#followUp": [
+      {
+        "@id": "localhost:8081/followUp2"
+      },
+      {
+        "@id": "localhost:8081/followUp3"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/caseReport3",
+    "@type": [
+      "localhost:8081/schema#CaseReport"
+    ],
+    "localhost:8081/schema#hasCaseId": [
+      {
+        "@value": "3"
+      }
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient3"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/cardio"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2019-03-22",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#symptomsDisplayed": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3117"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3258"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C37943"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50635"
+      }
+    ],
+    "localhost:8081/schema#diagnosis": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38029"
+      }
+    ],
+    "localhost:8081/schema#supplementaryTests": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C168186"
+      }
+    ],
+    "localhost:8081/schema#givenTreatment": [
+      {
+        "@id": "localhost:8081/coagulants3"
+      }
+    ],
+    "localhost:8081/schema#followUp": [
+      {
+        "@id": "localhost:8081/followUp4"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/caseReport4",
+    "@type": [
+      "localhost:8081/schema#CaseReport"
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient4"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/orl"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2022-03-03",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#symptomsDisplayed": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78225"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C60271"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C113194"
+      }
+    ],
+    "localhost:8081/schema#diagnosis": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"
+      }
+    ],
+    "localhost:8081/schema#supplementaryTests": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C114184"
+      }
+    ],
+    "localhost:8081/schema#givenTreatment": [
+      {
+        "@id": "localhost:8081/balneo1"
+      }
+    ],
+    "localhost:8081/schema#followUp": [
+      {
+        "@id": "localhost:8081/followUp5"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/caseReport5",
+    "@type": [
+      "localhost:8081/schema#CaseReport"
+    ],
+    "localhost:8081/schema#hasCaseId": [
+      {
+        "@value": "5"
+      }
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient5"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/orl"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2022-01-07",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#symptomsDisplayed": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78225"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C60271"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C113194"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C35051"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C128439"
+      }
+    ],
+    "localhost:8081/schema#diagnosis": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"
+      }
+    ],
+    "localhost:8081/schema#supplementaryTests": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C114184"
+      }
+    ],
+    "localhost:8081/schema#givenTreatment": [
+      {
+        "@id": "localhost:8081/balneo2"
+      }
+    ],
+    "localhost:8081/schema#followUp": [
+      {
+        "@id": "localhost:8081/followUp6"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/caseReport6",
+    "@type": [
+      "localhost:8081/schema#CaseReport"
+    ],
+    "localhost:8081/schema#hasCaseId": [
+      {
+        "@value": "6"
+      }
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient6"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/orl"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2022-03-12",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#symptomsDisplayed": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78225"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C60271"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C113194"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C35051"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50491"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3128"
+      }
+    ],
+    "localhost:8081/schema#diagnosis": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"
+      }
+    ],
+    "localhost:8081/schema#supplementaryTests": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C114184"
+      }
+    ],
+    "localhost:8081/schema#givenTreatment": [
+      {
+        "@id": "localhost:8081/balneo3"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/caseReport7",
+    "@type": [
+      "localhost:8081/schema#CaseReport"
+    ],
+    "localhost:8081/schema#hasCaseId": [
+      {
+        "@value": "7"
+      }
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient7"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/rhumat"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2022-03-13",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#symptomsDisplayed": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C56098"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3128"
+      }
+    ],
+    "localhost:8081/schema#diagnosis": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2883"
+      }
+    ],
+    "localhost:8081/schema#supplementaryTests": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C137928"
+      }
+    ],
+    "localhost:8081/schema#followUp": [
+      {
+        "@id": "localhost:8081/followUp7"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/caseReport8",
+    "@type": [
+      "localhost:8081/schema#CaseReport"
+    ],
+    "localhost:8081/schema#hasCaseId": [
+      {
+        "@value": "8"
+      }
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient8"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/rhumat"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2021-09-28",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#symptomsDisplayed": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C143637"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26778"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38644"
+      }
+    ],
+    "localhost:8081/schema#diagnosis": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C58396"
+      }
+    ],
+    "localhost:8081/schema#supplementaryTests": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C114184"
+      }
+    ],
+    "localhost:8081/schema#givenTreatment": [
+      {
+        "@id": "localhost:8081/kine"
+      }
+    ],
+    "localhost:8081/schema#followUp": [
+      {
+        "@id": "localhost:8081/followUp8"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/caseReport9",
+    "@type": [
+      "localhost:8081/schema#CaseReport"
+    ],
+    "localhost:8081/schema#hasCaseId": [
+      {
+        "@value": "9"
+      }
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient9"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/rhumat"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2021-09-08",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#symptomsDisplayed": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78225"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C60271"
+      }
+    ],
+    "localhost:8081/schema#diagnosis": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"
+      }
+    ],
+    "localhost:8081/schema#supplementaryTests": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C114184"
+      }
+    ],
+    "localhost:8081/schema#givenTreatment": [
+      {
+        "@id": "localhost:8081/balneo4"
+      }
+    ],
+    "localhost:8081/schema#followUp": [
+      {
+        "@id": "localhost:8081/followUp9"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/coagulants1",
+    "@type": [
+      "localhost:8081/schema#Drug"
+    ],
+    "localhost:8081/schema#medication": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C943"
+      }
+    ],
+    "localhost:8081/schema#takesPerDay": [
+      {
+        "@value": 1
+      }
+    ],
+    "localhost:8081/schema#daysBetweenTakes": [
+      {
+        "@value": "P0D",
+        "@type": "http://www.w3.org/2001/XMLSchema#dayTimeDuration"
+      }
+    ],
+    "localhost:8081/schema#complementaryInstructions": [
+      {
+        "@value": "matin, à vie",
+        "@language": "fr"
+      },
+      {
+        "@value": "morning, for life",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/coagulants2",
+    "@type": [
+      "localhost:8081/schema#Drug"
+    ],
+    "localhost:8081/schema#medication": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C943"
+      }
+    ],
+    "localhost:8081/schema#takesPerDay": [
+      {
+        "@value": 1
+      }
+    ],
+    "localhost:8081/schema#daysBetweenTakes": [
+      {
+        "@value": "P0D",
+        "@type": "http://www.w3.org/2001/XMLSchema#dayTimeDuration"
+      }
+    ],
+    "localhost:8081/schema#complementaryInstructions": [
+      {
+        "@value": "matin, à vie",
+        "@language": "fr"
+      },
+      {
+        "@value": "morning, for life",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/coagulants3",
+    "@type": [
+      "localhost:8081/schema#Drug"
+    ],
+    "localhost:8081/schema#medication": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C943"
+      }
+    ],
+    "localhost:8081/schema#takesPerDay": [
+      {
+        "@value": 1
+      }
+    ],
+    "localhost:8081/schema#daysBetweenTakes": [
+      {
+        "@value": "P0D",
+        "@type": "http://www.w3.org/2001/XMLSchema#dayTimeDuration"
+      }
+    ],
+    "localhost:8081/schema#complementaryInstructions": [
+      {
+        "@value": "matin, à vie",
+        "@language": "fr"
+      },
+      {
+        "@value": "morning, for life",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/essouflement",
+    "@type": [
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C141592"
+    ],
+    "http://purl.org/dc/terms/date": [
+      {
+        "@value": "2016-08-16",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/essouflement1",
+    "@type": [
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C141592"
+    ],
+    "http://purl.org/dc/terms/date": [
+      {
+        "@value": "2018-10-15",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/followUp1",
+    "@type": [
+      "localhost:8081/schema#Follow-Up"
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient1"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/cardio"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2019-06-03",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#patientStatus": [
+      {
+        "@value": "Bien, stable",
+        "@language": "fr"
+      },
+      {
+        "@value": "Well, stable",
+        "@language": "en"
+      }
+    ],
+    "localhost:8081/schema#isPatientHealthy": [
+      {
+        "@value": true
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/followUp2",
+    "@type": [
+      "localhost:8081/schema#Follow-Up"
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient2"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/cardio"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2019-07-22",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#patientStatus": [
+      {
+        "@value": "Bien, stable",
+        "@language": "fr"
+      },
+      {
+        "@value": "Well, stable",
+        "@language": "en"
+      }
+    ],
+    "localhost:8081/schema#isPatientHealthy": [
+      {
+        "@value": true
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/followUp3",
+    "@type": [
+      "localhost:8081/schema#Follow-Up"
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient2"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/cardio"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2019-08-22",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#patientStatus": [
+      {
+        "@value": "Bien, stable",
+        "@language": "fr"
+      },
+      {
+        "@value": "Well, stable",
+        "@language": "en"
+      }
+    ],
+    "localhost:8081/schema#isPatientHealthy": [
+      {
+        "@value": true
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/followUp4",
+    "@type": [
+      "localhost:8081/schema#Follow-Up"
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient3"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/cardio"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2019-09-08",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#patientStatus": [
+      {
+        "@value": "Bien, stable",
+        "@language": "fr"
+      },
+      {
+        "@value": "Well, stable",
+        "@language": "en"
+      }
+    ],
+    "localhost:8081/schema#isPatientHealthy": [
+      {
+        "@value": true
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/followUp5",
+    "@type": [
+      "localhost:8081/schema#Follow-Up"
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient4"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/orl"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2019-07-09",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#patientStatus": [
+      {
+        "@value": "En cours de rétablissement",
+        "@language": "fr"
+      },
+      {
+        "@value": "In recovery",
+        "@language": "en"
+      }
+    ],
+    "localhost:8081/schema#isPatientHealthy": [
+      {
+        "@value": false
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/followUp6",
+    "@type": [
+      "localhost:8081/schema#Follow-Up"
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient5"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/orl"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2019-07-09",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#isPatientHealthy": [
+      {
+        "@value": true
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/followUp7",
+    "@type": [
+      "localhost:8081/schema#Follow-Up"
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient7"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/rhumat"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2022-08-30",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#patientStatus": [
+      {
+        "@value": "L'etat stagne",
+        "@language": "fr"
+      },
+      {
+        "@value": "Stagnation",
+        "@language": "en"
+      }
+    ],
+    "localhost:8081/schema#isPatientHealthy": [
+      {
+        "@value": false
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/followUp8",
+    "@type": [
+      "localhost:8081/schema#Follow-Up"
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient8"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/rhumat"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2021-12-28",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#isPatientHealthy": [
+      {
+        "@value": true
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/followUp9",
+    "@type": [
+      "localhost:8081/schema#Follow-Up"
+    ],
+    "localhost:8081/schema#isRegarding": [
+      {
+        "@id": "localhost:8081/Patient9"
+      }
+    ],
+    "localhost:8081/schema#hasBeenWrittenBy": [
+      {
+        "@id": "localhost:8081/rhumat"
+      }
+    ],
+    "localhost:8081/schema#wasWrittenOn": [
+      {
+        "@value": "2022-03-13",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "localhost:8081/schema#isPatientHealthy": [
+      {
+        "@value": true
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/fracture",
+    "@type": [
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26777"
+    ],
+    "http://purl.org/dc/terms/date": [
+      {
+        "@value": "2016-08-16",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/fracture2",
+    "@type": [
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C35153"
+    ],
+    "http://purl.org/dc/terms/date": [
+      {
+        "@value": "2016-05-06",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/fractureMultiple",
+    "@type": [
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26778"
+    ],
+    "http://purl.org/dc/terms/date": [
+      {
+        "@value": "2018-10-15",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/kine",
+    "@type": [
+      "localhost:8081/schema#MedicalActivity"
+    ],
+    "localhost:8081/schema#activityType": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15302"
+      }
+    ],
+    "localhost:8081/schema#durationPeriod": [
+      {
+        "@value": "P150D",
+        "@type": "http://www.w3.org/2001/XMLSchema#dayTimeDuration"
+      }
+    ],
+    "localhost:8081/schema#numberVisits": [
+      {
+        "@value": 30
+      }
+    ],
+    "localhost:8081/schema#shouldBePerformed": [
+      {
+        "@value": "Mobilisation et massages",
+        "@language": "fr"
+      },
+      {
+        "@value": "mobilization and massages",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/malaise"
+  },
+  {
+    "@id": "localhost:8081/malaise1",
+    "@type": [
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3832"
+    ],
+    "http://purl.org/dc/terms/date": [
+      {
+        "@value": "2015-06-16",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/malaise2",
+    "@type": [
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3832"
+    ],
+    "http://purl.org/dc/terms/date": [
+      {
+        "@value": "2017-08-16",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/operation1",
+    "@type": [
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C157806"
+    ],
+    "http://purl.org/dc/terms/date": [
+      {
+        "@value": "2015-07-03",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/orl",
+    "@type": [
+      "localhost:8081/schema#Medecin"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Banar"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      {
+        "@value": "Camille"
+      }
+    ],
+    "localhost:8081/schema#hasDoctorNumber": [
+      {
+        "@value": "33"
+      }
+    ],
+    "localhost:8081/schema#specializedIn": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16943"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/rhinite",
+    "@type": [
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78599"
+    ],
+    "http://purl.org/dc/terms/date": [
+      {
+        "@value": "2016-09-22",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/rhinite1",
+    "@type": [
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78599"
+    ],
+    "http://purl.org/dc/terms/date": [
+      {
+        "@value": "2018-10-15",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/rhinite2",
+    "@type": [
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78599"
+    ],
+    "http://purl.org/dc/terms/date": [
+      {
+        "@value": "2018-03-07",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/rhumat",
+    "@type": [
+      "localhost:8081/schema#Medecin"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Laner"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/familyName": [
+      {
+        "@value": "Xavier"
+      }
+    ],
+    "localhost:8081/schema#hasDoctorNumber": [
+      {
+        "@value": "48"
+      }
+    ],
+    "localhost:8081/schema#specializedIn": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17099"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/schema#CaseReport"
+  },
+  {
+    "@id": "localhost:8081/schema#Drug"
+  },
+  {
+    "@id": "localhost:8081/schema#Follow-Up"
+  },
+  {
+    "@id": "localhost:8081/schema#Medecin"
+  },
+  {
+    "@id": "localhost:8081/schema#MedicalActivity"
+  },
+  {
+    "@id": "localhost:8081/schema#Patient"
+  },
+  {
+    "@id": "localhost:8081/tendinite",
+    "@type": [
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#ncit:97141"
+    ],
+    "http://purl.org/dc/terms/date": [
+      {
+        "@value": "2018-10-15",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  },
+  {
+    "@id": "localhost:8081/tendinite1",
+    "@type": [
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#ncit:97141"
+    ],
+    "http://purl.org/dc/terms/date": [
+      {
+        "@value": "2018-10-15",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ]
+  }
+]

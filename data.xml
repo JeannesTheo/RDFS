@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:ns0="localhost:8081/schema#"
+         xmlns:dc="http://purl.org/dc/terms/">
+
+    <rdf:Description rdf:about="localhost:8081/Patient1">
+        <rdf:type rdf:resource="localhost:8081/schema#Patient"/>
+        <foaf:name>François</foaf:name>
+        <foaf:familyName>Deville</foaf:familyName>
+        <foaf:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1982-09-08</foaf:birthday>
+        <ns0:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</ns0:weight>
+        <ns0:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">179</ns0:height>
+        <ns0:hasSex rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197"/>
+        <ns0:livesInCountry rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"/>
+        <ns0:hasPostalCode>75001</ns0:hasPostalCode>
+        <ns0:hasSecuritySocialNumber>0672153498123</ns0:hasSecuritySocialNumber>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3283"/>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747"/>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172316"/>
+        <ns0:hasBeenAffectedBy>
+            <rdf:Description rdf:about="localhost:8081/malaise1">
+                <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3832"/>
+                <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-06-16</dc:date>
+            </rdf:Description>
+        </ns0:hasBeenAffectedBy>
+
+        <ns0:hasBeenAffectedBy>
+            <rdf:Description rdf:about="localhost:8081/operation1">
+                <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C157806"/>
+                <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-07-03</dc:date>
+            </rdf:Description>
+        </ns0:hasBeenAffectedBy>
+
+    </rdf:Description>
+
+    <rdf:Description rdf:about="localhost:8081/malaise2">
+        <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3832"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-08-16</dc:date>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="localhost:8081/essouflement">
+        <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C141592"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-08-16</dc:date>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="localhost:8081/fracture">
+        <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26777"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-08-16</dc:date>
+    </rdf:Description>
+
+    <ns0:Patient rdf:about="localhost:8081/Patient2">
+        <foaf:name>Bernard</foaf:name>
+        <foaf:familyName>Pataphou</foaf:familyName>
+        <foaf:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1978-09-03</foaf:birthday>
+        <ns0:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">92</ns0:weight>
+        <ns0:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">168</ns0:height>
+        <ns0:hasSex rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197"/>
+        <ns0:livesInCountry rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"/>
+        <ns0:hasPostalCode>75008</ns0:hasPostalCode>
+        <ns0:hasSecuritySocialNumber>2265189370246</ns0:hasSecuritySocialNumber>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3283"/>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747"/>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172310"/>
+        <ns0:hasBeenAffectedBy rdf:resource="localhost:8081/malaise"/>
+        <ns0:hasBeenAffectedBy rdf:resource="localhost:8081/essouflement"/>
+        <ns0:hasBeenAffectedBy>
+            <rdf:Description rdf:about="localhost:8081/tendinite">
+                <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#ncit:97141"/>
+                <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-10-15</dc:date>
+            </rdf:Description>
+        </ns0:hasBeenAffectedBy>
+
+    </ns0:Patient>
+
+    <ns0:Patient rdf:about="localhost:8081/Patient3">
+        <foaf:name>Robert</foaf:name>
+        <foaf:familyName>De Niro</foaf:familyName>
+        <foaf:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1977-09-18</foaf:birthday>
+        <ns0:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">89</ns0:weight>
+        <ns0:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">172</ns0:height>
+        <ns0:hasSex rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197"/>
+        <ns0:livesInCountry rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"/>
+        <ns0:hasPostalCode>75011</ns0:hasPostalCode>
+        <ns0:hasSecuritySocialNumber>0928347610583</ns0:hasSecuritySocialNumber>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3283"/>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747"/>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172320"/>
+        <ns0:hasBeenAffectedBy rdf:resource="localhost:8081/fracture"/>
+    </ns0:Patient>
+
+    <ns0:Patient rdf:about="localhost:8081/Patient4">
+        <foaf:name>Emma</foaf:name>
+        <foaf:familyName>Annelie</foaf:familyName>
+        <foaf:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2002-03-19</foaf:birthday>
+        <ns0:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</ns0:weight>
+        <ns0:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">172</ns0:height>
+        <ns0:hasSex rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16567"/>
+        <ns0:livesInCountry rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"/>
+        <ns0:hasPostalCode>69002</ns0:hasPostalCode>
+        <ns0:hasSecuritySocialNumber>2306958274512</ns0:hasSecuritySocialNumber>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28397"/>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C145003"/>
+        <ns0:hasBeenAffectedBy>
+            <rdf:Description rdf:about="localhost:8081/rhinite">
+                <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78599"/>
+                <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-09-22</dc:date>
+            </rdf:Description>
+        </ns0:hasBeenAffectedBy>
+
+        <ns0:knownHereditaryCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"/>
+    </ns0:Patient>
+
+    <rdf:Description rdf:about="localhost:8081/rhinite1">
+        <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78599"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-10-15</dc:date>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="localhost:8081/rhinite2">
+        <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78599"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-03-07</dc:date>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="localhost:8081/fracture2">
+        <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C35153"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-05-06</dc:date>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="localhost:8081/essouflement1">
+        <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C141592"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-10-15</dc:date>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="localhost:8081/tendinite1">
+        <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#ncit:97141"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-10-15</dc:date>
+    </rdf:Description>
+
+    <ns0:Patient rdf:about="localhost:8081/Patient5">
+        <foaf:name>Léa</foaf:name>
+        <foaf:familyName>Dupond</foaf:familyName>
+        <foaf:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2002-01-20</foaf:birthday>
+        <ns0:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</ns0:weight>
+        <ns0:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">160</ns0:height>
+        <ns0:hasSex rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16567"/>
+        <ns0:livesInCountry rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"/>
+        <ns0:hasPostalCode>69004</ns0:hasPostalCode>
+        <ns0:hasSecuritySocialNumber>2387561092834</ns0:hasSecuritySocialNumber>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28397"/>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C145003"/>
+        <ns0:hasBeenAffectedBy rdf:resource="localhost:8081/rhinite1"/>
+        <ns0:hasBeenAffectedBy rdf:resource="localhost:8081/essouflement1"/>
+        <ns0:knownHereditaryCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"/>
+    </ns0:Patient>
+
+    <ns0:Patient rdf:about="localhost:8081/Patient6">
+        <foaf:name>Navah</foaf:name>
+        <foaf:familyName>Killian</foaf:familyName>
+        <foaf:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2002-08-19</foaf:birthday>
+        <ns0:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</ns0:weight>
+        <ns0:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">172</ns0:height>
+        <ns0:hasSex rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197"/>
+        <ns0:livesInCountry rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"/>
+        <ns0:hasPostalCode>13001</ns0:hasPostalCode>
+        <ns0:hasSecuritySocialNumber>0152093465827</ns0:hasSecuritySocialNumber>
+        <ns0:hasBeenAffectedBy rdf:resource="localhost:8081/rhinite2"/>
+        <ns0:hasBeenAffectedBy rdf:resource="localhost:8081/fracture2"/>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28397"/>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C145003"/>
+        <ns0:knownHereditaryCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"/>
+    </ns0:Patient>
+
+    <ns0:Patient rdf:about="localhost:8081/Patient7">
+        <foaf:name>Anna</foaf:name>
+        <foaf:familyName>Belfore</foaf:familyName>
+        <foaf:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1968-03-12</foaf:birthday>
+        <ns0:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58</ns0:weight>
+        <ns0:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">157</ns0:height>
+        <ns0:hasSex rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16567"/>
+        <ns0:livesInCountry rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"/>
+        <ns0:hasPostalCode>75013</ns0:hasPostalCode>
+        <ns0:hasSecuritySocialNumber>2245739810263</ns0:hasSecuritySocialNumber>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#97141"/>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172310"/>
+        <ns0:hasBeenAffectedBy rdf:resource="localhost:8081/tendinite1"/>
+    </ns0:Patient>
+
+    <ns0:Patient rdf:about="localhost:8081/Patient8">
+        <foaf:name>Johan</foaf:name>
+        <foaf:familyName>Fliel</foaf:familyName>
+        <foaf:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1971-12-22</foaf:birthday>
+        <ns0:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</ns0:weight>
+        <ns0:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</ns0:height>
+        <ns0:hasSex rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20197"/>
+        <ns0:livesInCountry rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"/>
+        <ns0:hasPostalCode>75116</ns0:hasPostalCode>
+        <ns0:hasSecuritySocialNumber>0831245675302</ns0:hasSecuritySocialNumber>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747"/>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C5357"/>
+        <ns0:hasBeenAffectedBy>
+            <rdf:Description rdf:about="localhost:8081/fractureMultiple">
+                <rdf:type rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26778"/>
+                <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-10-15</dc:date>
+            </rdf:Description>
+        </ns0:hasBeenAffectedBy>
+
+    </ns0:Patient>
+
+    <ns0:Patient rdf:about="localhost:8081/Patient9">
+        <foaf:name>Gaetan</foaf:name>
+        <foaf:familyName>Renoir</foaf:familyName>
+        <foaf:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-03-16</foaf:birthday>
+        <ns0:weight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</ns0:weight>
+        <ns0:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">125</ns0:height>
+        <ns0:livesInCountry rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16592"/>
+        <ns0:hasPostalCode>75011</ns0:hasPostalCode>
+        <ns0:hasSecuritySocialNumber>0831245675302</ns0:hasSecuritySocialNumber>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28397"/>
+        <ns0:pre-existingCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C172310"/>
+        <ns0:knownHereditaryCondition rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"/>
+    </ns0:Patient>
+
+    <ns0:Medecin rdf:about="localhost:8081/cardio">
+        <foaf:name>Hadren</foaf:name>
+        <foaf:familyName>Nyam</foaf:familyName>
+        <ns0:hasDoctorNumber>190</ns0:hasDoctorNumber>
+        <ns0:specializedIn rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17153"/>
+    </ns0:Medecin>
+
+    <ns0:Medecin rdf:about="localhost:8081/orl">
+        <foaf:name>Banar</foaf:name>
+        <foaf:familyName>Camille</foaf:familyName>
+        <ns0:hasDoctorNumber>33</ns0:hasDoctorNumber>
+        <ns0:specializedIn rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16943"/>
+    </ns0:Medecin>
+
+    <ns0:Medecin rdf:about="localhost:8081/rhumat">
+        <foaf:name>Laner</foaf:name>
+        <foaf:familyName>Xavier</foaf:familyName>
+        <ns0:hasDoctorNumber>48</ns0:hasDoctorNumber>
+        <ns0:specializedIn rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17099"/>
+    </ns0:Medecin>
+
+    <ns0:CaseReport rdf:about="localhost:8081/caseReport1">
+        <ns0:hasCaseId>1</ns0:hasCaseId>
+        <ns0:isRegarding rdf:resource="localhost:8081/Patient1"/>
+        <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/cardio"/>
+        <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-02-12</ns0:wasWrittenOn>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3117"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3258"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C37943"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50635"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C35051"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50809"/>
+        <ns0:diagnosis rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38029"/>
+        <ns0:supplementaryTests rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C168186"/>
+        <ns0:givenTreatment>
+            <ns0:Drug rdf:about="localhost:8081/coagulants1">
+                <ns0:medication rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C943"/>
+                <ns0:takesPerDay rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ns0:takesPerDay>
+                <ns0:daysBetweenTakes rdf:datatype="http://www.w3.org/2001/XMLSchema#dayTimeDuration">P0D</ns0:daysBetweenTakes>
+                <ns0:complementaryInstructions xml:lang="fr">matin, à vie</ns0:complementaryInstructions>
+                <ns0:complementaryInstructions xml:lang="en">morning, for life</ns0:complementaryInstructions>
+            </ns0:Drug>
+        </ns0:givenTreatment>
+
+        <ns0:followUp>
+            <ns0:Follow-Up rdf:about="localhost:8081/followUp1">
+                <ns0:isRegarding rdf:resource="localhost:8081/Patient1"/>
+                <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/cardio"/>
+                <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-03</ns0:wasWrittenOn>
+                <ns0:patientStatus xml:lang="fr">Bien, stable</ns0:patientStatus>
+                <ns0:patientStatus xml:lang="en">Well, stable</ns0:patientStatus>
+                <ns0:isPatientHealthy rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns0:isPatientHealthy>
+            </ns0:Follow-Up>
+        </ns0:followUp>
+
+    </ns0:CaseReport>
+
+    <ns0:CaseReport rdf:about="localhost:8081/caseReport2">
+        <ns0:hasCaseId>2</ns0:hasCaseId>
+        <ns0:isRegarding rdf:resource="localhost:8081/Patient2"/>
+        <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/cardio"/>
+        <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-13</ns0:wasWrittenOn>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3117"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3258"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C37943"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50635"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C92801"/>
+        <ns0:diagnosis rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38029"/>
+        <ns0:supplementaryTests rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C168186"/>
+        <ns0:givenTreatment>
+            <ns0:Drug rdf:about="localhost:8081/coagulants2">
+                <ns0:medication rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C943"/>
+                <ns0:takesPerDay rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ns0:takesPerDay>
+                <ns0:daysBetweenTakes rdf:datatype="http://www.w3.org/2001/XMLSchema#dayTimeDuration">P0D</ns0:daysBetweenTakes>
+                <ns0:complementaryInstructions xml:lang="fr">matin, à vie</ns0:complementaryInstructions>
+                <ns0:complementaryInstructions xml:lang="en">morning, for life</ns0:complementaryInstructions>
+            </ns0:Drug>
+        </ns0:givenTreatment>
+
+        <ns0:followUp>
+            <ns0:Follow-Up rdf:about="localhost:8081/followUp2">
+                <ns0:isRegarding rdf:resource="localhost:8081/Patient2"/>
+                <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/cardio"/>
+                <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-07-22</ns0:wasWrittenOn>
+                <ns0:patientStatus xml:lang="fr">Bien, stable</ns0:patientStatus>
+                <ns0:patientStatus xml:lang="en">Well, stable</ns0:patientStatus>
+                <ns0:isPatientHealthy rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns0:isPatientHealthy>
+            </ns0:Follow-Up>
+        </ns0:followUp>
+
+        <ns0:followUp>
+            <ns0:Follow-Up rdf:about="localhost:8081/followUp3">
+                <ns0:isRegarding rdf:resource="localhost:8081/Patient2"/>
+                <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/cardio"/>
+                <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-08-22</ns0:wasWrittenOn>
+                <ns0:patientStatus xml:lang="fr">Bien, stable</ns0:patientStatus>
+                <ns0:patientStatus xml:lang="en">Well, stable</ns0:patientStatus>
+                <ns0:isPatientHealthy rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns0:isPatientHealthy>
+            </ns0:Follow-Up>
+        </ns0:followUp>
+
+    </ns0:CaseReport>
+
+    <ns0:CaseReport rdf:about="localhost:8081/caseReport3">
+        <ns0:hasCaseId>3</ns0:hasCaseId>
+        <ns0:isRegarding rdf:resource="localhost:8081/Patient3"/>
+        <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/cardio"/>
+        <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-03-22</ns0:wasWrittenOn>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3117"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3258"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C37943"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50635"/>
+        <ns0:diagnosis rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38029"/>
+        <ns0:supplementaryTests rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C168186"/>
+        <ns0:givenTreatment>
+            <ns0:Drug rdf:about="localhost:8081/coagulants3">
+                <ns0:medication rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C943"/>
+                <ns0:takesPerDay rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ns0:takesPerDay>
+                <ns0:daysBetweenTakes rdf:datatype="http://www.w3.org/2001/XMLSchema#dayTimeDuration">P0D</ns0:daysBetweenTakes>
+                <ns0:complementaryInstructions xml:lang="fr">matin, à vie</ns0:complementaryInstructions>
+                <ns0:complementaryInstructions xml:lang="en">morning, for life</ns0:complementaryInstructions>
+            </ns0:Drug>
+        </ns0:givenTreatment>
+
+        <ns0:followUp>
+            <ns0:Follow-Up rdf:about="localhost:8081/followUp4">
+                <ns0:isRegarding rdf:resource="localhost:8081/Patient3"/>
+                <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/cardio"/>
+                <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-09-08</ns0:wasWrittenOn>
+                <ns0:patientStatus xml:lang="fr">Bien, stable</ns0:patientStatus>
+                <ns0:patientStatus xml:lang="en">Well, stable</ns0:patientStatus>
+                <ns0:isPatientHealthy rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns0:isPatientHealthy>
+            </ns0:Follow-Up>
+        </ns0:followUp>
+
+    </ns0:CaseReport>
+
+    <ns0:CaseReport rdf:about="localhost:8081/caseReport4">
+        <ns0:isRegarding rdf:resource="localhost:8081/Patient4"/>
+        <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/orl"/>
+        <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-03</ns0:wasWrittenOn>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78225"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C60271"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C113194"/>
+        <ns0:diagnosis rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"/>
+        <ns0:supplementaryTests rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C114184"/>
+        <ns0:givenTreatment>
+            <ns0:MedicalActivity rdf:about="localhost:8081/balneo1">
+                <ns0:activityType rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C21117"/>
+                <ns0:durationPeriod rdf:datatype="http://www.w3.org/2001/XMLSchema#dayTimeDuration">P180D</ns0:durationPeriod>
+                <ns0:numberVisits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</ns0:numberVisits>
+                <ns0:shouldBePerformed xml:lang="fr">exercice légers + respiration</ns0:shouldBePerformed>
+                <ns0:shouldBePerformed xml:lang="en">light exercise + breathing</ns0:shouldBePerformed>
+            </ns0:MedicalActivity>
+        </ns0:givenTreatment>
+
+        <ns0:followUp>
+            <ns0:Follow-Up rdf:about="localhost:8081/followUp5">
+                <ns0:isRegarding rdf:resource="localhost:8081/Patient4"/>
+                <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/orl"/>
+                <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-07-09</ns0:wasWrittenOn>
+                <ns0:patientStatus xml:lang="fr">En cours de rétablissement</ns0:patientStatus>
+                <ns0:patientStatus xml:lang="en">In recovery</ns0:patientStatus>
+                <ns0:isPatientHealthy rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ns0:isPatientHealthy>
+            </ns0:Follow-Up>
+        </ns0:followUp>
+
+    </ns0:CaseReport>
+
+    <ns0:MedicalActivity rdf:about="localhost:8081/balneo2">
+        <ns0:activityType rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C21117"/>
+        <ns0:durationPeriod rdf:datatype="http://www.w3.org/2001/XMLSchema#dayTimeDuration">P120D</ns0:durationPeriod>
+        <ns0:numberVisits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ns0:numberVisits>
+        <ns0:shouldBePerformed xml:lang="fr">exercice légers + respiration</ns0:shouldBePerformed>
+        <ns0:shouldBePerformed xml:lang="en">light exercise + breathing</ns0:shouldBePerformed>
+    </ns0:MedicalActivity>
+
+    <ns0:CaseReport rdf:about="localhost:8081/caseReport5">
+        <ns0:hasCaseId>5</ns0:hasCaseId>
+        <ns0:isRegarding rdf:resource="localhost:8081/Patient5"/>
+        <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/orl"/>
+        <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-07</ns0:wasWrittenOn>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78225"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C60271"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C113194"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C35051"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C128439"/>
+        <ns0:diagnosis rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"/>
+        <ns0:supplementaryTests rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C114184"/>
+        <ns0:givenTreatment rdf:resource="localhost:8081/balneo2"/>
+        <ns0:followUp>
+            <ns0:Follow-Up rdf:about="localhost:8081/followUp6">
+                <ns0:isRegarding rdf:resource="localhost:8081/Patient5"/>
+                <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/orl"/>
+                <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-07-09</ns0:wasWrittenOn>
+                <ns0:isPatientHealthy rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns0:isPatientHealthy>
+            </ns0:Follow-Up>
+        </ns0:followUp>
+
+    </ns0:CaseReport>
+
+    <ns0:CaseReport rdf:about="localhost:8081/caseReport6">
+        <ns0:hasCaseId>6</ns0:hasCaseId>
+        <ns0:isRegarding rdf:resource="localhost:8081/Patient6"/>
+        <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/orl"/>
+        <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-12</ns0:wasWrittenOn>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78225"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C60271"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C113194"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C35051"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50491"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3128"/>
+        <ns0:diagnosis rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"/>
+        <ns0:supplementaryTests rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C114184"/>
+        <ns0:givenTreatment>
+            <ns0:MedicalActivity rdf:about="localhost:8081/balneo3">
+                <ns0:activityType rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C21117"/>
+                <ns0:durationPeriod rdf:datatype="http://www.w3.org/2001/XMLSchema#dayTimeDuration">P180D</ns0:durationPeriod>
+                <ns0:numberVisits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</ns0:numberVisits>
+            </ns0:MedicalActivity>
+        </ns0:givenTreatment>
+
+    </ns0:CaseReport>
+
+    <ns0:CaseReport rdf:about="localhost:8081/caseReport7">
+        <ns0:hasCaseId>7</ns0:hasCaseId>
+        <ns0:isRegarding rdf:resource="localhost:8081/Patient7"/>
+        <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/rhumat"/>
+        <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-13</ns0:wasWrittenOn>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C56098"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3128"/>
+        <ns0:diagnosis rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2883"/>
+        <ns0:supplementaryTests rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C137928"/>
+        <ns0:followUp>
+            <ns0:Follow-Up rdf:about="localhost:8081/followUp7">
+                <ns0:isRegarding rdf:resource="localhost:8081/Patient7"/>
+                <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/rhumat"/>
+                <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-08-30</ns0:wasWrittenOn>
+                <ns0:patientStatus xml:lang="fr">L'etat stagne</ns0:patientStatus>
+                <ns0:patientStatus xml:lang="en">Stagnation</ns0:patientStatus>
+                <ns0:isPatientHealthy rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ns0:isPatientHealthy>
+            </ns0:Follow-Up>
+        </ns0:followUp>
+
+    </ns0:CaseReport>
+
+    <ns0:CaseReport rdf:about="localhost:8081/caseReport8">
+        <ns0:hasCaseId>8</ns0:hasCaseId>
+        <ns0:isRegarding rdf:resource="localhost:8081/Patient8"/>
+        <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/rhumat"/>
+        <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-09-28</ns0:wasWrittenOn>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C143637"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26778"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38644"/>
+        <ns0:diagnosis rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C58396"/>
+        <ns0:supplementaryTests rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C114184"/>
+        <ns0:givenTreatment>
+            <ns0:MedicalActivity rdf:about="localhost:8081/kine">
+                <ns0:activityType rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15302"/>
+                <ns0:durationPeriod rdf:datatype="http://www.w3.org/2001/XMLSchema#dayTimeDuration">P150D</ns0:durationPeriod>
+                <ns0:numberVisits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</ns0:numberVisits>
+                <ns0:shouldBePerformed xml:lang="fr">Mobilisation et massages</ns0:shouldBePerformed>
+                <ns0:shouldBePerformed xml:lang="en">mobilization and massages</ns0:shouldBePerformed>
+            </ns0:MedicalActivity>
+        </ns0:givenTreatment>
+
+        <ns0:followUp>
+            <ns0:Follow-Up rdf:about="localhost:8081/followUp8">
+                <ns0:isRegarding rdf:resource="localhost:8081/Patient8"/>
+                <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/rhumat"/>
+                <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-12-28</ns0:wasWrittenOn>
+                <ns0:isPatientHealthy rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns0:isPatientHealthy>
+            </ns0:Follow-Up>
+        </ns0:followUp>
+
+    </ns0:CaseReport>
+
+    <ns0:CaseReport rdf:about="localhost:8081/caseReport9">
+        <ns0:hasCaseId>9</ns0:hasCaseId>
+        <ns0:isRegarding rdf:resource="localhost:8081/Patient9"/>
+        <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/rhumat"/>
+        <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-09-08</ns0:wasWrittenOn>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C78225"/>
+        <ns0:symptomsDisplayed rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C60271"/>
+        <ns0:diagnosis rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"/>
+        <ns0:supplementaryTests rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C114184"/>
+        <ns0:givenTreatment>
+            <ns0:MedicalActivity rdf:about="localhost:8081/balneo4">
+                <ns0:activityType rdf:resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C21117"/>
+                <ns0:durationPeriod rdf:datatype="http://www.w3.org/2001/XMLSchema#dayTimeDuration">P90D</ns0:durationPeriod>
+                <ns0:numberVisits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</ns0:numberVisits>
+                <ns0:shouldBePerformed xml:lang="fr">exercice de respiration</ns0:shouldBePerformed>
+                <ns0:shouldBePerformed xml:lang="en">breathing exercises</ns0:shouldBePerformed>
+            </ns0:MedicalActivity>
+        </ns0:givenTreatment>
+
+        <ns0:followUp>
+            <ns0:Follow-Up rdf:about="localhost:8081/followUp9">
+                <ns0:isRegarding rdf:resource="localhost:8081/Patient9"/>
+                <ns0:hasBeenWrittenBy rdf:resource="localhost:8081/rhumat"/>
+                <ns0:wasWrittenOn rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-13</ns0:wasWrittenOn>
+                <ns0:isPatientHealthy rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns0:isPatientHealthy>
+            </ns0:Follow-Up>
+        </ns0:followUp>
+
+    </ns0:CaseReport>
+
+</rdf:RDF>

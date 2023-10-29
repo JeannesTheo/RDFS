@@ -1,0 +1,36 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xs:     <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+
+@prefix ncit:   <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix loinc:  <http://purl.bioontology.org/ontology/LNC/> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+
+@prefix :       <localhost:8081/schema#> .
+@base <localhost:8081/data#>.
+
+<cardio>
+    a                :Medecin ;
+    foaf:name        "Hadren" ;
+    foaf:familyName  "Nyam" ;
+    :hasDoctorNumber "190" ;
+    :specializedIn   ncit:C17153 . #Cardiologue
+
+<orl>
+    a                :Medecin ;
+    foaf:name        "Banar" ;
+    foaf:familyName  "Camille" ;
+    :hasDoctorNumber "33" ;
+    :specializedIn   ncit:C16943 . # ORL
+
+<rhumat>
+    a                :Medecin ;
+    foaf:name        "Laner" ;
+    foaf:familyName  "Xavier" ;
+    :hasDoctorNumber "48" ;
+    :specializedIn   ncit:C17099 . # Rhumatologue

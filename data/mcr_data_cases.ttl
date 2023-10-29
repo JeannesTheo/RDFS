@@ -1,9 +1,6 @@
 @prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xs:     <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xs:     <http://www.w3.org/2001/XMLSchema#> .
 
 @prefix dc:     <http://purl.org/dc/terms/> .
 @prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
@@ -14,7 +11,7 @@
 @prefix loinc:  <http://purl.bioontology.org/ontology/LNC/> .
 @prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
 
-@prefix :       <localhost:8081/schema#>.
+@prefix :       <localhost:8081/schema#> .
 @base <localhost:8081/data#>.
 
 <caseReport1>
@@ -166,33 +163,35 @@
     :isPatientHealthy true .
 
 
-<caseReport6> a :CaseReport;
+<caseReport6>
+    a                   :CaseReport ;
     :hasCaseId          "6" ;
     :isRegarding        <Patient6> ;
     :hasBeenWrittenBy   <orl> ;
     :wasWrittenOn       "2022-03-12"^^xs:date ;
-    :symptomsDisplayed  ncit:C78225, ncit:C60271, ncit:C113194, ncit:C35051, ncit:C50491 ,ncit:C3128 ;
+    :symptomsDisplayed  ncit:C78225, ncit:C60271, ncit:C113194, ncit:C35051, ncit:C50491, ncit:C3128 ;
     #encombrement bronchiques, infections respiratoires, problèles digestifs, mains moites, douleur torse, tension faibles
     :diagnosis          ncit:C2975 ; #Mucoviscidose
     :supplementaryTests ncit:C114184 ; #Irm
     :givenTreatment     <balneo3> . #Balnéo thérapie.
 
 <balneo3>
-    a                  :MedicalActivity ;
-    :activityType      ncit:C21117 ; #Balnéo thérapie
-    :durationPeriod    "P180D"^^xs:dayTimeDuration ;
-    :numberVisits      25.
+    a               :MedicalActivity ;
+    :activityType   ncit:C21117 ; #Balnéo thérapie
+    :durationPeriod "P180D"^^xs:dayTimeDuration ;
+    :numberVisits   25 .
 
-<caseReport7> a :CaseReport;
+<caseReport7>
+    a                   :CaseReport ;
     :hasCaseId          "7" ;
     :isRegarding        <Patient7> ;
     :hasBeenWrittenBy   <rhumat> ;
     :wasWrittenOn       "2022-03-13"^^xs:date ;
-    :symptomsDisplayed  ncit:C56098 ,ncit:C3128 ;
+    :symptomsDisplayed  ncit:C56098, ncit:C3128 ;
     #douleur aigue articulaire, tension faible
     :diagnosis          ncit:C2883 ; #Arthrite
-    :supplementaryTests ncit:C137928  ; #radio
-    :followUp <followUp7>. #Balnéo thérapie.
+    :supplementaryTests ncit:C137928 ; #radio
+    :followUp           <followUp7> . #Balnéo thérapie.
 
 <followUp7>
     a                 :Follow-Up ;
@@ -202,7 +201,8 @@
     :patientStatus    "L'etat stagne"@fr, "Stagnation"@en ;
     :isPatientHealthy false .
 
-<caseReport8> a :CaseReport;
+<caseReport8>
+    a                   :CaseReport ;
     :hasCaseId          "8" ;
     :isRegarding        <Patient8> ;
     :hasBeenWrittenBy   <rhumat> ;
@@ -211,10 +211,11 @@
     #Inflammation Larynx, fractures multiples, douleur osseuse
     :diagnosis          ncit:C58396 ; #ostéoporose
     :supplementaryTests ncit:C114184 ; #Radio
-    :givenTreatment     <kine>;
-    :followUp <followUp8>. #Balnéo thérapie.
+    :givenTreatment     <kine> ;
+    :followUp           <followUp8> . #Balnéo thérapie.
 
-<kine> a :MedicalActivity;
+<kine>
+    a                  :MedicalActivity ;
     :activityType      ncit:C15302 ; #Balnéo thérapie
     :durationPeriod    "P150D"^^xs:dayTimeDuration ;
     :numberVisits      30 ;
@@ -227,7 +228,8 @@
     :wasWrittenOn     "2021-12-28"^^xs:date ;
     :isPatientHealthy true .
 
-<caseReport9> a :CaseReport;
+<caseReport9>
+    a                   :CaseReport ;
     :hasCaseId          "9" ;
     :isRegarding        <Patient9> ;
     :hasBeenWrittenBy   <rhumat> ;
@@ -236,10 +238,11 @@
     #encombrement bronchiques, infections respiratoires
     :diagnosis          ncit:C2975 ; #Mucoviscidose
     :supplementaryTests ncit:C114184 ; #Irm
-    :givenTreatment     <balneo4>;
-    :followUp <followUp9>. #Balnéo thérapie.
+    :givenTreatment     <balneo4> ;
+    :followUp           <followUp9> . #Balnéo thérapie.
 
-<balneo4> a :MedicalActivity;
+<balneo4>
+    a                  :MedicalActivity ;
     :activityType      ncit:C21117 ; #Balnéo thérapie
     :durationPeriod    "P90D"^^xs:dayTimeDuration ;
     :numberVisits      15 ;
