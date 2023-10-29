@@ -19,7 +19,7 @@
 
 <h1> Patients </h1>
 
-<div class="patient-card" about="data#Patient1" typeof="localhost:8081/schema#Patient">
+<div class="card" about="data#Patient1" typeof="localhost:8081/schema#Patient">
     <h1 property="foaf:name">name: François</h1>
     <p property="foaf:familyName">familyName: Deville</p>
     <p property="foaf:birthday">birthday: 1982-09-08</p>
@@ -49,7 +49,7 @@
     </span>
 </div>
 
-<div class="patient-card" about="data#Patient2" typeof="localhost:8081/schema#Patient">
+<div class="card" about="data#Patient2" typeof="localhost:8081/schema#Patient">
     <h1 property="foaf:name">name: Bernard</h1>
     <p property="foaf:familyName">familyName: Pataphou</p>
     <p property="foaf:birthday">birthday: 1978-09-03</p>
@@ -83,7 +83,7 @@
     </span>
 </div>
 
-<div class="patient-card" about="data#Patient3" typeof="localhost:8081/schema#Patient">
+<div class="card" about="data#Patient3" typeof="localhost:8081/schema#Patient">
     <h1 property="foaf:name">name: Robert</h1>
     <p property="foaf:familyName">familyName: De Niro</p>
     <p property="foaf:birthday">birthday: 1977-09-18</p>
@@ -109,7 +109,7 @@
     </span>
 </div>
 
-<div class="patient-card" about="data#Patient4" typeof="localhost:8081/schema#Patient">
+<div class="card" about="data#Patient4" typeof="localhost:8081/schema#Patient">
     <h1 property="foaf:name">name: Emma</h1>
     <p property="foaf:familyName">familyName: Annelie</p>
     <p property="foaf:birthday">birthday: 2002-03-19</p>
@@ -134,7 +134,7 @@
     </p>
 </div>
 
-<div class="patient-card" about="data#Patient5" typeof="localhost:8081/schema#Patient">
+<div class="card" about="data#Patient5" typeof="localhost:8081/schema#Patient">
     <h1 property="foaf:name">name: Léa</h1>
     <p property="foaf:familyName">familyName: Dupond</p>
     <p property="foaf:birthday">birthday: 2004-01-20</p>
@@ -159,7 +159,7 @@
     </p>
 </div>
 
-<div class="patient-card" about="data#Patient6" typeof="localhost:8081/schema#Patient">
+<div class="card" about="data#Patient6" typeof="localhost:8081/schema#Patient">
     <h1 property="foaf:name">name: Navah</h1>
     <p property="foaf:familyName">familyName: Killian</p>
     <p property="foaf:birthday">birthday: 2002-08-19</p>
@@ -184,7 +184,7 @@
     </p>
 </div>
 
-<div class="patient-card" about="data#Patient7" typeof="localhost:8081/schema#Patient">
+<div class="card" about="data#Patient7" typeof="localhost:8081/schema#Patient">
     <h1 property="foaf:name">name: Anna</h1>
     <p property="foaf:familyName">familyName: Belfore</p>
     <p property="foaf:birthday">birthday: 1968-03-12</p>
@@ -204,7 +204,7 @@
     </p>
 </div>
 
-<div class="patient-card" about="data#Patient8" typeof="localhost:8081/schema#Patient">
+<div class="card" about="data#Patient8" typeof="localhost:8081/schema#Patient">
     <h1 property="foaf:name">name: Johan</h1>
     <p property="foaf:familyName">familyName: Fliel</p>
     <p property="foaf:birthday">birthday: 1971-12-22</p>
@@ -225,7 +225,7 @@
     </p>
 </div>
 
-<div class="patient-card" about="data#Patient9" typeof="localhost:8081/schema#Patient">
+<div class="card" about="data#Patient9" typeof="localhost:8081/schema#Patient">
     <h1 property="foaf:name">name: Gaetan</h1>
     <p property="foaf:familyName">familyName: Renoir</p>
     <p property="foaf:birthday">birthday: 2018-03-16</p>
@@ -247,16 +247,17 @@
 
 <h1> Doctors </h1>
 
-<div class="doctor-card" about="data#cardio" typeof="localhost:8081/schema#Medecin">
+<div class="card" about="data#cardio" typeof="localhost:8081/schema#Medecin">
     <h1 property="foaf:name">name: Hadren</h1>
     <p property="foaf:familyName">familyName: Nyam</p>
     <p property="localhost:8081/schema#hasDoctorNumber">Doctor Number: 190</p>
-    <p property="localhost:8081/schema#specializedIn" resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17153">
+    <p property="localhost:8081/schema#specializedIn"
+       resource="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17153">
         specializedIn: Cardiologue
     </p>
 </div>
 
-<div class="doctor-card" about="data#orl" typeof="localhost:8081/schema#Medecin">
+<div class="card" about="data#orl" typeof="localhost:8081/schema#Medecin">
     <h1 property="foaf:name">name: Banar</h1>
     <p property="foaf:familyName">familyName: Camille</p>
     <p property="localhost:8081/schema#hasDoctorNumber">Doctor Number: 33</p>
@@ -265,7 +266,7 @@
     </p>
 </div>
 
-<div class="doctor-card" about="data#rhumat" typeof="localhost:8081/schema#Medecin">
+<div class="card" about="data#rhumat" typeof="localhost:8081/schema#Medecin">
     <h1 property="foaf:name">name: Laner</h1>
     <p property="foaf:familyName">familyName: Xavier</p>
     <p property="localhost:8081/schema#hasDoctorNumber">Doctor Number: 48</p>
@@ -274,9 +275,115 @@
     </p>
 </div>
 
-<h1> Case Reports </h1>
+<h1> Case Reports, Treatments & Follow Ups</h1>
 
+<div class="case-follow-up-container">
+    <div class="card" about="data#caseReport2" typeof="localhost:8081/schema#CaseReport">
+        <h1 property="hasCaseId">Case Report #2</h1>
+        <p property="isRegarding" resource="data#Patient2">Regarding: Patient2</p>
+        <p property="hasBeenWrittenBy" resource="data#cardio">Written By: Dr. Dr. Hadren Nyam</p>
+        <p property="wasWrittenOn">Written On: 2019-04-13</p>
+        <p property="symptomsDisplayed"
+           resource="http://ncit:C3117 http://ncit:C3258 http://ncit:C37943 http://ncit:C50635 http://ncit:C92801">
+            Symptoms Displayed: tension élevée, nausée, vertiges, perte de connaissance, fringales
+        </p>
+        <p property="diagnosis" resource="http://ncit:C38029">Diagnosis: Tachycardie</p>
+        <p property="supplementaryTests" resource="http://ncit:C168186">Supplementary Tests: electrocardiogramme</p>
+        <p property="givenTreatment" resource="data#coagulants2">Given Treatment: Coagulants</p>
+        <span property="followUp">
+        <span resource="data#followUp2 data#followUp3">Follow-Up #2</span>
+        <span resource="data#followUp3">, Follow-Up #3</span>
+    </span>
+    </div>
+    <div class="card" about="data#coagulants2" typeof="localhost:8081/schema#Drug">
+        <h1>Treatment</h1>
+        <p property="medication" resource="ncit:C943">Medication: Vitamine K</p>
+        <p property="takesPerDay">Takes Per Day: 1</p>
+        <p property="daysBetweenTakes" datatype="xs:dayTimeDuration">Days Between Takes: P0D</p>
+        <p property="complementaryInstructions" lang="en">Complementary Instructions: morning, for life</p>
+    </div>
+    <div class="card" about="data#followUp2" typeof="localhost:8081/schema#FollowUp">
+        <h1 property="hasCaseId">Follow-Up #2</h1>
+        <p property="isRegarding" resource="data#Patient2">Regarding: Patient2</p>
+        <p property="hasBeenWrittenBy" resource="data#cardio">Written By: Dr. Dr. Hadren Nyam</p>
+        <p property="wasWrittenOn">Written On: 2019-07-22</p>
+        <p property="patientStatus" resource="http://ncit:C38029">
+            Patient Status: In recovery
+        </p>
+        <p property="isPatientHealthy" resource="http://www.w3.org/2001/XMLSchema#boolean">Is Patient Healthy: false</p>
+    </div>
+    <div class="card" about="data#followUp3" typeof="localhost:8081/schema#FollowUp">
+        <h1 property="hasCaseId">Follow-Up #3</h1>
+        <p property="isRegarding" resource="data#Patient2">Regarding: Patient2</p>
+        <p property="hasBeenWrittenBy" resource="data#cardio">Written By: Dr. Hadren Nyam</p>
+        <p property="wasWrittenOn">Written On: 2019-08-22</p>
+        <p property="patientStatus" resource="http://ncit:C38029">
+            Patient Status: Well, stable
+        </p>
+        <p property="isPatientHealthy" resource="http://www.w3.org/2001/XMLSchema#boolean">Is Patient Healthy: true</p>
+    </div>
+</div>
 
+<div class="case-follow-up-container">
+    <div class="card" about="data#caseReport4" typeof="localhost:8081/schema#CaseReport">
+        <h1 property="hasCaseId">Case Report #4</h1>
+        <p property="isRegarding" resource="data#Patient4">Regarding: Patient4</p>
+        <p property="hasBeenWrittenBy" resource="data#orl">Written by: Dr. Banar Camille</p>
+        <p property="wasWrittenOn">Written on: 2022-03-03</p>
+        <p property="symptomsDisplayed">
+            Symptoms: encombrement bronchiques, infections respiratoires, problèmes digestifs
+        </p>
+        <p property="diagnosis" resource="ncit:C2975">Diagnosis: Mucoviscidose</p>
+        <p property="supplementaryTests" resource="ncit:C114184">Supplementary Tests: Irm</p>
+        <p property="givenTreatment" resource="data#balneo1">Treatment: Balnéo thérapie</p>
+        <p property="followUp" resource="data#followUp5">Follow-Up #5</p>
+    </div>
+    <div class="card" about="data#balneo1" typeof="localhost:8081/schema#MedicalActivity">
+        <h1 property="hasCaseId">Treatment</h1>
+        <p property="activityType" resource="ncit:C21117">Activity Type: Balnéo thérapie</p>
+        <p property="durationPeriod" datatype="xs:dayTimeDuration">Duration: P180D</p>
+        <p property="numberVisits">Number of Visits: 30</p>
+        <p property="shouldBePerformed" lang="en">Should be performed: light exercise + breathing</p>
+    </div>
+    <div class="card" about="data#followUp5" typeof="localhost:8081/schema#FollowUp">
+        <h1 property="hasCaseId">Follow up #5</h1>
+        <p property="isRegarding" resource="data#Patient4">Regarding: Patient4</p>
+        <p property="hasBeenWrittenBy" resource="data#orl">Written by: Dr. Banar Camille</p>
+        <p property="wasWrittenOn">Written on: 2019-07-09</p>
+        <p property="patientStatus" lang="en">Patient Status: In recovery</p>
+        <p property="isPatientHealthy">Patient is not healthy</p>
+    </div>
+</div>
+
+<div class="case-follow-up-container">
+    <div class="card" about="data#caseReport8" typeof="localhost:8081/schema#CaseReport">
+        <h1>Case Report #8</h1>
+        <p property="isRegarding" resource="data#Patient8">Regarding: Patient 8</p>
+        <p property="hasBeenWrittenBy" resource="data#rhumat">Written By: Dr. Laner Xavier</p>
+        <p property="wasWrittenOn" datatype="xs:date">Written On: 2021-09-28</p>
+        <p property="symptomsDisplayed" resource="ncit:C143637 ncit:C26778 ncit:C38644">Symptoms Displayed: Inflammation Larynx, fractures multiples, douleur osseuse</p>
+        <p property="diagnosis" resource="ncit:C58396">Diagnosis: Ostéoporose</p>
+        <p property="supplementaryTests" resource="ncit:C114184">Supplementary Tests: Radio</p>
+        <p property="givenTreatment" resource="data#kine">Given Treatment: Balnéo thérapie</p>
+        <p property="followUp" resource="data#followUp8">Follow-up #8</p>
+    </div>
+
+    <div class="card" about="data#kine" typeof="localhost:8081/schema#MedicalActivity">
+        <h1>Treatment</h1>
+        <p property="activityType" resource="ncit:C15302">Activity Type: Balnéo thérapie</p>
+        <p property="durationPeriod" datatype="xs:dayTimeDuration">Duration Period: P150D</p>
+        <p property="numberVisits">Number of Visits: 30</p>
+        <p property="shouldBePerformed" lang="en">Should be Performed: Mobilization and massages</p>
+    </div>
+
+    <div class="card" about="data#followUp8" typeof="localhost:8081/schema#Follow-Up">
+        <h1>Follow-Up #8</h1>
+        <p property="isRegarding" resource="data#Patient8">Regarding: Patient 8</p>
+        <p property="hasBeenWrittenBy" resource="data#rhumat">Written By: Dr. Laner Xavier</p>
+        <p property="wasWrittenOn" datatype="xs:date">Written On: 2021-12-28</p>
+        <p property="isPatientHealthy">Patient Status: En bonne santé</p>
+    </div>
+</div>
 
 </body>
 </html>

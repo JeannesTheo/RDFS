@@ -67,8 +67,8 @@
     :isRegarding      <Patient2> ;
     :hasBeenWrittenBy <cardio> ;
     :wasWrittenOn     "2019-07-22"^^xs:date ;
-    :patientStatus    "Bien, stable"@fr, "Well, stable"@en ;
-    :isPatientHealthy true .
+    :patientStatus    "En cours de guérison"@fr, "In recovery"@en ;
+    :isPatientHealthy false .
 
 <followUp3>
     a                 :Follow-Up ;
