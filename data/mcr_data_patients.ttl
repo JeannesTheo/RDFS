@@ -61,7 +61,7 @@
     :hasPostalCode           "75008" ; #Paris
     :hasSecuritySocialNumber "2265189370246" ;
     :pre-existingCondition   ncit:C3283, ncit:C26747, ncit:C172310 ; #Obesité, Diabetes Type 2, cat allergy
-    :hasBeenAffectedBy       <malaise>, <essouflement>, <tendinite> .
+    :hasBeenAffectedBy       <malaise2>, <essouflement>, <tendinite> .
 
 <Patient3>
     a                        :Patient ;
