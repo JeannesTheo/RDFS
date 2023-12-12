@@ -8,26 +8,26 @@
 
 @prefix ncit:   <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
 
-@prefix :       <localhost:8081/schema#> .
-@base <localhost:8081/data#>.
+@prefix :       <http://td-projet-sparql/schema#> .
+@base <http://td-projet-sparql/data>.
 
 <cardio>
     a                :Medecin ;
     foaf:name        "Hadren" ;
     foaf:familyName  "Nyam" ;
-    :hasDoctorNumber "190" ;
+    :hasDoctorNumber 190 ;
     :specializedIn   ncit:C17153 . #Cardiologue
 
 <orl>
     a                :Medecin ;
     foaf:name        "Banar" ;
     foaf:familyName  "Camille" ;
-    :hasDoctorNumber "33" ;
+    :hasDoctorNumber 33 ;
     :specializedIn   ncit:C16943 . # ORL
 
 <rhumat>
     a                :Medecin ;
     foaf:name        "Laner" ;
     foaf:familyName  "Xavier" ;
-    :hasDoctorNumber "48" ;
+    :hasDoctorNumber 48 ;
     :specializedIn   ncit:C17099 . # Rhumatologue
