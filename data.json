@@ -111,6 +111,9 @@
     "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38644"
   },
   {
+    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C4679"
+  },
+  {
     "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C50491"
   },
   {
@@ -142,9 +145,6 @@
   },
   {
     "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C943"
-  },
-  {
-    "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#ncit:97141"
   },
   {
     "@id": "localhost:8081/Patient1",
@@ -260,7 +260,7 @@
     ],
     "localhost:8081/schema#hasPostalCode": [
       {
-        "@value": "75008"
+        "@value": "75001"
       }
     ],
     "localhost:8081/schema#hasSecuritySocialNumber": [
@@ -281,7 +281,7 @@
     ],
     "localhost:8081/schema#hasBeenAffectedBy": [
       {
-        "@id": "localhost:8081/malaise"
+        "@id": "localhost:8081/malaise2"
       },
       {
         "@id": "localhost:8081/essouflement"
@@ -426,6 +426,9 @@
     "localhost:8081/schema#knownHereditaryCondition": [
       {
         "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747"
       }
     ]
   },
@@ -446,7 +449,7 @@
     ],
     "http://xmlns.com/foaf/0.1/birthday": [
       {
-        "@value": "2002-01-20",
+        "@value": "2004-01-20",
         "@type": "http://www.w3.org/2001/XMLSchema#date"
       }
     ],
@@ -637,6 +640,11 @@
     "localhost:8081/schema#hasBeenAffectedBy": [
       {
         "@id": "localhost:8081/tendinite1"
+      }
+    ],
+    "localhost:8081/schema#knownHereditaryCondition": [
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26747"
       }
     ]
   },
@@ -1203,6 +1211,9 @@
     "localhost:8081/schema#diagnosis": [
       {
         "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2975"
+      },
+      {
+        "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C4679"
       }
     ],
     "localhost:8081/schema#supplementaryTests": [
@@ -1626,17 +1637,17 @@
     ],
     "localhost:8081/schema#patientStatus": [
       {
-        "@value": "Bien, stable",
+        "@value": "En cours de guérison",
         "@language": "fr"
       },
       {
-        "@value": "Well, stable",
+        "@value": "In recovery",
         "@language": "en"
       }
     ],
     "localhost:8081/schema#isPatientHealthy": [
       {
-        "@value": true
+        "@value": false
       }
     ]
   },
@@ -1938,9 +1949,6 @@
     ]
   },
   {
-    "@id": "localhost:8081/malaise"
-  },
-  {
     "@id": "localhost:8081/malaise1",
     "@type": [
       "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C3832"
@@ -2085,7 +2093,7 @@
   {
     "@id": "localhost:8081/tendinite",
     "@type": [
-      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#ncit:97141"
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#97141"
     ],
     "http://purl.org/dc/terms/date": [
       {
@@ -2097,7 +2105,7 @@
   {
     "@id": "localhost:8081/tendinite1",
     "@type": [
-      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#ncit:97141"
+      "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#97141"
     ],
     "http://purl.org/dc/terms/date": [
       {
