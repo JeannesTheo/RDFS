@@ -10,7 +10,6 @@
 
 @prefix :       <http://td-projet-sparql/schema#> .
 @base <http://td-projet-sparql/data>.
-
 <caseReport1>
     a                   :CaseReport ;
     :hasCaseId          "1" ;
@@ -197,6 +196,15 @@
     :wasWrittenOn     "2022-08-30"^^xs:date ;
     :patientStatus    "L'etat stagne"@fr, "Stagnation"@en ;
     :isPatientHealthy false .
+
+<caseReport7B>
+    a                   :CaseReport ;
+    :hasCaseId          "7" ;
+    :isRegarding        <Patient7> ;
+    :hasBeenWrittenBy   <orl> ;
+    :wasWrittenOn       "2022-05-27"^^xs:date ;
+    :symptomsDisplayed  ncit:C143637; #Inflammation Larynx
+    :diagnosis          ncit:C51221 . #Angine
 
 <caseReport8>
     a                   :CaseReport ;

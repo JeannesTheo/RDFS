@@ -5,7 +5,6 @@
 @prefix dc:   <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-
 @prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
 @base <http://td-projet-sparql/schema> .
 
@@ -48,10 +47,10 @@
     rdfs:subClassOf <Gender> .
 
 <hasSex>
-    a            owl:ObjectProperty ;
-    rdfs:domain  foaf:Person ;
-    rdfs:range   <Gender> ;
-    rdfs:seeAlso ncit:C17357, ncit:C28421 ;
+    a               owl:ObjectProperty ;
+    rdfs:domain     foaf:Person ;
+    rdfs:range      <Gender> ;
+    rdfs:seeAlso    ncit:C17357, ncit:C28421 ;
     skos:prefLabel  "has Sex"@en ;
     skos:altLabel   "est de sexe"@fr ;
     skos:definition "define the sex, as physical attributes, of a person"@en,
@@ -102,16 +101,18 @@
     skos:definition "Issue that had affected a patient in the past"@en,
                     "Problème ayant affecté le patient a un moment donné"@fr .
 
-<Affection> a rdfs:Class ;
+<Affection>
+    a            rdfs:Class ;
     rdfs:comment "An affection, either a disease or an issue"@en,
                  "Une affection, qui peut etre une maladie ou un problème"@fr ;
     rdfs:label   "Affection"@en, "Affection"@fr .
 
-<typeAffection> a owl:ObjectProperty ;
-    rdfs:domain    <Affection> ;
-    rdfs:range     ncit:C7057 ;
-    skos:prefLabel "type of affection"@en ;
-    skos:altLabel  "type d'affection"@fr ;
+<typeAffection>
+    a               owl:ObjectProperty ;
+    rdfs:domain     <Affection> ;
+    rdfs:range      ncit:C7057 ;
+    skos:prefLabel  "type of affection"@en ;
+    skos:altLabel   "type d'affection"@fr ;
     skos:definition "The type of affection"@en, "Le type d'affection"@fr .
 
 
@@ -146,26 +147,80 @@
 <specializedIn>
     a               owl:ObjectProperty ;
     rdfs:domain     <Medecin> ;
-    rdfs:range      ncit:C17153 ; # Medical Specialty
+    rdfs:range      <MedicalSpecialty> ; # Medical Specialty
     skos:prefLabel  "specializedIn"@en ;
     skos:altLabel   "spécialisé en"@fr ;
     skos:definition "The specialization of the medecin"@en, "La spécialisation du médecin"@fr ;
     skos:example    ncit:C86055 . # Cardiology
 
+<MedicalSpecialty>
+    a              rdfs:Class, skos:Concept ;
+    skos:prefLabel "A medical specialty"@en ;
+    skos:altLabel  "Une spécialité médicale"@fr ;
+    skos:narrower  <Chirugie>, <MedecineGenerale> .
+
+<Chirugie>
+           rdfs:subClassOf <MedicalSpecialty> ;
+           skos:prefLabel  "Surgery"@en ;
+           skos:altLabel   "Chirurgie"@fr ;
+           skos:definition "The study of operative procedures"@en, "L'étude des procédures opératoires"@fr .
+
+<MedecineGenerale> # General Medicine
+                   rdfs:subClassOf <MedicalSpecialty> ;
+                   skos:prefLabel  "General Medicine"@en ;
+                   skos:altLabel   "Médecine Générale"@fr ;
+                   skos:definition "The branch of medicine that deals with the diagnosis and (nonsurgical) treatment of diseases of the internal organs (especially in adults)"@en,
+                                   "La branche de la médecine qui traite du diagnostic et du traitement (non chirurgical) des maladies des organes internes (en particulier chez les adultes)"@fr .
+
+<Cardiologie>
+    rdfs:subClassOf <MedicalSpecialty> ;
+    skos:prefLabel  "Cardiology"@en ;
+    skos:altLabel   "Cardiologie"@fr ;
+    skos:definition "The study of the heart and its functions in health and disease"@en,
+                    "L'étude du coeur et de ses fonctions dans la santé et la maladie"@fr ;
+    skos:broader    <MedecineGenerale> .
+
+<MedecineRespiratoire> # Respiratory Medicine
+                       rdfs:subClassOf <MedicalSpecialty> ;
+                       skos:prefLabel  "Respiratory Medicine"@en ;
+                       skos:altLabel   "Medecine Respiratoire"@fr ;
+                       skos:definition "The study of the respiratory system"@en, "L'étude du système respiratoire"@fr .
+
+<SpecialiteORL> # Otorhinolaryngology
+                rdfs:subClassOf <MedicalSpecialty> ;
+                skos:prefLabel  "Otorhinolaryngology"@en ;
+                skos:altLabel   "Otorhinolaryngologie"@fr ;
+                skos:definition "The study of the ear, nose, and throat"@en,
+                                "L'étude de l'oreille, du nez et de la gorge"@fr ;
+                skos:broader    <MedecineRespiratoire> .
+
+<SpecialiteRhumatologie> # Rheumatology
+                         rdfs:subClassOf <MedicalSpecialty> ;
+                         skos:prefLabel  "Rheumatology"@en ;
+                         skos:altLabel   "Rhumatologie"@fr ;
+                         skos:definition "The study of rheumatism, arthritis, and other disorders of the joints, muscles, and ligaments"@en,
+                                         "L'étude du rhumatisme, de l'arthrite et d'autres troubles des articulations, des muscles et des ligaments"@fr ;
+                            skos:broader    <MedecineGenerale>, <MedecineRespiratoire> .
+
+<Document>
+    a            rdfs:Class ;
+    rdfs:comment "A document"@en, "Un document"@fr ;
+    rdfs:label   "Document"@en, "Document"@fr .
+
 <Follow-Up>
-    a                 dc:Document ;
+    rdfs:subClassOf   <Document> ;
     rdfs:label        "Follow-Up"@en, "Suivi"@fr ;
     rdfs:comment      "The follow-up of the patien, after a case report"@en,
                       "Un point sur l'etat du patient, après un rapport médical"@fr ;
     dc:isReferencedBy <CaseReport> .
 
 <CaseReport>
-    a          dc:Document ;
-    rdfs:label "Case Report"@en, "Rapport médical"@fr .
+    rdfs:subClassOf <Document> ;
+    rdfs:label      "Case Report"@en, "Rapport médical"@fr .
 
 <hasCaseId>
     rdfs:subPropertyOf dc:identifier ;
-    rdfs:domain        ncit:C19498 ;
+    rdfs:domain        <CaseReport> ;
     rdfs:range         xs:decimal ;
     skos:prefLabel     "has Id"@en ;
     skos:altLabel      "a pour numéro de rapport"@fr ;
@@ -181,7 +236,8 @@
     skos:definition "The diagnosis of the patient"@en, "Le diagnostic du patient"@fr ;
     rdfs:seeAlso    <Patient> .
 
-<hasBeenWrittenBy> a owl:ObjectProperty ;
+<hasBeenWrittenBy>
+    a                  owl:ObjectProperty ;
     rdfs:subPropertyOf dc:created ;
     rdfs:domain        <Patient> ;
     rdfs:range         <Medecin> ;
@@ -190,9 +246,12 @@
     skos:definition    "The case report has been written by the medecin"@en,
                        "Le rapport médical a été écrit par le médecin"@fr .
 
+<hasBeenRedactedBy>
+    owl:equivalentProperty <hasBeenWrittenBy> .
+
 <isRegarding>
     rdfs:subPropertyOf dc:subject ;
-    rdfs:domain        ncit:C19498 ;
+    rdfs:domain        dc:document ;
     rdfs:range         <Patient> ;
     skos:prefLabel     "is regarding"@en ;
     skos:altLabel      "concerne"@fr ;
@@ -229,7 +288,7 @@
 
 <wasWrittenOn>
     rdfs:subPropertyOf dc:date ;
-    rdfs:domain        ncit:C19498 ; # Document
+    rdfs:domain        <Document> ; # Document
     rdfs:range         xs:dateTime ;
     skos:prefLabel     "was written on"@en ;
     skos:altLabel      "a été écrit le"@fr ;
