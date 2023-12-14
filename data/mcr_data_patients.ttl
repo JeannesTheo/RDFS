@@ -8,166 +8,171 @@
 
 @prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
 
-@prefix :     <http://td-projet-sparql/schema#> .
-@base <http://td-projet-sparql/data> .
+@prefix s:    <http://td-projet-sparql/schema#> .
+@prefix :     <http://td-projet-sparql/data#> .
 
-<Patient1>
-    a                        :Patient ;
-    foaf:name                "François" ;
-    foaf:familyName          "Deville" ;
-    foaf:birthday            "1982-09-08"^^xs:date ;
-    :weight                  "100"^^xs:integer ;
-    :height                  "179"^^xs:integer ;
-    :hasSex                  :Male ; #Male
-    :livesInCountry          ncit:C16592 ; #France
-    :hasPostalCode           "75001" ; #Paris
-    :hasSecuritySocialNumber "0672153498123" ;
-    :pre-existingCondition   ncit:C3283, ncit:C26747, ncit:C172316 ; #Obesité, Diabetes Type 2, Fruit Allergy
-    :hasBeenAffectedBy       [ a          :Affection ;
-                               :typeAffection ncit:C3832 ;
-                               dc:date    "2015-06-16" ] ;
-    :hasBeenAffectedBy       [ a          :Affection ;
-                               :typeAffection ncit:C157806 ; #cardiac Surgery
-                               dc:date    "2015-07-03"^^xs:date ] . #Fruit Allergy
+:Patient1
+    a                         s:Patient ;
+    foaf:name                 "François" ;
+    foaf:familyName           "Deville" ;
+    foaf:birthday             "1982-09-08"^^xs:date ;
+    s:brotherOrSister            :orl ;
+    s:hasParent               :Patient5 ;
+    s:weight                  "100"^^xs:integer ;
+    s:height                  "179"^^xs:integer ;
+    s:hasSex                  s:Male ; #Male
+    s:livesInCountry          ncit:C16592 ; #France
+    s:hasPostalCode           "75001" ; #Paris
+    s:hasSocialSecurityNumber "0672153498123" ;
+    s:pre-existingCondition   ncit:C3283, ncit:C26747, ncit:C172316 ; #Obesité, Diabetes Type 2, Fruit Allergy
+    s:hasBeenAffectedBy       [ a               s:Affection ;
+                                s:typeAffection ncit:C3832 ;
+                                dc:date         "2015-06-16" ] ;
+    s:hasBeenAffectedBy       [ a               s:Affection ;
+                                s:typeAffection ncit:C157806 ; #cardiac Surgery
+                                dc:date         "2015-07-03"^^xs:date ] . #Fruit Allergy
 
-<Patient2>
-    a                        :Patient ;
-    foaf:name                "Bernard" ;
-    foaf:familyName          "Pataphou" ;
-    foaf:birthday            "1978-09-03"^^xs:date ;
-    :weight                  "92"^^xs:integer ;
-    :height                  "168"^^xs:integer ;
-    :hasSex                  :Male ; #Male
-    :livesInCountry          ncit:C16592 ; #France
-    :hasPostalCode           "75001" ; #Paris
-    :hasSecuritySocialNumber "2265189370246" ;
-    :pre-existingCondition   ncit:C3283, ncit:C26747, ncit:C172310 ; #Obesité, Diabetes Type 2, cat allergy
-    :hasBeenAffectedBy       [ a          :Affection ;
-                               :typeAffection ncit:C3832 ; #Malaise
-                               dc:date    "2017-08-16"^^xs:date ] ;
-    :hasBeenAffectedBy       [ a          :Affection ;
-                               :typeAffection ncit:C141592 ; #essouflement
-                               dc:date    "2016-08-16"^^xs:date ] ;
-    :hasBeenAffectedBy       [ a          :Affection ;
-                               :typeAffection ncit:C97141 ;
-                               dc:date    "2018-10-15"^^xs:date ] .
+:Patient2
+    a                         s:Patient ;
+    foaf:name                 "Bernard" ;
+    foaf:familyName           "Pataphou" ;
+    foaf:birthday             "1978-09-03"^^xs:date ;
+    s:weight                  "92"^^xs:integer ;
+    s:height                  "168"^^xs:integer ;
+    s:hasSex                  s:Male ; #Male
+    s:livesInCountry          ncit:C16592 ; #France
+    s:hasPostalCode           "75001" ; #Paris
+    s:hasSocialSecurityNumber "2265189370246" ;
+    s:pre-existingCondition   ncit:C3283, ncit:C26747, ncit:C172310 ; #Obesité, Diabetes Type 2, cat allergy
+    s:hasBeenAffectedBy       [ a               s:Affection ;
+                                s:typeAffection ncit:C3832 ; #Malaise
+                                dc:date         "2017-08-16"^^xs:date ] ;
+    s:hasBeenAffectedBy       [ a               s:Affection ;
+                                s:typeAffection ncit:C141592 ; #essouflement
+                                dc:date         "2016-08-16"^^xs:date ] ;
+    s:hasBeenAffectedBy       [ a               s:Affection ;
+                                s:typeAffection ncit:C97141 ;
+                                dc:date         "2018-10-15"^^xs:date ] .
 
-<Patient3>
-    a                        :Patient ;
-    foaf:name                "Robert" ;
-    foaf:familyName          "De Niro" ;
-    foaf:birthday            "1977-09-18"^^xs:date ;
-    :weight                  "89"^^xs:integer ;
-    :height                  "172"^^xs:integer ;
-    :hasSex                  :Male ; #Male
-    :livesInCountry          ncit:C16592 ; #France
-    :hasPostalCode           "75011" ; #Paris
-    :hasSecuritySocialNumber "0928347610583" ;
-    :pre-existingCondition   ncit:C3283, ncit:C26747, ncit:C172320 ; #Obesité, Diabetes Type 2, SeaFood Allergy
-    :hasBeenAffectedBy       [ a          :Affection ;
-                               :typeAffection ncit:C26777 ; #fracture poignet
-                               dc:date    "2016-08-16"^^xs:date ] .
+:Patient3
+    a                         s:Patient ;
+    foaf:name                 "Robert" ;
+    foaf:familyName           "De Niro" ;
+    foaf:birthday             "1977-09-18"^^xs:date ;
+    s:weight                  "89"^^xs:integer ;
+    s:height                  "172"^^xs:integer ;
+    s:hasSex                  s:Male ; #Male
+    s:livesInCountry          ncit:C16592 ; #France
+    s:hasPostalCode           "75011" ; #Paris
+    s:hasSocialSecurityNumber "0928347610583" ;
+    s:pre-existingCondition   ncit:C3283, ncit:C26747, ncit:C172320 ; #Obesité, Diabetes Type 2, SeaFood Allergy
+    s:hasBeenAffectedBy       [ a               s:Affection ;
+                                s:typeAffection ncit:C26777 ; #fracture poignet
+                                dc:date         "2016-08-16"^^xs:date ] .
 
-<Patient4>
-    a                         :Patient ;
-    foaf:name                 "Emma" ;
-    foaf:familyName           "Annelie" ;
-    foaf:birthday             "2002-03-19"^^xs:date ;
-    :weight                   "60"^^xs:integer ;
-    :height                   "172"^^xs:integer ;
-    :hasSex                   :Female ; #Female
-    :livesInCountry           ncit:C16592 ; #France
-    :hasPostalCode            "69002" ; #Lyon
-    :hasSecuritySocialNumber  "2306958274512" ;
-    :pre-existingCondition    ncit:C28397, ncit:C145003 ; #Asthme, Apnée du sommeil
-    :hasBeenAffectedBy        [ a          :Affection ;
-                                :typeAffection ncit:C78599 ; #rhinite
-                                dc:date    "2016-09-22"^^xs:date ] ;
-    :knownHereditaryCondition ncit:C2975, ncit:C26747 . #Mucoviscidose
+:Patient4
+    a                          s:Patient ;
+    foaf:name                  "Emma" ;
+    foaf:familyName            "Annelie" ;
+    foaf:birthday              "2002-03-19"^^xs:date ;
+    s:hasParent                :Patient5 ;
+    s:weight                   "60"^^xs:integer ;
+    s:height                   "172"^^xs:integer ;
+    s:hasSex                   s:Female ; #Female
+    s:livesInCountry           ncit:C16592 ; #France
+    s:hasPostalCode            "69002" ; #Lyon
+    s:hasSocialSecurityNumber  "2306958274512" ;
+    s:pre-existingCondition    ncit:C28397, ncit:C145003 ; #Asthme, Apnée du sommeil
+    s:hasBeenAffectedBy        [ a               s:Affection ;
+                                 s:typeAffection ncit:C78599 ; #rhinite
+                                 dc:date         "2016-09-22"^^xs:date ] ;
+    s:knownHereditaryCondition ncit:C2975, ncit:C26747 . #Mucoviscidose
 
-<Patient5>
-    a                         :Patient ;
-    foaf:name                 "Léa" ;
-    foaf:familyName           "Dupond" ;
-    foaf:birthday             "2004-01-20"^^xs:date ;
-    :weight                   "50"^^xs:integer ;
-    :height                   "160"^^xs:integer ;
-    :hasSex                   :Female ; # Female
-    :livesInCountry           ncit:C16592 ; # France
-    :hasPostalCode            "69004" ; # Paris
-    :hasSecuritySocialNumber  "2387561092834" ;
-    :pre-existingCondition    ncit:C28397, ncit:C145003 ; #Asthme, Apnée du sommeil
-    :hasBeenAffectedBy        [ a          :Affection ;
-                                :typeAffection ncit:C78599 ; #rhinite
-                                dc:date    "2018-10-15"^^xs:date ] ;
-    :hasBeenAffectedBy        [ a          :Affection ;
-                                :typeAffection ncit:C141592 ; #essouflement
-                                dc:date    "2018-10-15"^^xs:date ] ;
-    :knownHereditaryCondition ncit:C2975 . #Mucoviscidose
+:Patient5
+    a                          s:Patient ;
+    foaf:name                  "Léa" ;
+    foaf:familyName            "Dupond" ;
+    foaf:birthday              "1954-01-20"^^xs:date ;
+    s:hasChild                  :Patient1;
+    s:weight                   "50"^^xs:integer ;
+    s:height                   "160"^^xs:integer ;
+    s:hasSex                   s:Female ; # Female
+    s:livesInCountry           ncit:C16592 ; # France
+    s:hasPostalCode            "69004" ; # Paris
+    s:hasSocialSecurityNumber  "2387561092834" ;
+    s:pre-existingCondition    ncit:C28397, ncit:C145003 ; #Asthme, Apnée du sommeil
+    s:hasBeenAffectedBy        [ a               s:Affection ;
+                                 s:typeAffection ncit:C78599 ; #rhinite
+                                 dc:date         "2018-10-15"^^xs:date ] ;
+    s:hasBeenAffectedBy        [ a               s:Affection ;
+                                 s:typeAffection ncit:C141592 ; #essouflement
+                                 dc:date         "2018-10-15"^^xs:date ] ;
+    s:knownHereditaryCondition ncit:C2975 . #Mucoviscidose
 
-<Patient6>
-    a                         :Patient ;
-    foaf:name                 'Navah' ;
-    foaf:familyName           'Killian' ;
-    foaf:birthday             '2002-08-19'^^xs:date ;
-    :weight                   '70'^^xs:integer ;
-    :height                   '172'^^xs:integer ;
-    :hasSex                   :Male ;
-    :livesInCountry           ncit:C16592 ;
-    :hasPostalCode            '13001' ;
-    :hasSecuritySocialNumber  '0152093465827' ;
-    :hasBeenAffectedBy        [ a          :Affection ;
-                                :typeAffection ncit:C78599 ;
-                                dc:date    "2018-03-07"^^xs:date ] ;
-    :hasBeenAffectedBy        [ a          :Affection ;
-                                :typeAffection ncit:C35153 ;
-                                dc:date    "2016-05-06"^^xs:date ] ;
-    :pre-existingCondition    ncit:C28397, ncit:C145003 ; #Asthme, Apnée du sommeil
-    :knownHereditaryCondition ncit:C2975 . #Mucoviscidose
+:Patient6
+    a                          s:Patient ;
+    foaf:name                  'Navah' ;
+    foaf:familyName            'Killian' ;
+    foaf:birthday              '2002-08-19'^^xs:date ;
+    s:weight                   '70'^^xs:integer ;
+    s:height                   '172'^^xs:integer ;
+    s:hasSex                   s:Male ;
+    s:livesInCountry           ncit:C16592 ;
+    s:hasPostalCode            '13001' ;
+    s:hasSocialSecurityNumber  '0152093465827' ;
+    s:hasBeenAffectedBy        [ a               s:Affection ;
+                                 s:typeAffection ncit:C78599 ;
+                                 dc:date         "2018-03-07"^^xs:date ] ;
+    s:hasBeenAffectedBy        [ a               s:Affection ;
+                                 s:typeAffection ncit:C35153 ;
+                                 dc:date         "2016-05-06"^^xs:date ] ;
+    s:pre-existingCondition    ncit:C28397, ncit:C145003 ; #Asthme, Apnée du sommeil
+    s:knownHereditaryCondition ncit:C2975 . #Mucoviscidose
 
-<Patient7>
-    a                         :Patient ;
-    foaf:name                 "Anna" ;
-    foaf:familyName           "Belfore" ;
-    foaf:birthday             "1968-03-12"^^xs:date ;
-    :weight                   "58"^^xs:integer ;
-    :height                   "157"^^xs:integer ;
-    :hasSex                   :Female ;
-    :livesInCountry           ncit:C16592 ;
-    :hasPostalCode            "75013" ;
-    :hasSecuritySocialNumber  "2245739810263" ;
-    :pre-existingCondition    ncit:C172310 ; # Tendinopathies
-    :hasBeenAffectedBy        [ a          :Affection ;
-                                :typeAffection ncit:C97141 ; # tendinite1
-                                dc:date    "2018-10-15"^^xs:date ] ; ;
-    :knownHereditaryCondition ncit:C26747 .
+:Patient7
+    a                          s:Patient ;
+    foaf:name                  "Anna" ;
+    foaf:familyName            "Belfore" ;
+    s:hasChild                   :Patient6 ;
+    foaf:birthday              "1968-03-12"^^xs:date ;
+    s:weight                   "58"^^xs:integer ;
+    s:height                   "157"^^xs:integer ;
+    s:hasSex                   s:Female ;
+    s:livesInCountry           ncit:C16592 ;
+    s:hasPostalCode            "75013" ;
+    s:hasSocialSecurityNumber  "2245739810263" ;
+    s:pre-existingCondition    ncit:C172310 ; # Tendinopathies
+    s:hasBeenAffectedBy        [ a               s:Affection ;
+                                 s:typeAffection ncit:C97141 ; # tendinite1
+                                 dc:date         "2018-10-15"^^xs:date ] ;
+    s:knownHereditaryCondition ncit:C26747 .
 
-<Patient8>
-    a                        :Patient ;
-    foaf:name                "Johan" ;
-    foaf:familyName          "Fliel" ;
-    foaf:birthday            "1971-12-22"^^xs:date ;
-    :weight                  "80"^^xs:integer ;
-    :height                  "180"^^xs:integer ;
-    :hasSex                  :Male ; # Male
-    :livesInCountry          ncit:C16592 ; # France
-    :hasPostalCode           "75116" ; # Paris
-    :hasSecuritySocialNumber "0831245675302" ;
-    :pre-existingCondition   ncit:C26747, ncit:C5357 ; # Diabetes Type 2, tumeur au coeur
-    :hasBeenAffectedBy       [ a          :Affection ;
-                               :typeAffection ncit:C26778 ;
-                               dc:date    "2018-10-15"^^xs:date ] .
+:Patient8
+    a                         s:Patient ;
+    foaf:name                 "Johan" ;
+    foaf:familyName           "Fliel" ;
+    foaf:birthday             "1971-12-22"^^xs:date ;
+    s:weight                  "80"^^xs:integer ;
+    s:height                  "180"^^xs:integer ;
+    s:hasSex                  s:Male ; # Male
+    s:livesInCountry          ncit:C16592 ; # France
+    s:hasPostalCode           "75116" ; # Paris
+    s:hasSocialSecurityNumber "0831245675302" ;
+    s:pre-existingCondition   ncit:C26747, ncit:C5357 ; # Diabetes Type 2, tumeur au coeur
+    s:hasBeenAffectedBy       [ a               s:Affection ;
+                                s:typeAffection ncit:C26778 ;
+                                dc:date         "2018-10-15"^^xs:date ] .
 
-<Patient9>
-    a                         :Patient ;
-    foaf:name                 "Gaetan" ;
-    foaf:familyName           "Renoir" ;
-    foaf:birthday             "2018-03-16"^^xs:date ;
-    :weight                   "38"^^xs:integer ;
-    :hasSex                  :Male ; # Male
-    :height                   "125"^^xs:integer ;
-    :livesInCountry           ncit:C16592 ; # France
-    :hasPostalCode            "75011" ; # Paris
-    :hasSecuritySocialNumber  "0831245675302" ;
-    :pre-existingCondition    ncit:C28397, ncit:C172310 ; # Asthme, Allergy aux chats
-    :knownHereditaryCondition ncit:C2975 . #Mucoviscidose
+:Patient9
+    a                          s:Patient ;
+    foaf:name                  "Gaetan" ;
+    foaf:familyName            "Renoir" ;
+    foaf:birthday              "2018-03-16"^^xs:date ;
+    s:weight                   "38"^^xs:integer ;
+    s:hasSex                   s:Male ; # Male
+    s:height                   "125"^^xs:integer ;
+    s:livesInCountry           ncit:C16592 ; # France
+    s:hasPostalCode            "75011" ; # Paris
+    s:hasSocialSecurityNumber  "0831245675302" ;
+    s:pre-existingCondition    ncit:C28397, ncit:C172310 ; # Asthme, Allergy aux chats
+    s:knownHereditaryCondition ncit:C2975 . #Mucoviscidose

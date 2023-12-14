@@ -6,13 +6,14 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
-@base <http://td-projet-sparql/schema> .
+@prefix s:    <http://td-projet-sparql/schema#> .
 
-<Patient>
+s:Patient
     rdfs:subClassOf foaf:Person ;
-    foaf:status     ncit:C16960 .
+    foaf:status     ncit:C16960 ;
+    owl:hasKey      s:hasSocialSecurityNumber .
 
-<weight>
+s:weight
     a               owl:DatatypeProperty ;
     rdfs:domain     foaf:Person ;
     rdfs:range      xs:float ;
@@ -24,7 +25,7 @@
                     "Le poids de la personne est mesurée en kilogrammes"@fr ;
     ncit:P355       "kg" . # Unit of measurement
 
-<height>
+s:height
     a               owl:DatatypeProperty ;
     rdfs:domain     foaf:Person ;
     rdfs:range      xs:float ;
@@ -37,36 +38,39 @@
     ncit:P355       "cm"@en .
 
 
-<Gender>
-    a rdfs:Class .
+s:Male
+    rdfs:subClassOf s:Gender .
 
-<Male>
-    rdfs:subClassOf <Gender> .
+s:Female
+    rdfs:subClassOf s:Gender .
 
-<Female>
-    rdfs:subClassOf <Gender> .
+s:Other
+    rdfs:subClassOf s:Gender .
 
-<hasSex>
+s:Gender
+    a                   rdfs:Class ;
+    owl:disjointUnionOf ( s:Male s:Female s:Other ) .
+
+s:hasSex
     a               owl:ObjectProperty ;
     rdfs:domain     foaf:Person ;
-    rdfs:range      <Gender> ;
+    rdfs:range      s:Gender ;
     rdfs:seeAlso    ncit:C17357, ncit:C28421 ;
     skos:prefLabel  "has Sex"@en ;
     skos:altLabel   "est de sexe"@fr ;
     skos:definition "define the sex, as physical attributes, of a person"@en,
                     "définie le sexe biologique d'une personne, en fonction de ses attributs biologiques"@fr .
 
-
-<hasSecuritySocialNumber>
-    a               owl:DatatypeProperty ;
-    rdfs:domain     <Patient> ;
+s:hasSocialSecurityNumber
+    a               owl:DatatypeProperty, owl:InverseFunctionalProperty, owl:FunctionalProperty ;
+    rdfs:domain     s:Patient ;
     rdfs:range      xs:string ;
     skos:prefLabel  "has Security Social Number"@en ;
     skos:altLabel   "a pour numéro de sécurité sociale"@fr, ""@en ;
     skos:definition "The security social number of the patient"@en, "Le numéro de sécurité sociale du patient"@fr ;
     skos:example    "1234567890123" ; .
 
-<livesInCountry>
+s:livesInCountry
     a               owl:DatatypeProperty ;
     rdfs:domain     foaf:Person ;
     rdfs:range      ncit:C176365 ; # Country of permanent residence
@@ -75,7 +79,7 @@
     skos:definition "The country where the person lives"@en, "Le pays où la personne vit"@fr ;
     skos:example    ncit:C16592 . # France
 
-<hasPostalCode>
+s:hasPostalCode
     a              owl:DatatypeProperty ;
     rdfs:domain    foaf:Person ;
     rdfs:range     xs:string ;
@@ -83,7 +87,7 @@
     skos:altLabel  "a pour code postal"@fr ;
     skos:example   "06410" .
 
-<pre-existingCondition>
+s:pre-existingCondition
     a               owl:ObjectProperty ;
     rdfs:domain     foaf:Person ;
     rdfs:range      ncit:C7057 ; # Disease or Issue
@@ -93,192 +97,200 @@
     skos:definition "A pre-existing condition, that reoccuring or never leaving"@en,
                     "Une condition pré-existante, qui réapparait ou ne part jamais"@fr .
 
-<hasBeenAffectedBy>
+s:hasBeenAffectedBy
     a               owl:ObjectProperty ;
-    rdfs:domain     <Patient> ;
+    rdfs:domain     s:Patient ;
     skos:prefLabel  "has been affected by"@en ;
     skos:altLabel   "a été affecté par"@fr ;
     skos:definition "Issue that had affected a patient in the past"@en,
                     "Problème ayant affecté le patient a un moment donné"@fr .
 
-<Affection>
+s:Affection
     a            rdfs:Class ;
     rdfs:comment "An affection, either a disease or an issue"@en,
                  "Une affection, qui peut etre une maladie ou un problème"@fr ;
     rdfs:label   "Affection"@en, "Affection"@fr .
 
-<typeAffection>
+s:typeAffection
     a               owl:ObjectProperty ;
-    rdfs:domain     <Affection> ;
+    rdfs:domain     s:Affection ;
     rdfs:range      ncit:C7057 ;
     skos:prefLabel  "type of affection"@en ;
     skos:altLabel   "type d'affection"@fr ;
     skos:definition "The type of affection"@en, "Le type d'affection"@fr .
 
 
-<knownHereditaryCondition>
+s:knownHereditaryCondition
     a               owl:ObjectProperty ;
-    rdfs:domain     <Patient> ;
+    rdfs:domain     s:Patient ;
     rdfs:range      ncit:C27998, ncit:C7057 ;# Hereditary Issue
     skos:prefLabel  "hasHereditaryCondition"@en ;
     skos:altLabel   "a pour condition héréditaire"@fr ;
     skos:definition "Known family or related issues that might be hereditary"@en,
                     "Condtion médicale connue parmi la famille"@fr .
 
-<Medecin>
+s:Medecin
     rdfs:subClassOf foaf:Person ;
-    foaf:status     <Doctor> .
+    foaf:status     s:Doctor ;
+    owl:hasKey      s:hasDoctorNumber .
 
-<Doctor>
+s:Doctor
     rdfs:subClassOf ncit:C69164 ;
     skos:prefLabel  "Medecin"@en ;
     skos:altLabel   "Médecin"@fr ;
     skos:definition "Person who can perform medicals acts"@en, "Une personne autorisée a pratiquer la médécine"@fr .
 
-<hasDoctorNumber>
+s:hasDoctorNumber
     rdfs:subPropertyOf dc:identifier ;
-    rdfs:domain        <Medecin> ;
+    rdfs:domain        s:Medecin ;
     rdfs:range         xs:int ;
     skos:prefLabel     "has Id"@en ;
     skos:altLabel      "a pour numéro de médecin"@fr ;
     skos:definition    "The id of the person"@en ;
     skos:example       1 .
 
-<specializedIn>
+s:specializedIn
     a               owl:ObjectProperty ;
-    rdfs:domain     <Medecin> ;
-    rdfs:range      <MedicalSpecialty> ; # Medical Specialty
+    rdfs:domain     s:Medecin ;
+    rdfs:range      s:MedicalSpecialty ; # Medical Specialty
     skos:prefLabel  "specializedIn"@en ;
     skos:altLabel   "spécialisé en"@fr ;
     skos:definition "The specialization of the medecin"@en, "La spécialisation du médecin"@fr ;
-    skos:example    ncit:C86055 . # Cardiology
+    skos:example    s:Surgery .
 
-<MedicalSpecialty>
-    a              rdfs:Class, skos:Concept ;
-    skos:prefLabel "A medical specialty"@en ;
-    skos:altLabel  "Une spécialité médicale"@fr ;
-    skos:narrower  <Chirugie>, <MedecineGenerale> .
+s:MedicalSpecialty
+    a                       rdfs:Class, skos:Concept ;
+    skos:prefLabel          "A medical specialty"@en ;
+    skos:altLabel           "Une spécialité médicale"@fr ;
+    skos:narrowerTransitive s:Surgery, s:GeneraleMedicine .
 
-<Chirugie>
-           rdfs:subClassOf <MedicalSpecialty> ;
-           skos:prefLabel  "Surgery"@en ;
-           skos:altLabel   "Chirurgie"@fr ;
-           skos:definition "The study of operative procedures"@en, "L'étude des procédures opératoires"@fr .
+s:Surgery
+    rdfs:subClassOf s:MedicalSpecialty ;
+    skos:prefLabel  "Surgery"@en ;
+    skos:altLabel   "Chirurgie"@fr ;
+    skos:definition "The study of operative procedures"@en, "L'étude des procédures opératoires"@fr .
 
-<MedecineGenerale> # General Medicine
-                   rdfs:subClassOf <MedicalSpecialty> ;
+s:GeneraleMedicine # General Medicine
+                   rdfs:subClassOf s:MedicalSpecialty ;
                    skos:prefLabel  "General Medicine"@en ;
                    skos:altLabel   "Médecine Générale"@fr ;
                    skos:definition "The branch of medicine that deals with the diagnosis and (nonsurgical) treatment of diseases of the internal organs (especially in adults)"@en,
                                    "La branche de la médecine qui traite du diagnostic et du traitement (non chirurgical) des maladies des organes internes (en particulier chez les adultes)"@fr .
 
-<Cardiologie>
-    rdfs:subClassOf <MedicalSpecialty> ;
-    skos:prefLabel  "Cardiology"@en ;
-    skos:altLabel   "Cardiologie"@fr ;
-    skos:definition "The study of the heart and its functions in health and disease"@en,
-                    "L'étude du coeur et de ses fonctions dans la santé et la maladie"@fr ;
-    skos:broader    <MedecineGenerale> .
+s:Cardiology
+    rdfs:subClassOf        s:MedicalSpecialty ;
+    skos:prefLabel         "Cardiology"@en ;
+    skos:altLabel          "Cardiologie"@fr ;
+    skos:definition        "The study of the heart and its functions in health and disease"@en,
+                           "L'étude du coeur et de ses fonctions dans la santé et la maladie"@fr ;
+    skos:broaderTransitive s:GeneraleMedicine .
 
-<MedecineRespiratoire> # Respiratory Medicine
-                       rdfs:subClassOf <MedicalSpecialty> ;
-                       skos:prefLabel  "Respiratory Medicine"@en ;
-                       skos:altLabel   "Medecine Respiratoire"@fr ;
-                       skos:definition "The study of the respiratory system"@en, "L'étude du système respiratoire"@fr .
+s:RespiratoryField # Respiratory Medicine
+                   rdfs:subClassOf s:MedicalSpecialty ;
+                   skos:prefLabel  "Respiratory Medicine"@en ;
+                   skos:altLabel   "Medecine Respiratoire"@fr ;
+                   skos:definition "The study of the respiratory system"@en, "L'étude du système respiratoire"@fr .
 
-<SpecialiteORL> # Otorhinolaryngology
-                rdfs:subClassOf <MedicalSpecialty> ;
-                skos:prefLabel  "Otorhinolaryngology"@en ;
-                skos:altLabel   "Otorhinolaryngologie"@fr ;
-                skos:definition "The study of the ear, nose, and throat"@en,
-                                "L'étude de l'oreille, du nez et de la gorge"@fr ;
-                skos:broader    <MedecineRespiratoire> .
+s:ENTField # Otorhinolaryngology
+           rdfs:subClassOf        s:RespiratoryField ;
+           skos:prefLabel         "Otorhinolaryngology"@en ;
+           skos:altLabel          "Otorhinolaryngologie"@fr ;
+           skos:definition        "The study of the ear, nose, and throat"@en,
+                                  "L'étude de l'oreille, du nez et de la gorge"@fr ;
+           skos:broaderTransitive s:RespiratoryField .
 
-<SpecialiteRhumatologie> # Rheumatology
-                         rdfs:subClassOf <MedicalSpecialty> ;
-                         skos:prefLabel  "Rheumatology"@en ;
-                         skos:altLabel   "Rhumatologie"@fr ;
-                         skos:definition "The study of rheumatism, arthritis, and other disorders of the joints, muscles, and ligaments"@en,
-                                         "L'étude du rhumatisme, de l'arthrite et d'autres troubles des articulations, des muscles et des ligaments"@fr ;
-                            skos:broader    <MedecineGenerale>, <MedecineRespiratoire> .
+s:Rheumatology # Rheumatology
+               rdfs:subClassOf        s:RespiratoryField ;
+               skos:prefLabel         "Rheumatology"@en ;
+               skos:altLabel          "Rhumatologie"@fr ;
+               skos:definition        "The study of rheumatism, arthritis, and other disorders of the joints, muscles, and ligaments"@en,
+                                      "L'étude du rhumatisme, de l'arthrite et d'autres troubles des articulations, des muscles et des ligaments"@fr ;
+               skos:broaderTransitive s:GeneraleMedicine, s:RespiratoryField .
 
-<Document>
+s:RespiratoryMedecin
+    a               owl:Class ;
+    rdfs:subClassOf [ a                  owl:Restriction ;
+                      owl:onProperty     s:specializedIn ;
+                      owl:someValuesFrom s:RespiratoryField ] .
+
+s:Document
     a            rdfs:Class ;
     rdfs:comment "A document"@en, "Un document"@fr ;
     rdfs:label   "Document"@en, "Document"@fr .
 
-<Follow-Up>
-    rdfs:subClassOf   <Document> ;
+s:Follow-Up
+    rdfs:subClassOf   s:Document ;
     rdfs:label        "Follow-Up"@en, "Suivi"@fr ;
     rdfs:comment      "The follow-up of the patien, after a case report"@en,
                       "Un point sur l'etat du patient, après un rapport médical"@fr ;
-    dc:isReferencedBy <CaseReport> .
+    dc:isReferencedBy s:CaseReport .
 
-<CaseReport>
-    rdfs:subClassOf <Document> ;
-    rdfs:label      "Case Report"@en, "Rapport médical"@fr .
+s:CaseReport
+    rdfs:subClassOf s:Document ;
+    rdfs:label      "Case Report"@en, "Rapport médical"@fr ;
+    owl:hasKey      s:hasCaseId .
 
-<hasCaseId>
+s:hasCaseId
     rdfs:subPropertyOf dc:identifier ;
-    rdfs:domain        <CaseReport> ;
+    rdfs:domain        s:CaseReport ;
     rdfs:range         xs:decimal ;
     skos:prefLabel     "has Id"@en ;
     skos:altLabel      "a pour numéro de rapport"@fr ;
     skos:definition    "The id of the report"@en, "L'identifiant unique du rapport"@fr ;
     skos:example       123456 .
 
-<diagnosis>
+s:diagnosis
     a               owl:ObjectProperty ;
-    rdfs:domain     <CaseReport> ;
+    rdfs:domain     s:CaseReport ;
     rdfs:range      ncit:C7057 ; # Disease or Issue
     skos:prefLabel  "diagnosis"@en ;
     skos:altLabel   "diagnostic"@fr ;
     skos:definition "The diagnosis of the patient"@en, "Le diagnostic du patient"@fr ;
-    rdfs:seeAlso    <Patient> .
+    rdfs:seeAlso    s:Patient .
 
-<hasBeenWrittenBy>
+s:hasBeenWrittenBy
     a                  owl:ObjectProperty ;
     rdfs:subPropertyOf dc:created ;
-    rdfs:domain        <Patient> ;
-    rdfs:range         <Medecin> ;
+    rdfs:domain        s:Patient ;
+    rdfs:range         s:Medecin ;
     skos:prefLabel     "has been written by"@en ;
     skos:altLabel      "a été écrit par"@fr ;
     skos:definition    "The case report has been written by the medecin"@en,
                        "Le rapport médical a été écrit par le médecin"@fr .
 
-<hasBeenRedactedBy>
-    owl:equivalentProperty <hasBeenWrittenBy> .
+s:hasBeenRedactedBy
+    owl:equivalentProperty s:hasBeenWrittenBy .
 
-<isRegarding>
+s:isRegarding
     rdfs:subPropertyOf dc:subject ;
     rdfs:domain        dc:document ;
-    rdfs:range         <Patient> ;
+    rdfs:range         s:Patient ;
     skos:prefLabel     "is regarding"@en ;
     skos:altLabel      "concerne"@fr ;
     skos:definition    "The case report is regarding the patient"@en, "Le rapport médical concerne le patient"@fr .
 
-<followUp>
+s:followUp
     a               owl:ObjectProperty ;
-    rdfs:domain     <CaseReport> ;
-    rdfs:range      <Follow-Up> ;
+    rdfs:domain     s:CaseReport ;
+    rdfs:range      s:Follow-Up ;
     skos:prefLabel  "follows"@en ;
     skos:altLabel   "suit"@fr ;
     skos:definition "The follow-up of the patient"@en, "Le suivi du patient"@fr ;
-    rdfs:seeAlso    <Follow-Up> .
+    rdfs:seeAlso    s:Follow-Up .
 
 
-<isPatientHealthy>
+s:isPatientHealthy
     a               owl:DatatypeProperty ;
-    rdfs:domain     <Follow-Up> ;
+    rdfs:domain     s:Follow-Up ;
     rdfs:range      xs:boolean ;
     skos:prefLabel  "is patient healthy"@en ;
     skos:altLabel   "est en bonne santé"@fr ;
     skos:definition "The patient is healthy"@en, "Le patient est en bonne santé"@fr ;
     skos:example    true .
 
-<patientStatus>
+s:patientStatus
     a               owl:DatatypeProperty ;
-    rdfs:domain     <Follow-Up> ;
+    rdfs:domain     s:Follow-Up ;
     rdfs:range      xs:string ; # Disease or Issue
     skos:prefLabel  "patient status"@en ;
     skos:altLabel   "état du patient"@fr ;
@@ -286,57 +298,57 @@
                     "Détails sur l'etat du patient"@fr ;
     skos:example    "Normal mobility"^^xs:string .
 
-<wasWrittenOn>
+s:wasWrittenOn
     rdfs:subPropertyOf dc:date ;
-    rdfs:domain        <Document> ; # Document
+    rdfs:domain        s:Document ; # Document
     rdfs:range         xs:dateTime ;
     skos:prefLabel     "was written on"@en ;
     skos:altLabel      "a été écrit le"@fr ;
     skos:definition    "Redaction date of the document"@en, "La date de rédaction du document "@fr .
 
-<symptomsDisplayed>
+s:symptomsDisplayed
     a               owl:ObjectProperty ;
-    rdfs:domain     <CaseReport> ;
+    rdfs:domain     s:CaseReport ;
     rdfs:range      ncit:C100104 ; # Symptom
     skos:prefLabel  "symptom displayed"@en ;
     skos:altLabel   "symptôme connu"@fr ;
     skos:definition "A symptom displayed by the patient"@en, "Un symptome du patient"@fr .
 
-<givenTreatment>
+s:givenTreatment
     a               owl:ObjectProperty ;
-    rdfs:domain     <CaseReport> ;
-    rdfs:range      <Treatment> ;
+    rdfs:domain     s:CaseReport ;
+    rdfs:range      s:Treatment ;
     skos:prefLabel  "given treatment"@en ;
     skos:altLabel   "traitement donné"@fr ;
     skos:definition "A treatment given to the patient"@en, "Un traitement prescrit au patient"@fr .
 
-<supplementaryTests>
+s:supplementaryTests
     a               owl:ObjectProperty ;
-    rdfs:domain     <CaseReport> ;
+    rdfs:domain     s:CaseReport ;
     rdfs:range      ncit:C16203 ; # Activitées médicales
     skos:prefLabel  "supplementaryTests"@en ;
     skos:altLabel   "tests complémentaires"@fr ;
     skos:definition "A supplementary test given to the patient"@en, "Un examen complémentaire donné a un patient"@fr ;
-    rdfs:seeAlso    <Follow-Up> .
+    rdfs:seeAlso    s:Follow-Up .
 
-<Treatment>
+s:Treatment
     a            rdfs:Class ;
     rdfs:comment "A treatment, either a medical activity or a prescription"@en,
                  "Un traitement, qui peut etre un médicament ou une activitée médicale"@fr ;
     rdfs:label   "Treatment"@en, "Traitement"@fr .
 
-<durationPeriod>
+s:durationPeriod
     a               owl:DatatypeProperty ;
-    rdfs:domain     <Treatment> ;
+    rdfs:domain     s:Treatment ;
     rdfs:range      xs:dayTimeDuration ;
     skos:prefLabel  "duration period"@en ;
     skos:altLabel   "durée du traitement"@fr ;
     skos:definition "The duration of the treatment"@en ;
     skos:example    "P10D"^^xs:dayTimeDuration .
 
-<complementaryInstructions>
+s:complementaryInstructions
     a               owl:DatatypeProperty ;
-    rdfs:domain     <Treatment> ;
+    rdfs:domain     s:Treatment ;
     rdfs:range      xs:string ;
     skos:prefLabel  "complementary instructions"@en ;
     skos:altLabel   "instructions complémentaires"@fr ;
@@ -345,54 +357,54 @@
     skos:example    "Take with food"@en .
 
 
-<MedicalActivity>
-    rdfs:subClassOf <Treatment> ; # Report
+s:MedicalActivity
+    rdfs:subClassOf s:Treatment ; # Report
     rdfs:label      "Medical Activity"@en, "Activité médicale"@fr ;
     rdfs:comment    "A medical activity prescribed to someone"@en, "Une activité médicale prescrite à quelqu'un"@fr .
 
-<activity>
+s:activity
     a              owl:ObjectProperty ;
-    rdfs:domain    <MedicalActivity> ;
+    rdfs:domain    s:MedicalActivity ;
     rdfs:range     ncit:C16203 ;
     skos:prefLabel "activity to do"@en ;
     skos:altLabel  "l'activitée à faire"@en .
 
-<shouldBePerformed>
+s:shouldBePerformed
     a               owl:DatatypeProperty ;
-    rdfs:domain     <MedicalActivity> ;
+    rdfs:domain     s:MedicalActivity ;
     rdfs:range      xs:string ;
     skos:prefLabel  "should be performed"@en ;
     skos:altLabel   "devrait être effectué"@fr, "ce qui doit être fait"@fr, "what should be done"@en ;
     skos:definition "Details about what should be performed for a medical activity"@en,
                     "Détails sur ce qui doit être fait pour une activité médicale"@fr ;
-    skos:related    <MedicalActivity> .
+    skos:related    s:MedicalActivity .
 
-<numberVisits>
+s:numberVisits
     a               owl:DatatypeProperty ;
-    rdfs:domain     <MedicalActivity> ;
+    rdfs:domain     s:MedicalActivity ;
     rdfs:range      xs:integer ;
     skos:prefLabel  "number of visits"@en ;
     skos:altLabel   "nombre de visites"@fr ;
     skos:definition "The number of visits for a medical activity"@en,
                     "Le nombre de visites pour une activité médicale"@fr ;
-    skos:related    <MedicalActivity> .
+    skos:related    s:MedicalActivity .
 
 
-<Drug>
-    rdfs:subClassOf <Treatment> ;
+s:Drug
+    rdfs:subClassOf s:Treatment ;
     rdfs:label      "Drug"@en, "Médicament"@fr ;
     rdfs:comment    "A legal substance use for medication"@en, "Une substance légale utilisée pour la médication"@fr .
 
-<medication>
+s:medication
     a              owl:ObjectProperty ;
-    rdfs:domain    <Drug> ;
+    rdfs:domain    s:Drug ;
     rdfs:range     ncit:C1908 ;
     skos:prefLabel "medication"@en ;
     skos:altLabel  "médication"@fr, "principe actif"@fr, "active agent"@fr .
 
-<dayBetweenTwoTake>
+s:dayBetweenTwoTake
     a               owl:DatatypeProperty ;
-    rdfs:domain     <Drug> ;
+    rdfs:domain     s:Drug ;
     rdfs:range      xs:dayTimeDuration ;
     skos:prefLabel  "days between two takes"@en ;
     skos:altLabel   "jours entre deux prises"@fr ;
@@ -400,13 +412,64 @@
                     "Le nombre de jours entre deux prises du médicament"@fr ;
     skos:example    'P0D'^^xs:dayTimeDuration .
 
-<takesPerDay>
+s:takesPerDay
     a               owl:DatatypeProperty ;
-    rdfs:domain     <Drug> ;
+    rdfs:domain     s:Drug ;
     rdfs:range      xs:integer ;
     skos:prefLabel  "takes per day "@en ;
     skos:altLabel   "prises par jour"@fr ;
     skos:definition "The number of takes per day of the drug"@en, "Le nombre de prises par jour du médicament"@fr ;
     skos:example    2 .
 
+s:Personne
+    a                   owl:Class ;
+    owl:unionOf         ( s:Patient s:Medecin ) ;
+    owl:equivalentClass foaf:Person .
 
+s:hasAscendant
+    a owl:ObjectProperty, owl:TransitiveProperty .
+
+s:hasChild
+    a               owl:ObjectProperty, owl:AsymmetricProperty, owl:IrreflexiveProperty ;
+    rdfs:domain     s:Personne ;
+    rdfs:range      s:Personne ;
+    skos:prefLabel  "has child"@en ;
+    skos:altLabel   "a pour enfant"@fr ;
+    skos:definition "The child of the patient"@en, "L'enfant du patient"@fr .
+
+s:hasParent
+    rdfs:subClassOf s:hasAscendant ;
+    owl:inverseOf   s:hasChild ;
+    skos:prefLabel  "has parent"@en ;
+    skos:altLabel   "a pour parent"@fr ;
+    skos:definition "The parent of the patient"@en, "Le parent du patient"@fr .
+
+s:brotherOrSister # Brother or Sister
+                  a                        owl:ObjectProperty, owl:SymmetricProperty, owl:TransitiveProperty,
+                                           owl:IrreflexiveProperty ;
+                  rdfs:domain              s:Personne ;
+                  rdfs:range               s:Personne ;
+                  skos:prefLabel           "brother or sister"@en ;
+                  skos:altLabel            "frère ou soeur"@fr ;
+                  skos:definition          "The brother or sister of the patient"@en,
+                                           "Le frère ou la soeur du patient"@fr ;
+                  owl:propertyChainAxiom   ( s:hasParent s:hasChild ) ;
+                  owl:propertyDisjointWith s:hasChild .
+
+skos:narrowerTransitive
+    owl:inverseOf skos:broaderTransitive .
+
+s:notDirectlyRelated
+    a                      owl:DatatypeProperty, owl:IrreflexiveProperty ;
+    owl:propertyChainAxiom ( s:hasAscendant s:brotherOrSister ) ;
+    skos:definition        "The person is not directly related to the patient, but has a commun ancestor"@en,
+                           "La personne n'est pas directement liée au patient, mais a un ascendant commun"@fr .
+
+s:ThreatenedPatient
+    a                  owl:Class ;
+    owl:intersectionOf ( s:Patient [ a           owl:Restriction ;
+                                     owl:unionOf ( [ a                  owl:Restriction ;
+                                                     owl:onProperty     s:knownHereditaryCondition ;
+                                                     owl:minCardinality 3 ] [ a                  owl:Restriction ;
+                                                                              owl:onProperty     s:pre-existingCondition ;
+                                                                              owl:minCardinality 1 ] ) ] ) .

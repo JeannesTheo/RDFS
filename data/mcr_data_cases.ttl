@@ -1,261 +1,264 @@
-@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xs:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xs:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
 
-@prefix dc:     <http://purl.org/dc/terms/> .
-@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
-@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix dc:   <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-@prefix ncit:   <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
 
-@prefix :       <http://td-projet-sparql/schema#> .
-@base <http://td-projet-sparql/data>.
-<caseReport1>
-    a                   :CaseReport ;
-    :hasCaseId          "1" ;
-    :isRegarding        <Patient1> ;
-    :hasBeenWrittenBy   <cardio> ;
-    :wasWrittenOn       "2019-02-12"^^xs:date ;
-    :symptomsDisplayed  ncit:C3117, ncit:C3258, ncit:C37943, ncit:C50635, ncit:C35051, ncit:C50809 ;
+@prefix s:    <http://td-projet-sparql/schema#> .
+@prefix :     <http://td-projet-sparql/data#>.
+
+:caseReport1
+    a                    s:CaseReport ;
+    s:hasCaseId          "1" ;
+    s:isRegarding        :Patient1 ;
+    s:hasBeenWrittenBy   :cardio ;
+    s:wasWrittenOn       "2019-02-12"^^xs:date ;
+    s:symptomsDisplayed  ncit:C3117, ncit:C3258, ncit:C37943, ncit:C50635, ncit:C35051, ncit:C50809 ;
     # Tension élévée, nausée, vertiges, perte de connaissance, sueurs, faiblesse
-    :diagnosis          ncit:C38029 ; #Tachycardie
-    :supplementaryTests ncit:C168186 ; #electrocardiogramme
-    :givenTreatment     <coagulants1> ; #Coagulants
-    :followUp           <followUp1> . #1
+    s:diagnosis          ncit:C38029 ; #Tachycardie
+    s:supplementaryTests ncit:C168186 ; #electrocardiogramme
+    s:givenTreatment     :coagulants1 ; #Coagulants
+    s:followUp           :followUp1 . #1
 
-<coagulants1>
-    a                          :Drug ;
-    :medication                ncit:C943 ; #Vitamine K
-    :takesPerDay               1 ;
-    :daysBetweenTakes          "P0D"^^xs:dayTimeDuration ;
-    :complementaryInstructions "matin, à vie"@fr, "morning, for life"@en .
+:coagulants1
+    a                           s:Drug ;
+    s:medication                ncit:C943 ; #Vitamine K
+    s:takesPerDay               1 ;
+    s:daysBetweenTakes          "P0D"^^xs:dayTimeDuration ;
+    s:complementaryInstructions "matin, à vie"@fr, "morning, for life"@en .
 
-<followUp1>
-    a                 :Follow-Up ;
-    :isRegarding      <Patient1> ;
-    :hasBeenWrittenBy <cardio> ;
-    :wasWrittenOn     "2019-06-03"^^xs:date ;
-    :patientStatus    "Bien, stable"@fr, "Well, stable"@en ;
-    :isPatientHealthy true .
+:followUp1
+    a                  s:Follow-Up ;
+    s:isRegarding      :Patient1 ;
+    s:hasBeenWrittenBy :cardio ;
+    s:wasWrittenOn     "2019-06-03"^^xs:date ;
+    s:patientStatus    "Bien, stable"@fr, "Well, stable"@en ;
+    s:isPatientHealthy true .
 
-<caseReport2>
-    a                   :CaseReport ;
-    :hasCaseId          "2" ;
-    :isRegarding        <Patient2> ;
-    :hasBeenWrittenBy   <cardio> ;
-    :wasWrittenOn       "2019-04-13"^^xs:date ;
-    :symptomsDisplayed  ncit:C3117, ncit:C3258, ncit:C37943, ncit:C50635, ncit:C92801 ;
+:caseReport2
+    a                    s:CaseReport ;
+    s:hasCaseId          "2" ;
+    s:isRegarding        :Patient2 ;
+    s:hasBeenWrittenBy   :cardio ;
+    s:wasWrittenOn       "2019-04-13"^^xs:date ;
+    s:symptomsDisplayed  ncit:C3117, ncit:C3258, ncit:C37943, ncit:C50635, ncit:C92801 ;
     # tension élevée, nausée, vertiges, perte de connaissance, fringales
-    :diagnosis          ncit:C38029 ; #Tachycardie
-    :supplementaryTests ncit:C168186 ; #electrocardiogramme
-    :givenTreatment     <coagulants2> ; #Coagulants
-    :followUp           <followUp2>, <followUp3> . #1
+    s:diagnosis          ncit:C38029 ; #Tachycardie
+    s:supplementaryTests ncit:C168186 ; #electrocardiogramme
+    s:givenTreatment     :coagulants2 ; #Coagulants
+    s:followUp           :followUp2, :followUp3 . #1
 
-<coagulants2>
-    a                          :Drug ;
-    :medication                ncit:C943 ; #Vitamine K
-    :takesPerDay               1 ;
-    :daysBetweenTakes          "P0D"^^xs:dayTimeDuration ;
-    :complementaryInstructions "matin, à vie"@fr, "morning, for life"@en .
+:coagulants2
+    a                           s:Drug ;
+    s:medication                ncit:C943 ; #Vitamine K
+    s:takesPerDay               1 ;
+    s:daysBetweenTakes          "P0D"^^xs:dayTimeDuration ;
+    s:complementaryInstructions "matin, à vie"@fr, "morning, for life"@en .
 
-<followUp2>
-    a                 :Follow-Up ;
-    :isRegarding      <Patient2> ;
-    :hasBeenWrittenBy <cardio> ;
-    :wasWrittenOn     "2019-07-22"^^xs:date ;
-    :patientStatus    "En cours de guérison"@fr, "In recovery"@en ;
-    :isPatientHealthy false .
+:followUp2
+    a                  s:Follow-Up ;
+    s:isRegarding      :Patient2 ;
+    s:hasBeenWrittenBy :cardio ;
+    s:wasWrittenOn     "2019-07-22"^^xs:date ;
+    s:patientStatus    "En cours de guérison"@fr, "In recovery"@en ;
+    s:isPatientHealthy false .
 
-<followUp3>
-    a                 :Follow-Up ;
-    :isRegarding      <Patient2> ;
-    :hasBeenWrittenBy <cardio> ;
-    :wasWrittenOn     "2019-08-22"^^xs:date ;
-    :patientStatus    "Bien, stable"@fr, "Well, stable"@en ;
-    :isPatientHealthy true .
+:followUp3
+    a                  s:Follow-Up ;
+    s:isRegarding      :Patient2 ;
+    s:hasBeenWrittenBy :cardio ;
+    s:wasWrittenOn     "2019-08-22"^^xs:date ;
+    s:patientStatus    "Bien, stable"@fr, "Well, stable"@en ;
+    s:isPatientHealthy true .
 
-<caseReport3>
-    a                   :CaseReport ;
-    :hasCaseId          "3" ;
-    :isRegarding        <Patient3> ;
-    :hasBeenWrittenBy   <cardio> ;
-    :wasWrittenOn       "2019-03-22"^^xs:date ;
-    :symptomsDisplayed  ncit:C3117, ncit:C3258, ncit:C37943, ncit:C50635 ;
+:caseReport3
+    a                    s:CaseReport ;
+    s:hasCaseId          "3" ;
+    s:isRegarding        :Patient3 ;
+    s:hasBeenWrittenBy   :cardio ;
+    s:wasWrittenOn       "2019-03-22"^^xs:date ;
+    s:symptomsDisplayed  ncit:C3117, ncit:C3258, ncit:C37943, ncit:C50635 ;
     # tension élevée, nausée, vertiges, perte de connaissance
-    :diagnosis          ncit:C38029 ; #Tachycardie
-    :supplementaryTests ncit:C168186 ; #electrocardiogramme
-    :givenTreatment     <coagulants3> ; #Coagulants
-    :followUp           <followUp4> . #1
+    s:diagnosis          ncit:C38029 ; #Tachycardie
+    s:supplementaryTests ncit:C168186 ; #electrocardiogramme
+    s:givenTreatment     :coagulants3 ; #Coagulants
+    s:followUp           :followUp4 . #1
 
-<coagulants3>
-    a                          :Drug ;
-    :medication                ncit:C943 ; #Vitamine K
-    :takesPerDay               1 ;
-    :daysBetweenTakes          "P0D"^^xs:dayTimeDuration ;
-    :complementaryInstructions "matin, à vie"@fr, "morning, for life"@en .
+:coagulants3
+    a                           s:Drug ;
+    s:medication                ncit:C943 ; #Vitamine K
+    s:takesPerDay               1 ;
+    s:daysBetweenTakes          "P0D"^^xs:dayTimeDuration ;
+    s:complementaryInstructions "matin, à vie"@fr, "morning, for life"@en .
 
-<followUp4>
-    a                 :Follow-Up ;
-    :isRegarding      <Patient3> ;
-    :hasBeenWrittenBy <cardio> ;
-    :wasWrittenOn     "2019-09-08"^^xs:date ;
-    :patientStatus    "Bien, stable"@fr, "Well, stable"@en ;
-    :isPatientHealthy true .
+:followUp4
+    a                  s:Follow-Up ;
+    s:isRegarding      :Patient3 ;
+    s:hasBeenWrittenBy :cardio ;
+    s:wasWrittenOn     "2019-09-08"^^xs:date ;
+    s:patientStatus    "Bien, stable"@fr, "Well, stable"@en ;
+    s:isPatientHealthy true .
 
-<caseReport4>
-    a                   :CaseReport ;
-    :isRegarding        <Patient4> ;
-    :hasBeenWrittenBy   <orl> ;
-    :wasWrittenOn       "2022-03-03"^^xs:date ;
-    :symptomsDisplayed  ncit:C78225, ncit:C60271, ncit:C113194 ;
+:caseReport4
+    a                    s:CaseReport ;
+    s:isRegarding        :Patient4 ;
+    s:hasBeenWrittenBy   :orl ;
+    s:wasWrittenOn       "2022-03-03"^^xs:date ;
+    s:symptomsDisplayed  ncit:C78225, ncit:C60271, ncit:C113194 ;
     # encombrement bronchiques, infections respiratoires, problèles digestifs
-    :diagnosis          ncit:C2975 ; #Mucoviscidose
-    :supplementaryTests ncit:C114184 ; #Irm
-    :givenTreatment     <balneo1> ; #Balnéo thérapie
-    :followUp           <followUp5> . #1
+    s:diagnosis          ncit:C2975 ; #Mucoviscidose
+    s:supplementaryTests ncit:C114184 ; #Irm
+    s:givenTreatment     :balneo1 ; #Balnéo thérapie
+    s:followUp           :followUp5 . #1
 
-<followUp5>
-    a                 :Follow-Up ;
-    :isRegarding      <Patient4> ;
-    :hasBeenWrittenBy <orl> ;
-    :wasWrittenOn     "2019-07-09"^^xs:date ;
-    :patientStatus    "En cours de rétablissement"@fr, "In recovery"@en ;
-    :isPatientHealthy false .
+:followUp5
+    a                  s:Follow-Up ;
+    s:isRegarding      :Patient4 ;
+    s:hasBeenWrittenBy :orl ;
+    s:wasWrittenOn     "2019-07-09"^^xs:date ;
+    s:patientStatus    "En cours de rétablissement"@fr, "In recovery"@en ;
+    s:isPatientHealthy false .
 
-<balneo1>
-    a                  :MedicalActivity ;
-    :activityType      ncit:C21117 ; #Balnéo thérapie
-    :durationPeriod    "P180D"^^xs:dayTimeDuration ;
-    :numberVisits      30 ;
-    :shouldBePerformed "exercice légers + respiration"@fr, "light exercise + breathing"@en .
+:balneo1
+    a                   s:MedicalActivity ;
+    s:activityType      ncit:C21117 ; #Balnéo thérapie
+    s:durationPeriod    "P180D"^^xs:dayTimeDuration ;
+    s:numberVisits      30 ;
+    s:shouldBePerformed "exercice légers + respiration"@fr, "light exercise + breathing"@en .
 
 #
-#Traitement : balnéo thérapie
-<balneo2>
-    a                  :MedicalActivity ;
-    :activityType      ncit:C21117 ; #Balnéo thérapie
-    :durationPeriod    "P120D"^^xs:dayTimeDuration ;
-    :numberVisits      20 ;
-    :shouldBePerformed "exercice légers + respiration"@fr, "light exercise + breathing"@en .
+#Traitements: balnéo thérapie
+:balneo2
+    a                   s:MedicalActivity ;
+    s:activityType      ncit:C21117 ; #Balnéo thérapie
+    s:durationPeriod    "P120D"^^xs:dayTimeDuration ;
+    s:numberVisits      20 ;
+    s:shouldBePerformed "exercice légers + respiration"@fr, "light exercise + breathing"@en .
 
-<caseReport5>
-    a                   :CaseReport ;
-    :hasCaseId          "5" ;
-    :isRegarding        <Patient5> ;
-    :hasBeenWrittenBy   <orl> ;
-    :wasWrittenOn       "2022-01-07"^^xs:date ;
-    :symptomsDisplayed  ncit:C78225, ncit:C60271, ncit:C113194, ncit:C35051, ncit:C128439 ;
+:caseReport5
+    a                    s:CaseReport ;
+    s:hasCaseId          "5" ;
+    s:isRegarding        :Patient5 ;
+    s:hasBeenWrittenBy   :orl ;
+    s:wasWrittenOn       "2022-01-07"^^xs:date ;
+    s:symptomsDisplayed  ncit:C78225, ncit:C60271, ncit:C113194, ncit:C35051, ncit:C128439 ;
     #encombrement bronchiques, infections respiratoires, problèles digestifs, mains moites, aphtes
-    :diagnosis          ncit:C2975, ncit:C4679 ; #Mucoviscidose
-    :supplementaryTests ncit:C114184 ; #Irm
-    :givenTreatment     <balneo2> ; #Balnéo thérapie
-    :followUp           <followUp6> . #1
+    s:diagnosis          ncit:C2975, ncit:C4679 ; #Mucoviscidose
+    s:supplementaryTests ncit:C114184 ; #Irm
+    s:givenTreatment     :balneo2 ; #Balnéo thérapie
+    s:followUp           :followUp6 . #1
 
-<followUp6>
-    a                 :Follow-Up ;
-    :isRegarding      <Patient5> ;
-    :hasBeenWrittenBy <orl> ;
-    :wasWrittenOn     "2019-07-09"^^xs:date ;
-    :isPatientHealthy true .
+:followUp6
+    a                  s:Follow-Up ;
+    s:isRegarding      :Patient5 ;
+    s:hasBeenWrittenBy :orl ;
+    s:wasWrittenOn     "2019-07-09"^^xs:date ;
+    s:isPatientHealthy true .
 
 
-<caseReport6>
-    a                   :CaseReport ;
-    :hasCaseId          "6" ;
-    :isRegarding        <Patient6> ;
-    :hasBeenWrittenBy   <orl> ;
-    :wasWrittenOn       "2022-03-12"^^xs:date ;
-    :symptomsDisplayed  ncit:C78225, ncit:C60271, ncit:C113194, ncit:C35051, ncit:C50491, ncit:C3128 ;
+:caseReport6
+    a                    s:CaseReport ;
+    s:hasCaseId          "6" ;
+    s:isRegarding        :Patient6 ;
+    s:hasBeenWrittenBy   :orl ;
+    s:wasWrittenOn       "2022-03-12"^^xs:date ;
+    s:symptomsDisplayed  ncit:C78225, ncit:C60271, ncit:C113194, ncit:C35051, ncit:C50491, ncit:C3128 ;
     #encombrement bronchiques, infections respiratoires, problèles digestifs, mains moites, douleur torse, tension faibles
-    :diagnosis          ncit:C2975 ; #Mucoviscidose
-    :supplementaryTests ncit:C114184 ; #Irm
-    :givenTreatment     <balneo3> . #Balnéo thérapie.
+    s:diagnosis          ncit:C2975 ; #Mucoviscidose
+    s:supplementaryTests ncit:C114184 ; #Irm
+    s:givenTreatment     :balneo3 . #Balnéo thérapie.
 
-<balneo3>
-    a               :MedicalActivity ;
-    :activityType   ncit:C21117 ; #Balnéo thérapie
-    :durationPeriod "P180D"^^xs:dayTimeDuration ;
-    :numberVisits   25 .
+:balneo3
+    a                s:MedicalActivity ;
+    s:activityType   ncit:C21117 ; #Balnéo thérapie
+    s:durationPeriod "P180D"^^xs:dayTimeDuration ;
+    s:numberVisits   25 .
 
-<caseReport7>
-    a                   :CaseReport ;
-    :hasCaseId          "7" ;
-    :isRegarding        <Patient7> ;
-    :hasBeenWrittenBy   <rhumat> ;
-    :wasWrittenOn       "2022-03-13"^^xs:date ;
-    :symptomsDisplayed  ncit:C56098, ncit:C3128 ;
+:caseReport7
+    a                    s:CaseReport ;
+    s:hasCaseId          "7" ;
+    s:isRegarding        :Patient7 ;
+    s:hasBeenWrittenBy   :rhumat ;
+    s:wasWrittenOn       "2022-03-13"^^xs:date ;
+    s:symptomsDisplayed  ncit:C56098, ncit:C3128 ;
     #douleur aigue articulaire, tension faible
-    :diagnosis          ncit:C2883 ; #Arthrite
-    :supplementaryTests ncit:C137928 ; #radio
-    :followUp           <followUp7> . #Balnéo thérapie.
+    s:diagnosis          ncit:C2883 ; #Arthrite
+    s:supplementaryTests ncit:C137928 ; #radio
+    s:followUp           :followUp7 . #Balnéo thérapie.
 
-<followUp7>
-    a                 :Follow-Up ;
-    :isRegarding      <Patient7> ;
-    :hasBeenWrittenBy <rhumat> ;
-    :wasWrittenOn     "2022-08-30"^^xs:date ;
-    :patientStatus    "L'etat stagne"@fr, "Stagnation"@en ;
-    :isPatientHealthy false .
+:followUp7
+    a                  s:Follow-Up ;
+    s:isRegarding      :Patient7 ;
+    s:hasBeenWrittenBy :rhumat ;
+    s:wasWrittenOn     "2022-08-30"^^xs:date ;
+    s:patientStatus    "L'etat stagne"@fr, "Stagnation"@en ;
+    s:isPatientHealthy false .
 
-<caseReport7B>
-    a                   :CaseReport ;
-    :hasCaseId          "7" ;
-    :isRegarding        <Patient7> ;
-    :hasBeenWrittenBy   <orl> ;
-    :wasWrittenOn       "2022-05-27"^^xs:date ;
-    :symptomsDisplayed  ncit:C143637; #Inflammation Larynx
-    :diagnosis          ncit:C51221 . #Angine
+:caseReport7B
+    a                   s:CaseReport ;
+    s:hasCaseId         "10" ;
+    s:isRegarding       :Patient7 ;
+    s:hasBeenWrittenBy  :orl ;
+    s:wasWrittenOn      "2022-05-27"^^xs:date ;
+    s:symptomsDisplayed ncit:C143637 ; #Inflammation Larynx
+    s:diagnosis         ncit:C51221 ; #Angine
+    owl:differentFrom   :followUp7B .
 
-<caseReport8>
-    a                   :CaseReport ;
-    :hasCaseId          "8" ;
-    :isRegarding        <Patient8> ;
-    :hasBeenWrittenBy   <rhumat> ;
-    :wasWrittenOn       "2021-09-28"^^xs:date ;
-    :symptomsDisplayed  ncit:C143637, ncit:C26778, ncit:C38644 ;
+:caseReport8
+    a                    s:CaseReport ;
+    s:hasCaseId          "8" ;
+    s:isRegarding        :Patient8 ;
+    s:hasBeenWrittenBy   :rhumat ;
+    s:wasWrittenOn       "2021-09-28"^^xs:date ;
+    s:symptomsDisplayed  ncit:C143637, ncit:C26778, ncit:C38644 ;
     #Inflammation Larynx, fractures multiples, douleur osseuse
-    :diagnosis          ncit:C58396 ; #ostéoporose
-    :supplementaryTests ncit:C114184 ; #Radio
-    :givenTreatment     <kine> ;
-    :followUp           <followUp8> . #Balnéo thérapie.
+    s:diagnosis          ncit:C58396 ; #ostéoporose
+    s:supplementaryTests ncit:C114184 ; #Radio
+    s:givenTreatment     :kine ;
+    s:followUp           :followUp8 . #Balnéo thérapie.
 
-<kine>
-    a                  :MedicalActivity ;
-    :activityType      ncit:C15302 ; #Balnéo thérapie
-    :durationPeriod    "P150D"^^xs:dayTimeDuration ;
-    :numberVisits      30 ;
-    :shouldBePerformed "Mobilisation et massages"@fr, "mobilization and massages"@en .
+:kine
+    a                   s:MedicalActivity ;
+    s:activityType      ncit:C15302 ; #Balnéo thérapie
+    s:durationPeriod    "P150D"^^xs:dayTimeDuration ;
+    s:numberVisits      30 ;
+    s:shouldBePerformed "Mobilisation et massages"@fr, "mobilization and massages"@en .
 
-<followUp8>
-    a                 :Follow-Up ;
-    :isRegarding      <Patient8> ;
-    :hasBeenWrittenBy <rhumat> ;
-    :wasWrittenOn     "2021-12-28"^^xs:date ;
-    :isPatientHealthy true .
+:followUp8
+    a                  s:Follow-Up ;
+    s:isRegarding      :Patient8 ;
+    s:hasBeenWrittenBy :rhumat ;
+    s:wasWrittenOn     "2021-12-28"^^xs:date ;
+    s:isPatientHealthy true .
 
-<caseReport9>
-    a                   :CaseReport ;
-    :hasCaseId          "9" ;
-    :isRegarding        <Patient9> ;
-    :hasBeenWrittenBy   <rhumat> ;
-    :wasWrittenOn       "2021-09-08"^^xs:date ;
-    :symptomsDisplayed  ncit:C78225, ncit:C60271 ;
+:caseReport9
+    a                    s:CaseReport ;
+    s:hasCaseId          "9" ;
+    s:isRegarding        :Patient9 ;
+    s:hasBeenWrittenBy   :rhumat ;
+    s:wasWrittenOn       "2021-09-08"^^xs:date ;
+    s:symptomsDisplayed  ncit:C78225, ncit:C60271 ;
     #encombrement bronchiques, infections respiratoires
-    :diagnosis          ncit:C2975 ; #Mucoviscidose
-    :supplementaryTests ncit:C114184 ; #Irm
-    :givenTreatment     <balneo4> ;
-    :followUp           <followUp9> . #Balnéo thérapie.
+    s:diagnosis          ncit:C2975 ; #Mucoviscidose
+    s:supplementaryTests ncit:C114184 ; #Irm
+    s:givenTreatment     :balneo4 ;
+    s:followUp           :followUp9 . #Balnéo thérapie.
 
-<balneo4>
-    a                  :MedicalActivity ;
-    :activityType      ncit:C21117 ; #Balnéo thérapie
-    :durationPeriod    "P90D"^^xs:dayTimeDuration ;
-    :numberVisits      15 ;
-    :shouldBePerformed "exercice de respiration"@fr, "breathing exercises"@en .
+:balneo4
+    a                   s:MedicalActivity ;
+    s:activityType      ncit:C21117 ; #Balnéo thérapie
+    s:durationPeriod    "P90D"^^xs:dayTimeDuration ;
+    s:numberVisits      15 ;
+    s:shouldBePerformed "exercice de respiration"@fr, "breathing exercises"@en .
 
-<followUp9>
-    a                 :Follow-Up ;
-    :isRegarding      <Patient9> ;
-    :hasBeenWrittenBy <rhumat> ;
-    :wasWrittenOn     "2022-03-13"^^xs:date ;
-    :isPatientHealthy true .
+:followUp9
+    a                  s:Follow-Up ;
+    s:isRegarding      :Patient9 ;
+    s:hasBeenWrittenBy :rhumat ;
+    s:wasWrittenOn     "2022-03-13"^^xs:date ;
+    s:isPatientHealthy true .
