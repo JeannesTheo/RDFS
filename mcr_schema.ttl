@@ -8,6 +8,11 @@
 @prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
 @prefix s:    <http://td-projet-sparql/schema#> .
 
+s:
+    a            owl:Ontology ;
+    rdfs:label   "TD Projet Sparql"@fr, "TD Projet Sparql"@en ;
+    rdfs:comment "Ontology for the TD Projet Sparql"@fr, "Ontologie pour le TD Projet Sparql"@en .
+
 s:Patient
     rdfs:subClassOf foaf:Person ;
     foaf:status     ncit:C16960 ;
@@ -48,7 +53,7 @@ s:Other
     rdfs:subClassOf s:Gender .
 
 s:Gender
-    a                   rdfs:Class ;
+    a                   rdfs:Class, skos:Concept  ;
     owl:disjointUnionOf ( s:Male s:Female s:Other ) .
 
 s:hasSex
@@ -100,6 +105,7 @@ s:pre-existingCondition
 s:hasBeenAffectedBy
     a               owl:ObjectProperty ;
     rdfs:domain     s:Patient ;
+    rdfs:range s:Affection ;
     skos:prefLabel  "has been affected by"@en ;
     skos:altLabel   "a été affecté par"@fr ;
     skos:definition "Issue that had affected a patient in the past"@en,
@@ -251,7 +257,7 @@ s:diagnosis
 s:hasBeenWrittenBy
     a                  owl:ObjectProperty ;
     rdfs:subPropertyOf dc:created ;
-    rdfs:domain        s:Patient ;
+    rdfs:domain        s:Document ;
     rdfs:range         s:Medecin ;
     skos:prefLabel     "has been written by"@en ;
     skos:altLabel      "a été écrit par"@fr ;
