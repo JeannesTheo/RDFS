@@ -1,0 +1,36 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xs:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix dc:   <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix s:    <http://td-projet-sparql/schema#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+
+s:PatientShape
+    a              sh:NodeShape ;
+    sh:targetClass s:Patient ;
+    sh:property    [ sh:path     foaf:name ;
+                     sh:minCount 1 ; ] ;
+    sh:property    [ sh:path     foaf:familyName ;
+                     sh:minCount 1 ;
+                     sh:maxCount 1 ; ] .
+
+s:weightShape
+    a              sh:NodeShape ;
+    sh:targetClass s:Patient ;
+    sh:property    [ sh:path         s:weight ;
+                     sh:datatype     xs:integer ;
+                     sh:maxCount     1 ;
+                     sh:minExclusive 0 ;
+                     sh:maxInclusive 250 ;
+                     sh:severity     sh:Info ;
+                     sh:message      "There is probably a mistake in the weight" ; ] .
+
+s:sexShape
+    a                   sh:NodeShape ;
+    sh:targetClass s:Patient ;
+    sh:property         [ sh:path s:hasSex ;
+                          sh:in   ( s:Male s:Female s:Other ) ; ] .

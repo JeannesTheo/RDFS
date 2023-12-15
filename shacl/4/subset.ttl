@@ -1,0 +1,61 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xs:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc:   <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix s:    <http://td-projet-sparql/schema#> .
+@prefix :     <http://td-projet-sparql/data#> .
+
+
+:followUp1
+    a                  s:Follow-Up ;
+    s:isRegarding      :Patient2 ;
+    s:hasBeenWrittenBy :cardio ;
+    s:patientStatus    "Bien, stable"@fr, "Well, stable"@en ;
+    s:isPatientHealthy true .
+
+:followUp2
+    a                  s:Follow-Up ;
+    s:isRegarding      :Patient2 ;
+    s:hasBeenWrittenBy :cardio ;
+    s:patientStatus    "Bien, stable"@fr, "Well, stable"@en ;
+    s:isPatientHealthy 'True' .
+
+:followUp3
+    a                  s:Follow-Up ;
+    s:isRegarding      :Patient2 ;
+    s:hasBeenWrittenBy :cardio ;
+    s:patientStatus    "Bien, stable"@fr, "Well, stable"@en ;
+    s:isPatientHealthy 'True', true .
+
+:followUp4
+    a                  s:Follow-Up ;
+    s:isRegarding      :Patient2 ;
+    s:hasBeenWrittenBy :cardio ;
+    s:patientStatus    "Bien, stable"@en, "Well, stable"@en ;
+    s:isPatientHealthy true .
+
+:caseReport1
+    a                  s:CaseReport ;
+    s:isRegarding      :Patient2 ;
+    s:hasBeenWrittenBy :cardio ;
+    s:followUp         :followUp1 . #1
+
+:Patient2
+    a               s:Patient ;
+    foaf:familyName "Doe" .
+
+:cardio
+    a                 s:Medecin ;
+    foaf:familyName   "Doctor" ;
+    s:hasDoctorNumber 2 .
+
+:caseReport2
+    a                  s:CaseReport ;
+    s:isRegarding      :Patient3 ;
+    s:hasBeenWrittenBy :cardio .
+
+:Patient3
+    a               s:Patient .

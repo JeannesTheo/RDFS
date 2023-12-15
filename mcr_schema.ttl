@@ -427,7 +427,7 @@ s:takesPerDay
     skos:definition "The number of takes per day of the drug"@en, "Le nombre de prises par jour du médicament"@fr ;
     skos:example    2 .
 
-s:Personne
+s:Person
     a                   owl:Class ;
     owl:unionOf         ( s:Patient s:Medecin ) ;
     owl:equivalentClass foaf:Person .
@@ -437,8 +437,8 @@ s:hasAscendant
 
 s:hasChild
     a               owl:ObjectProperty, owl:AsymmetricProperty, owl:IrreflexiveProperty ;
-    rdfs:domain     s:Personne ;
-    rdfs:range      s:Personne ;
+    rdfs:domain     s:Person ;
+    rdfs:range      s:Person ;
     skos:prefLabel  "has child"@en ;
     skos:altLabel   "a pour enfant"@fr ;
     skos:definition "The child of the patient"@en, "L'enfant du patient"@fr .
@@ -453,8 +453,8 @@ s:hasParent
 s:brotherOrSister # Brother or Sister
                   a                        owl:ObjectProperty, owl:SymmetricProperty, owl:TransitiveProperty,
                                            owl:IrreflexiveProperty ;
-                  rdfs:domain              s:Personne ;
-                  rdfs:range               s:Personne ;
+                  rdfs:domain              s:Person ;
+                  rdfs:range               s:Person ;
                   skos:prefLabel           "brother or sister"@en ;
                   skos:altLabel            "frère ou soeur"@fr ;
                   skos:definition          "The brother or sister of the patient"@en,

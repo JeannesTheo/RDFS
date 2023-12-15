@@ -1,0 +1,21 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xs:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc:   <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix s:    <http://td-projet-sparql/schema#> .
+@prefix :     <http://td-projet-sparql/data#> .
+
+:Patient1
+    a                   s:Patient ;
+    s:hasBeenAffectedBy [ a               s:Affection ;
+                          s:typeAffection ncit:C3832 ;
+                          dc:date         "2024-06-16"^^xs:date ],
+                        [ a               s:Affection ;
+                          s:typeAffection "grippe" ;
+                          dc:date         "2022-06-16"^^xs:date ],
+                        [ a               s:Affection ;
+                          s:typeAffection ncit:C157806 ; #cardiac Surgery
+                          dc:date         "2015-07-03"^^xs:date ].

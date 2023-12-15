@@ -1,0 +1,32 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xs:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc:   <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix s:    <http://td-projet-sparql/schema#> .
+@prefix :     <http://td-projet-sparql/data#> .
+
+:Patient1
+    a                         s:Patient ;
+    foaf:name                 "François" ;
+    foaf:familyName           "Deville" ;
+    s:hasSocialSecurityNumber "1234567891234" .
+
+:Patient2
+    a               s:Patient ;
+    foaf:name       "René" ;
+    foaf:familyName "Dupont" .
+
+:Patient3
+    a                         s:Patient ;
+    foaf:name                 "René" ;
+    foaf:familyName           "DuTableau" ;
+    s:hasSocialSecurityNumber 123456789123456 .
+
+:Patient4
+    a                         s:Patient ;
+    foaf:name                 "Bertrand" ;
+    foaf:familyName           "Dupont" ;
+    s:hasSocialSecurityNumber "123456-89126" .
