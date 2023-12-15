@@ -17,5 +17,5 @@
                           s:typeAffection "grippe" ;
                           dc:date         "2022-06-16"^^xs:date ],
                         [ a               s:Affection ;
-                          s:typeAffection ncit:C157806 ; #cardiac Surgery
+                          s:typeAffection ncit:C157806 ; #This affection is valid
                           dc:date         "2015-07-03"^^xs:date ].

@@ -9,7 +9,7 @@
 @prefix :     <http://td-projet-sparql/data#> .
 
 
-:followUp1
+:followUp1 # Ce Follow-Up est valide
     a                  s:Follow-Up ;
     s:isRegarding      :Patient2 ;
     s:hasBeenWrittenBy :cardio ;

@@ -53,7 +53,7 @@ s:Other
     rdfs:subClassOf s:Gender .
 
 s:Gender
-    a                   rdfs:Class, skos:Concept  ;
+    a                   owl:Class , skos:Concept  ;
     owl:disjointUnionOf ( s:Male s:Female s:Other ) .
 
 s:hasSex
@@ -112,7 +112,7 @@ s:hasBeenAffectedBy
                     "Problème ayant affecté le patient a un moment donné"@fr .
 
 s:Affection
-    a            rdfs:Class ;
+    a            owl:Class ;
     rdfs:comment "An affection, either a disease or an issue"@en,
                  "Une affection, qui peut etre une maladie ou un problème"@fr ;
     rdfs:label   "Affection"@en, "Affection"@fr .
@@ -165,7 +165,7 @@ s:specializedIn
     skos:example    s:Surgery .
 
 s:MedicalSpecialty
-    a                       rdfs:Class, skos:Concept ;
+    a                       owl:Class, skos:Concept ;
     skos:prefLabel          "A medical specialty"@en ;
     skos:altLabel           "Une spécialité médicale"@fr ;
     skos:narrowerTransitive s:Surgery, s:GeneraleMedicine .
@@ -195,7 +195,8 @@ s:RespiratoryField # Respiratory Medicine
                    rdfs:subClassOf s:MedicalSpecialty ;
                    skos:prefLabel  "Respiratory Medicine"@en ;
                    skos:altLabel   "Medecine Respiratoire"@fr ;
-                   skos:definition "The study of the respiratory system"@en, "L'étude du système respiratoire"@fr .
+                   skos:definition "The study of the respiratory system"@en, "L'étude du système respiratoire"@fr ;
+                   skos:narrower  s:ENTField, s:Rheumatology .
 
 s:ENTField # Otorhinolaryngology
            rdfs:subClassOf        s:RespiratoryField ;
@@ -220,7 +221,7 @@ s:RespiratoryMedecin
                       owl:someValuesFrom s:RespiratoryField ] .
 
 s:Document
-    a            rdfs:Class ;
+    a            owl:Class ;
     rdfs:comment "A document"@en, "Un document"@fr ;
     rdfs:label   "Document"@en, "Document"@fr .
 
@@ -338,7 +339,7 @@ s:supplementaryTests
     rdfs:seeAlso    s:Follow-Up .
 
 s:Treatment
-    a            rdfs:Class ;
+    a            owl:Class ;
     rdfs:comment "A treatment, either a medical activity or a prescription"@en,
                  "Un traitement, qui peut etre un médicament ou une activitée médicale"@fr ;
     rdfs:label   "Treatment"@en, "Traitement"@fr .

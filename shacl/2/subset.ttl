@@ -8,12 +8,6 @@
 @prefix s:    <http://td-projet-sparql/schema#> .
 @prefix :     <http://td-projet-sparql/data#> .
 
-:Patient1
-    a                         s:Patient ;
-    foaf:name                 "François" ;
-    foaf:familyName           "Deville" ;
-    s:hasSocialSecurityNumber "1234567891234" .
-
 :Patient2
     a               s:Patient ;
     foaf:name       "René" ;
@@ -30,3 +24,12 @@
     foaf:name                 "Bertrand" ;
     foaf:familyName           "Dupont" ;
     s:hasSocialSecurityNumber "123456-89126" .
+
+# Patient1 is valid
+
+:Patient1
+    a                         s:Patient ;
+    foaf:name                 "François" ;
+    foaf:familyName           "Deville" ;
+    s:hasSocialSecurityNumber "1234567891234" .
+

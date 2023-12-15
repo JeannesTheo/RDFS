@@ -9,19 +9,16 @@
 @prefix s:    <http://td-projet-sparql/schema#> .
 @prefix sh:   <http://www.w3.org/ns/shacl#> .
 
-s:AffectionShape a sh:NodeShape ;
+s:AffectionShape
+    a              sh:NodeShape ;
     sh:targetClass s:Affection ;
-    sh:property [
-        sh:path dc:date ;
-        sh:datatype xs:date ;
-        sh:maxExclusive "2023-12-31"^^xs:date ;
-        sh:nodeKind sh:Literal ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        ] ;
-    sh:property [
-        sh:path s:typeAffection  ;
-        sh:minExclusive 0 ;
-        sh:nodeKind sh:IRI ;
-        sh:pattern "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C[0-9]+" ;
-    ] .
+    sh:property    [ sh:path         dc:date ;
+                     sh:datatype     xs:date ;
+                     sh:maxExclusive "2023-12-31"^^xs:date ;
+                     sh:nodeKind     sh:Literal ;
+                     sh:minCount     1 ;
+                     sh:maxCount     1 ; ] ;
+    sh:property    [ sh:path     s:typeAffection ;
+                     sh:minCount 0 ;
+                     sh:nodeKind sh:IRI ;
+                     sh:pattern  "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C[0-9]+" ; ] .
