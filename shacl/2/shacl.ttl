@@ -16,8 +16,9 @@ s:PatientShape
                   sh:minCount  1 ;
                   sh:maxCount  1 ;
                   sh:datatype  xs:string ;
+                  sh:minLength 13 ;
+                  sh:maxLength 13 ;
                   sh:pattern   "^[0-9]{13}$" ;
                   sh:name      "Social Security Number" ;
                   sh:message  "Social Security Number must be a 13-digit number" ;
-                ] ;
-    sh:message "Social Security Number must be a 13-digit number" .
+                ] .

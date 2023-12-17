@@ -13,7 +13,7 @@ s:FollowUpShape
     a              sh:NodeShape ;
     sh:targetClass s:Follow-Up ;
     sh:property    [ sh:path       s:patientStatus ;
-                     sh:datatype   rdf:langString ;
+                     sh:or         ( [ sh:datatype rdf:langString ; ] [ sh:datatype xs:string ; ] ) ;
                      sh:minCount   1 ;
                      sh:languageIn ( "fr" "en" ) ;
                      sh:uniqueLang true ; ] ;

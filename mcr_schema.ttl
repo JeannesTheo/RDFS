@@ -53,7 +53,7 @@ s:Other
     rdfs:subClassOf s:Gender .
 
 s:Gender
-    a                   owl:Class , skos:Concept  ;
+    a                   owl:Class, skos:Concept ;
     owl:disjointUnionOf ( s:Male s:Female s:Other ) .
 
 s:hasSex
@@ -105,7 +105,7 @@ s:pre-existingCondition
 s:hasBeenAffectedBy
     a               owl:ObjectProperty ;
     rdfs:domain     s:Patient ;
-    rdfs:range s:Affection ;
+    rdfs:range      s:Affection ;
     skos:prefLabel  "has been affected by"@en ;
     skos:altLabel   "a été affecté par"@fr ;
     skos:definition "Issue that had affected a patient in the past"@en,
@@ -196,7 +196,7 @@ s:RespiratoryField # Respiratory Medicine
                    skos:prefLabel  "Respiratory Medicine"@en ;
                    skos:altLabel   "Medecine Respiratoire"@fr ;
                    skos:definition "The study of the respiratory system"@en, "L'étude du système respiratoire"@fr ;
-                   skos:narrower  s:ENTField, s:Rheumatology .
+                   skos:narrowerTransitive s:ENTField, s:Rheumatology .
 
 s:ENTField # Otorhinolaryngology
            rdfs:subClassOf        s:RespiratoryField ;
@@ -228,7 +228,7 @@ s:Document
 s:Follow-Up
     rdfs:subClassOf   s:Document ;
     rdfs:label        "Follow-Up"@en, "Suivi"@fr ;
-    rdfs:comment      "The follow-up of the patien, after a case report"@en,
+    rdfs:comment      "The follow-up of the patient, after a case report"@en,
                       "Un point sur l'etat du patient, après un rapport médical"@fr ;
     dc:isReferencedBy s:CaseReport .
 
@@ -451,7 +451,7 @@ s:hasParent
     skos:altLabel   "a pour parent"@fr ;
     skos:definition "The parent of the patient"@en, "Le parent du patient"@fr .
 
-s:brotherOrSister # Brother or Sister
+s:sibling # Brother or Sister
                   a                        owl:ObjectProperty, owl:SymmetricProperty, owl:TransitiveProperty,
                                            owl:IrreflexiveProperty ;
                   rdfs:domain              s:Person ;
@@ -467,8 +467,8 @@ skos:narrowerTransitive
     owl:inverseOf skos:broaderTransitive .
 
 s:notDirectlyRelated
-    a                      owl:DatatypeProperty, owl:IrreflexiveProperty ;
-    owl:propertyChainAxiom ( s:hasAscendant s:brotherOrSister ) ;
+    a                      owl:ObjectProperty , owl:IrreflexiveProperty ;
+    owl:propertyChainAxiom ( s:hasAscendant s:sibling ) ;
     skos:definition        "The person is not directly related to the patient, but has a commun ancestor"@en,
                            "La personne n'est pas directement liée au patient, mais a un ascendant commun"@fr .
 

@@ -16,7 +16,7 @@
     foaf:name                 "François" ;
     foaf:familyName           "Deville" ;
     foaf:birthday             "1982-09-08"^^xs:date ;
-    s:brotherOrSister            :orl ;
+    s:sibling            :orl ;
     s:hasParent               :Patient5 ;
     s:weight                  "100"^^xs:integer ;
     s:height                  "179"^^xs:integer ;
