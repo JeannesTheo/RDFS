@@ -164,6 +164,12 @@ s:specializedIn
     skos:definition "The specialization of the medecin"@en, "La spécialisation du médecin"@fr ;
     skos:example    s:Surgery .
 
+s:MedicalSpecialities a skos:ConceptScheme ;
+    skos:prefLabel     "Medical Specialities"@en ;
+    skos:altLabel      "Spécialités médicales"@fr ;
+    skos:definition    "Medical Specialities"@en, "Spécialités médicales"@fr ;
+    skos:hasTopConcept s:MedicalSpecialty .
+
 s:MedicalSpecialty
     a                       owl:Class, skos:Concept ;
     skos:prefLabel          "A medical specialty"@en ;
