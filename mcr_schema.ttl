@@ -447,7 +447,7 @@ s:hasAscendant
     a owl:ObjectProperty, owl:TransitiveProperty .
 
 s:hasChild
-    a               owl:ObjectProperty; owl:AsymmetricProperty, owl:IrreflexiveProperty ;
+    a               owl:ObjectProperty, owl:AsymmetricProperty, owl:IrreflexiveProperty ;
     rdfs:domain     s:Person ;
     rdfs:range      s:Person ;
     skos:prefLabel  "has child"@en ;
