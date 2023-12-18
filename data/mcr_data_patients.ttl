@@ -16,7 +16,7 @@
     foaf:name                 "François" ;
     foaf:familyName           "Deville" ;
     foaf:birthday             "1982-09-08"^^xs:date ;
-    s:sibling            :orl ;
+    s:sibling                 :orl ;
     s:hasParent               :Patient5 ;
     s:weight                  "100"^^xs:integer ;
     s:height                  "179"^^xs:integer ;
@@ -93,7 +93,7 @@
     foaf:name                  "Léa" ;
     foaf:familyName            "Dupond" ;
     foaf:birthday              "1954-01-20"^^xs:date ;
-    s:hasChild                  :Patient1;
+    s:hasChild                 :Patient1 ;
     s:weight                   "50"^^xs:integer ;
     s:height                   "160"^^xs:integer ;
     s:hasSex                   s:Female ; # Female
@@ -133,7 +133,7 @@
     a                          s:Patient ;
     foaf:name                  "Anna" ;
     foaf:familyName            "Belfore" ;
-    s:hasChild                   :Patient6 ;
+    s:hasChild                 :Patient6 ;
     foaf:birthday              "1968-03-12"^^xs:date ;
     s:weight                   "58"^^xs:integer ;
     s:height                   "157"^^xs:integer ;
@@ -168,6 +168,8 @@
     foaf:name                  "Gaetan" ;
     foaf:familyName            "Renoir" ;
     foaf:birthday              "2018-03-16"^^xs:date ;
+    s:hasChild                :Patient8 ;
+    s:sibling                 :Patient3 ;
     s:weight                   "38"^^xs:integer ;
     s:hasSex                   s:Male ; # Male
     s:height                   "125"^^xs:integer ;

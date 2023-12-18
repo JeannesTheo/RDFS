@@ -16,7 +16,7 @@ s:
 s:Patient
     rdfs:subClassOf foaf:Person ;
     foaf:status     ncit:C16960 ;
-    owl:hasKey      s:hasSocialSecurityNumber .
+    owl:hasKey      ( s:hasSocialSecurityNumber ) .
 
 s:weight
     a               owl:DatatypeProperty ;
@@ -138,7 +138,7 @@ s:knownHereditaryCondition
 s:Medecin
     rdfs:subClassOf foaf:Person ;
     foaf:status     s:Doctor ;
-    owl:hasKey      s:hasDoctorNumber .
+    owl:hasKey      ( s:hasDoctorNumber ) .
 
 s:Doctor
     a               skos:Concept ;
@@ -245,7 +245,7 @@ s:Follow-Up
 s:CaseReport
     rdfs:subClassOf s:Document ;
     rdfs:label      "Case Report"@en, "Rapport médical"@fr ;
-    owl:hasKey      s:hasCaseId .
+    owl:hasKey      ( s:hasCaseId ) .
 
 s:hasCaseId
     rdfs:subPropertyOf dc:identifier ;
@@ -456,19 +456,19 @@ s:hasChild
 
 s:hasParent
     rdfs:subPropertyOf s:hasAscendant ;
-    owl:inverseOf   s:hasChild ;
-    skos:prefLabel  "has parent"@en ;
-    skos:altLabel   "a pour parent"@fr ;
-    skos:definition "The parent of the patient"@en, "Le parent du patient"@fr .
+    owl:inverseOf      s:hasChild ;
+    skos:prefLabel     "has parent"@en ;
+    skos:altLabel      "a pour parent"@fr ;
+    skos:definition    "The parent of the patient"@en, "Le parent du patient"@fr .
 
 s:sibling # Brother or Sister
-          a                        owl:ObjectProperty, owl:SymmetricProperty, owl:TransitiveProperty;
-          rdfs:domain              s:Person ;
-          rdfs:range               s:Person ;
-          skos:prefLabel           "brother or sister"@en ;
-          skos:altLabel            "frère ou soeur"@fr ;
-          skos:definition          "The brother or sister of the patient"@en, "Le frère ou la soeur du patient"@fr;
-          owl:propertyChainAxiom   ( s:hasParent s:hasChild ) .
+          a                      owl:ObjectProperty, owl:SymmetricProperty, owl:TransitiveProperty ;
+          rdfs:domain            s:Person ;
+          rdfs:range             s:Person ;
+          skos:prefLabel         "brother or sister"@en ;
+          skos:altLabel          "frère ou soeur"@fr ;
+          skos:definition        "The brother or sister of the patient"@en, "Le frère ou la soeur du patient"@fr ;
+          owl:propertyChainAxiom ( s:hasParent s:hasChild ) .
 
 skos:narrowerTransitive
     owl:inverseOf skos:broaderTransitive .
@@ -481,8 +481,7 @@ s:notDirectlyRelated
 
 s:ThreatenedPatient
     a                   owl:Class ;
-    owl:equivalentClass [ a                  owl:Restriction ;
-                          owl:intersectionOf ( s:Patient [ a           owl:Restriction ;
+    owl:equivalentClass [ owl:intersectionOf ( s:Patient [ a           owl:Restriction ;
                                                            owl:unionOf ( [ a                  owl:Restriction ;
                                                                            owl:onProperty     s:knownHereditaryCondition ;
                                                                            owl:minCardinality 3 ] [ a                  owl:Restriction ;
