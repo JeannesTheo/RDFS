@@ -223,13 +223,6 @@ s:Rheumatology # Rheumatology
                                       "L'étude du rhumatisme, de l'arthrite et d'autres troubles des articulations, des muscles et des ligaments"@fr ;
                skos:broaderTransitive s:GeneraleMedicine, s:RespiratoryField .
 
-s:RespiratoryMedecin
-    a               owl:Class ;
-    rdfs:subClassOf [ a                  owl:Restriction ;
-                      owl:onProperty     s:specializedIn ;
-                      owl:someValuesFrom [ a                      skos:Concept ;
-                                           skos:broaderTransitive s:RespiratoryField ] ] .
-
 s:Document
     a            owl:Class ;
     rdfs:comment "A document"@en, "Un document"@fr ;
@@ -479,6 +472,18 @@ s:notDirectlyRelated
     skos:definition        "The person is not directly related to the patient, but has a commun ancestor"@en,
                            "La personne n'est pas directement liée au patient, mais a un ascendant commun"@fr .
 
+s:OnlyDrugsCaseReport
+    a                   owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf ( s:CaseReport [ a                 owl:Restriction ;
+                                                              owl:onProperty    s:givenTreatment ;
+                                                              owl:allValuesFrom s:Drug ] ) ] .
+
+s:AlternativesTreatmentCaseReport
+    a                   owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf ( s:CaseReport [ a                  owl:Restriction ;
+                                                              owl:onProperty     s:givenTreatment ;
+                                                              owl:someValuesFrom s:MedicalActivity ] ) ] .
+
 s:ThreatenedPatient
     a                   owl:Class ;
     owl:equivalentClass [ owl:intersectionOf ( s:Patient [ a           owl:Restriction ;
@@ -486,4 +491,4 @@ s:ThreatenedPatient
                                                                            owl:onProperty     s:knownHereditaryCondition ;
                                                                            owl:minCardinality 3 ] [ a                  owl:Restriction ;
                                                                                                     owl:onProperty     s:pre-existingCondition ;
-                                                                                                    owl:minCardinality 1 ] ) ] ) ] .
+                                                                                                    owl:minCardinality 2 ] ) ] ) ] .

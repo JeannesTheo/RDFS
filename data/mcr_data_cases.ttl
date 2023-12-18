@@ -29,7 +29,7 @@
     a                           s:Drug ;
     s:medication                ncit:C943 ; #Vitamine K
     s:takesPerDay               1 ;
-    s:daysBetweenTakes          "P0D"^^xs:dayTimeDuration ;
+    s:dayBetweenTwoTake         "P0D"^^xs:dayTimeDuration ;
     s:complementaryInstructions "matin, à vie"@fr, "morning, for life"@en .
 
 :followUp1
@@ -57,7 +57,7 @@
     a                           s:Drug ;
     s:medication                ncit:C943 ; #Vitamine K
     s:takesPerDay               1 ;
-    s:daysBetweenTakes          "P0D"^^xs:dayTimeDuration ;
+    s:dayBetweenTwoTake         "P0D"^^xs:dayTimeDuration ;
     s:complementaryInstructions "matin, à vie"@fr, "morning, for life"@en .
 
 :followUp2
@@ -93,7 +93,7 @@
     a                           s:Drug ;
     s:medication                ncit:C943 ; #Vitamine K
     s:takesPerDay               1 ;
-    s:daysBetweenTakes          "P0D"^^xs:dayTimeDuration ;
+    s:dayBetweenTwoTake         "P0D"^^xs:dayTimeDuration ;
     s:complementaryInstructions "matin, à vie"@fr, "morning, for life"@en .
 
 :followUp4
@@ -113,7 +113,7 @@
     # encombrement bronchiques, infections respiratoires, problèles digestifs
     s:diagnosis          ncit:C2975 ; #Mucoviscidose
     s:supplementaryTests ncit:C114184 ; #Irm
-    s:givenTreatment     :balneo1 ; #Balnéo thérapie
+    s:givenTreatment     :balneo1, :anxyolitiques ; #Balnéo thérapie
     s:followUp           :followUp5 . #1
 
 :followUp5
@@ -131,7 +131,13 @@
     s:numberVisits      30 ;
     s:shouldBePerformed "exercice légers + respiration"@fr, "light exercise + breathing"@en .
 
-#
+:anxyolitiques
+    a                   s:Drug ;
+    s:medication        ncit:C1012 ; #benzodiazepine
+    s:takesPerDay       1 ;
+    s:dayBetweenTwoTake "P3D"^^xs:dayTimeDuration ;
+    s:durationPeriod    "P30D"^^xs:dayTimeDuration .
+
 #Traitements: balnéo thérapie
 :balneo2
     a                   s:MedicalActivity ;
