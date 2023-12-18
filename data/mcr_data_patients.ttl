@@ -134,6 +134,7 @@
     foaf:name                  "Anna" ;
     foaf:familyName            "Belfore" ;
     s:hasChild                 :Patient6 ;
+    s:hasParent               :Patient8 ;
     foaf:birthday              "1968-03-12"^^xs:date ;
     s:weight                   "58"^^xs:integer ;
     s:height                   "157"^^xs:integer ;
