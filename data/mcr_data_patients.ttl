@@ -157,7 +157,7 @@
     s:hasSex                  s:Male ; # Male
     s:livesInCountry          ncit:C16592 ; # France
     s:hasPostalCode           "75116" ; # Paris
-    s:hasSocialSecurityNumber "0831245675302" ;
+    s:hasSocialSecurityNumber "1831245675302" ;
     s:pre-existingCondition   ncit:C26747, ncit:C5357 ; # Diabetes Type 2, tumeur au coeur
     s:hasBeenAffectedBy       [ a               s:Affection ;
                                 s:typeAffection ncit:C26778 ;
@@ -173,6 +173,6 @@
     s:height                   "125"^^xs:integer ;
     s:livesInCountry           ncit:C16592 ; # France
     s:hasPostalCode            "75011" ; # Paris
-    s:hasSocialSecurityNumber  "0831245675302" ;
+    s:hasSocialSecurityNumber  "0831455675302" ;
     s:pre-existingCondition    ncit:C28397, ncit:C172310 ; # Asthme, Allergy aux chats
     s:knownHereditaryCondition ncit:C2975 . #Mucoviscidose

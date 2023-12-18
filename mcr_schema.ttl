@@ -141,7 +141,7 @@ s:Medecin
     owl:hasKey      s:hasDoctorNumber .
 
 s:Doctor
-    rdfs:subClassOf ncit:C69164 ;
+    a               skos:Concept ;
     skos:prefLabel  "Medecin"@en ;
     skos:altLabel   "Médecin"@fr ;
     skos:definition "Person who can perform medicals acts"@en, "Une personne autorisée a pratiquer la médécine"@fr .
@@ -158,7 +158,7 @@ s:hasDoctorNumber
 s:specializedIn
     a               owl:ObjectProperty ;
     rdfs:domain     s:Medecin ;
-    rdfs:range      s:MedicalSpecialty ; # Medical Specialty
+    rdfs:range      s:MedicalSpecialty ;
     skos:prefLabel  "specializedIn"@en ;
     skos:altLabel   "spécialisé en"@fr ;
     skos:definition "The specialization of the medecin"@en, "La spécialisation du médecin"@fr ;
@@ -172,26 +172,27 @@ s:MedicalSpecialities
     skos:hasTopConcept s:MedicalSpecialty .
 
 s:MedicalSpecialty
-    a                       owl:Class, skos:Concept ;
+    a                       skos:Concept ;
     skos:prefLabel          "A medical specialty"@en ;
     skos:altLabel           "Une spécialité médicale"@fr ;
     skos:narrowerTransitive s:Surgery, s:GeneraleMedicine .
 
 s:Surgery
-    rdfs:subClassOf s:MedicalSpecialty ;
+    a               skos:Concept ;
     skos:prefLabel  "Surgery"@en ;
     skos:altLabel   "Chirurgie"@fr ;
     skos:definition "The study of operative procedures"@en, "L'étude des procédures opératoires"@fr .
 
 s:GeneraleMedicine # General Medicine
-                   rdfs:subClassOf s:MedicalSpecialty ;
-                   skos:prefLabel  "General Medicine"@en ;
-                   skos:altLabel   "Médecine Générale"@fr ;
-                   skos:definition "The branch of medicine that deals with the diagnosis and (nonsurgical) treatment of diseases of the internal organs (especially in adults)"@en,
-                                   "La branche de la médecine qui traite du diagnostic et du traitement (non chirurgical) des maladies des organes internes (en particulier chez les adultes)"@fr .
+                   a                       skos:Concept ;
+                   skos:prefLabel          "General Medicine"@en ;
+                   skos:altLabel           "Médecine Générale"@fr ;
+                   skos:definition         "The branch of medicine that deals with the diagnosis and (nonsurgical) treatment of diseases of the internal organs (especially in adults)"@en,
+                                           "La branche de la médecine qui traite du diagnostic et du traitement (non chirurgical) des maladies des organes internes (en particulier chez les adultes)"@fr ;
+                   skos:narrowerTransitive s:Cardiology, s:RespiratoryField .
 
 s:Cardiology
-    rdfs:subClassOf        s:MedicalSpecialty ;
+    a                      skos:Concept ;
     skos:prefLabel         "Cardiology"@en ;
     skos:altLabel          "Cardiologie"@fr ;
     skos:definition        "The study of the heart and its functions in health and disease"@en,
@@ -199,7 +200,7 @@ s:Cardiology
     skos:broaderTransitive s:GeneraleMedicine .
 
 s:RespiratoryField # Respiratory Medicine
-                   rdfs:subClassOf         s:MedicalSpecialty ;
+                   a                       skos:Concept ;
                    skos:prefLabel          "Respiratory Medicine"@en ;
                    skos:altLabel           "Medecine Respiratoire"@fr ;
                    skos:definition         "The study of the respiratory system"@en,
@@ -207,7 +208,7 @@ s:RespiratoryField # Respiratory Medicine
                    skos:narrowerTransitive s:ENTField, s:Rheumatology .
 
 s:ENTField # Otorhinolaryngology
-           rdfs:subClassOf        s:RespiratoryField ;
+           a                      skos:Concept ;
            skos:prefLabel         "Otorhinolaryngology"@en ;
            skos:altLabel          "Otorhinolaryngologie"@fr ;
            skos:definition        "The study of the ear, nose, and throat"@en,
@@ -215,7 +216,7 @@ s:ENTField # Otorhinolaryngology
            skos:broaderTransitive s:RespiratoryField .
 
 s:Rheumatology # Rheumatology
-               rdfs:subClassOf        s:RespiratoryField ;
+               a                      skos:Concept ;
                skos:prefLabel         "Rheumatology"@en ;
                skos:altLabel          "Rhumatologie"@fr ;
                skos:definition        "The study of rheumatism, arthritis, and other disorders of the joints, muscles, and ligaments"@en,
@@ -226,7 +227,8 @@ s:RespiratoryMedecin
     a               owl:Class ;
     rdfs:subClassOf [ a                  owl:Restriction ;
                       owl:onProperty     s:specializedIn ;
-                      owl:someValuesFrom s:RespiratoryField ] .
+                      owl:someValuesFrom [ a                      skos:Concept ;
+                                           skos:broaderTransitive s:RespiratoryField ] ] .
 
 s:Document
     a            owl:Class ;
@@ -445,7 +447,7 @@ s:hasAscendant
     a owl:ObjectProperty, owl:TransitiveProperty .
 
 s:hasChild
-    a               owl:ObjectProperty, owl:AsymmetricProperty, owl:IrreflexiveProperty ;
+    a               owl:ObjectProperty; owl:AsymmetricProperty, owl:IrreflexiveProperty ;
     rdfs:domain     s:Person ;
     rdfs:range      s:Person ;
     skos:prefLabel  "has child"@en ;
@@ -454,21 +456,19 @@ s:hasChild
 
 s:hasParent
     rdfs:subPropertyOf s:hasAscendant ;
-    owl:inverseOf      s:hasChild ;
-    skos:prefLabel     "has parent"@en ;
-    skos:altLabel      "a pour parent"@fr ;
-    skos:definition    "The parent of the patient"@en, "Le parent du patient"@fr .
+    owl:inverseOf   s:hasChild ;
+    skos:prefLabel  "has parent"@en ;
+    skos:altLabel   "a pour parent"@fr ;
+    skos:definition "The parent of the patient"@en, "Le parent du patient"@fr .
 
 s:sibling # Brother or Sister
-          a                        owl:ObjectProperty, owl:SymmetricProperty, owl:TransitiveProperty,
-                                   owl:IrreflexiveProperty ;
+          a                        owl:ObjectProperty, owl:SymmetricProperty, owl:TransitiveProperty;
           rdfs:domain              s:Person ;
           rdfs:range               s:Person ;
           skos:prefLabel           "brother or sister"@en ;
           skos:altLabel            "frère ou soeur"@fr ;
-          skos:definition          "The brother or sister of the patient"@en, "Le frère ou la soeur du patient"@fr ;
-          owl:propertyChainAxiom   ( s:hasParent s:hasChild ) ;
-          owl:propertyDisjointWith s:hasChild .
+          skos:definition          "The brother or sister of the patient"@en, "Le frère ou la soeur du patient"@fr;
+          owl:propertyChainAxiom   ( s:hasParent s:hasChild ) .
 
 skos:narrowerTransitive
     owl:inverseOf skos:broaderTransitive .
