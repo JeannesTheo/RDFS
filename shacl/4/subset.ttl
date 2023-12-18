@@ -10,11 +10,11 @@
 
 
 :followUp1 # Ce Follow-Up est valide
-    a                  s:Follow-Up ;
-    s:isRegarding      :Patient2 ;
-    s:hasBeenWrittenBy :cardio ;
-    s:patientStatus    "Bien, stable"@fr, "Well, stable"@en ;
-    s:isPatientHealthy true .
+           a                  s:Follow-Up ;
+           s:isRegarding      :Patient2 ;
+           s:hasBeenWrittenBy :cardio ;
+           s:patientStatus    "Bien, stable"@fr, "Well, stable"@en ;
+           s:isPatientHealthy true .
 
 :followUp2
     a                  s:Follow-Up ;
@@ -58,4 +58,4 @@
     s:hasBeenWrittenBy :cardio .
 
 :Patient3
-    a               s:Patient .
+    a s:Patient .

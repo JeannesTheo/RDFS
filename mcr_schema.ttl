@@ -164,7 +164,8 @@ s:specializedIn
     skos:definition "The specialization of the medecin"@en, "La spécialisation du médecin"@fr ;
     skos:example    s:Surgery .
 
-s:MedicalSpecialities a skos:ConceptScheme ;
+s:MedicalSpecialities
+    a                  skos:ConceptScheme ;
     skos:prefLabel     "Medical Specialities"@en ;
     skos:altLabel      "Spécialités médicales"@fr ;
     skos:definition    "Medical Specialities"@en, "Spécialités médicales"@fr ;
@@ -198,10 +199,11 @@ s:Cardiology
     skos:broaderTransitive s:GeneraleMedicine .
 
 s:RespiratoryField # Respiratory Medicine
-                   rdfs:subClassOf s:MedicalSpecialty ;
-                   skos:prefLabel  "Respiratory Medicine"@en ;
-                   skos:altLabel   "Medecine Respiratoire"@fr ;
-                   skos:definition "The study of the respiratory system"@en, "L'étude du système respiratoire"@fr ;
+                   rdfs:subClassOf         s:MedicalSpecialty ;
+                   skos:prefLabel          "Respiratory Medicine"@en ;
+                   skos:altLabel           "Medecine Respiratoire"@fr ;
+                   skos:definition         "The study of the respiratory system"@en,
+                                           "L'étude du système respiratoire"@fr ;
                    skos:narrowerTransitive s:ENTField, s:Rheumatology .
 
 s:ENTField # Otorhinolaryngology
@@ -452,37 +454,37 @@ s:hasChild
 
 s:hasParent
     rdfs:subPropertyOf s:hasAscendant ;
-    owl:inverseOf   s:hasChild ;
-    skos:prefLabel  "has parent"@en ;
-    skos:altLabel   "a pour parent"@fr ;
-    skos:definition "The parent of the patient"@en, "Le parent du patient"@fr .
+    owl:inverseOf      s:hasChild ;
+    skos:prefLabel     "has parent"@en ;
+    skos:altLabel      "a pour parent"@fr ;
+    skos:definition    "The parent of the patient"@en, "Le parent du patient"@fr .
 
 s:sibling # Brother or Sister
-                  a                        owl:ObjectProperty, owl:SymmetricProperty, owl:TransitiveProperty,
-                                           owl:IrreflexiveProperty ;
-                  rdfs:domain              s:Person ;
-                  rdfs:range               s:Person ;
-                  skos:prefLabel           "brother or sister"@en ;
-                  skos:altLabel            "frère ou soeur"@fr ;
-                  skos:definition          "The brother or sister of the patient"@en,
-                                           "Le frère ou la soeur du patient"@fr ;
-                  owl:propertyChainAxiom   ( s:hasParent s:hasChild ) ;
-                  owl:propertyDisjointWith s:hasChild .
+          a                        owl:ObjectProperty, owl:SymmetricProperty, owl:TransitiveProperty,
+                                   owl:IrreflexiveProperty ;
+          rdfs:domain              s:Person ;
+          rdfs:range               s:Person ;
+          skos:prefLabel           "brother or sister"@en ;
+          skos:altLabel            "frère ou soeur"@fr ;
+          skos:definition          "The brother or sister of the patient"@en, "Le frère ou la soeur du patient"@fr ;
+          owl:propertyChainAxiom   ( s:hasParent s:hasChild ) ;
+          owl:propertyDisjointWith s:hasChild .
 
 skos:narrowerTransitive
     owl:inverseOf skos:broaderTransitive .
 
 s:notDirectlyRelated
-    a                      owl:ObjectProperty , owl:IrreflexiveProperty ;
+    a                      owl:ObjectProperty, owl:IrreflexiveProperty ;
     owl:propertyChainAxiom ( s:hasAscendant s:sibling ) ;
     skos:definition        "The person is not directly related to the patient, but has a commun ancestor"@en,
                            "La personne n'est pas directement liée au patient, mais a un ascendant commun"@fr .
 
 s:ThreatenedPatient
-    a                  owl:Class ;
-    owl:intersectionOf ( s:Patient [ a           owl:Restriction ;
-                                     owl:unionOf ( [ a                  owl:Restriction ;
-                                                     owl:onProperty     s:knownHereditaryCondition ;
-                                                     owl:minCardinality 3 ] [ a                  owl:Restriction ;
-                                                                              owl:onProperty     s:pre-existingCondition ;
-                                                                              owl:minCardinality 1 ] ) ] ) .
+    a                   owl:Class ;
+    owl:equivalentClass [ a                  owl:Restriction ;
+                          owl:intersectionOf ( s:Patient [ a           owl:Restriction ;
+                                                           owl:unionOf ( [ a                  owl:Restriction ;
+                                                                           owl:onProperty     s:knownHereditaryCondition ;
+                                                                           owl:minCardinality 3 ] [ a                  owl:Restriction ;
+                                                                                                    owl:onProperty     s:pre-existingCondition ;
+                                                                                                    owl:minCardinality 1 ] ) ] ) ] .
